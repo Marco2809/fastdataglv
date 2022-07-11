@@ -1,0 +1,295 @@
+@charset "utf-8";
+/*
+/* 
+ * HTML5 ✰ Boilerplate
+ *
+ * Quanto segue è il risultato di un esteso lavoro di ricerca sugli stili cross-browser. 
+ * I riconoscimenti sono stati lasciati inline e un grosso grazie va a Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen e la comunità e il team di sviluppo H5BP.
+ *
+ * Informazioni dettagliate su questo CSS: h5bp.com/css
+ * 
+ * Modifiche in Dreamweaver:
+ * 1. Evidenziazione selezione rimossa tramite commento
+ * 2. Sezione media query rimossa (abbiamo aggiunto la nostra in un file separato)
+ *
+ * ==|== normalizzazione ==========================================================
+ */
+
+
+/* =============================================================================
+   Definizioni visualizzazione HTML5
+   ========================================================================== */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+
+/* =============================================================================
+   Base
+   ========================================================================== */
+
+/*
+ * 1. Corretto il ridimensionamento non corretto del testo in IE6/7 quando la dimensione carattere del corpo è impostata con unità em
+ * 2. Barra di scorrimento verticale forzata nei browser non IE
+ * 3. Impedito il ridimensionamento del testo in iOS dopo un cambio di orientamento del dispositivo, senza disabilitare lo zoom utente: h5bp.com/g
+ */
+
+html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+body { margin: 0; font-size: 13px; line-height: 1.231; }
+
+body, button, input, select, textarea { font-family: sans-serif; color: #222; }
+
+/* 
+ * Rimossa ombreggiatura testo in evidenziazione selezione: h5bp.com/i
+ * Queste dichiarazioni di selezione devono essere separate
+ * Inoltre: rosa acceso! (oppure potete personalizzare il colore di sfondo in base al vostro stile di design)
+ */
+
+/* Dreamweaver: rimuovete i commenti se volete personalizzare l'evidenziazione della selezione
+ *::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
+ *::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+ */
+
+/* =============================================================================
+   Collegamenti
+   ========================================================================== */
+
+a { color: #00e; }
+a:visited { color: #551a8b; }
+a:hover { color: #06e; }
+a:focus { outline: thin dotted; }
+
+/* Leggibilità migliorata in caso di attivazione e hover in tutti i browser: h5bp.com/h */
+a:hover, a:active {
+	outline: 0;
+	text-align: center;
+	font-family: play;
+	font-style: normal;
+	font-weight: 400;
+}
+
+
+/* =============================================================================
+   Composizione tipografica
+   ========================================================================== */
+
+abbr[title] { border-bottom: 1px dotted; }
+
+b, strong { font-weight: bold; }
+
+blockquote { margin: 1em 40px; }
+
+dfn { font-style: italic; }
+
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+
+ins { background: #ff9; color: #000; text-decoration: none; }
+
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+
+/* Famiglia di caratteri monospace ridichiarata: h5bp.com/j */
+pre, code, kbd, samp { font-family: monospace, monospace; _font-family: 'courier new', monospace; font-size: 1em; }
+
+/* Leggibilità migliorata del testo preformattato in tutti i browser */
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+
+q { quotes: none; }
+q:before, q:after { content: ""; content: none; }
+
+small { font-size: 85%; }
+
+/* Posizionamento dei contenuti in pedice e apice senza alterare l'altezza della riga: h5bp.com/k */
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+
+/* =============================================================================
+   Elenchi
+   ========================================================================== */
+
+ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+dd { margin: 0 0 0 40px; }
+nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
+
+
+/* =============================================================================
+   Contenuto incorporato
+   ========================================================================== */
+
+/*
+ * 1. Qualità immagine migliorata in caso di ridimensionamento in IE7: h5bp.com/d
+ * 2. Rimossa la distanza tra immagini e bordi nei contenitori di immagini: h5bp.com/e 
+ */
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+/*
+ * Corretto riversamento non nascosto in IE9 
+ */
+
+svg:not(:root) { overflow: hidden; }
+
+
+/* =============================================================================
+   Figure
+   ========================================================================== */
+
+figure { margin: 0; }
+
+
+/* =============================================================================
+   Moduli
+   ========================================================================== */
+
+form { margin: 0; }
+fieldset { border: 0; margin: 0; padding: 0; }
+
+/* Indica che 'label' passerà lo stato di attivazione all'elemento modulo associato */
+label { cursor: pointer; }
+
+/* 
+ * 1. Risolto problema colore non ereditato in IE6/7/8/9 
+ * 2. Risolto problema allineamento non visualizzato esattamente in IE6/7 
+ */
+
+legend { border: 0; *margin-left: -7px; padding: 0; }
+
+/*
+ * 1. Risolto problema dimensione carattere non ereditata in tutti i browser
+ * 2. Margini rimossi in FF3/4 S5 Chrome
+ * 3. Definita visualizzazione uniforme dell'allineamento verticale in tutti i browser
+ */
+
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+
+/*
+ * 1. Altezza riga definita come normale per corrispondere a FF3/4 (impostata mediante !important nel foglio di stile UA)
+ * 2. Risolto problema allineamento non visualizzato correttamente in IE6/7
+ */
+
+button, input { line-height: normal; *overflow: visible; }
+
+/*
+ * Reintrodotta spaziatura interna in 'table' per evitare problemi di sovrapposizione e spazio vuoto in IE6/7
+ */
+
+table button, table input { *overflow: auto; }
+
+/*
+ * 1. Cursore a forma di mano visualizzato per elementi modulo cliccabili
+ * 2. Consentita l'applicazione di stili agli elementi modulo cliccabili in iOS
+ */
+
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
+
+/*
+ * Ridimensionamento e aspetto uniformi delle caselle 
+ */
+
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+
+/* 
+ * Rimossa spaziatura interna e bordo in FF3/4: h5bp.com/l 
+ */
+
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+
+/* 
+ * 1. Rimossa barra di scorrimento verticale predefinita in IE6/7/8/9 
+ * 2. Consentito solo ridimensionamento verticale
+ */
+
+textarea { overflow: auto; vertical-align: top; resize: vertical; }
+
+/* Colori per validità modulo */
+input:valid, textarea:valid {  }
+input:invalid, textarea:invalid { background-color: #f0dddd; }
+
+
+/* =============================================================================
+   Tabelle
+   ========================================================================== */
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	font-family: play;
+	font-style: normal;
+	font-weight: 400;
+}
+td {
+	vertical-align: top;
+	text-align: left;
+}
+
+
+/* ==|== stili principali =====================================================
+   Autore: 
+   ========================================================================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==|== classi helper non semantiche ========================================
+   Definite i vostri stili prima di questa sezione.
+   ========================================================================== */
+
+/* Per sostituzione immagini */
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
+.ir br { display: none; }
+
+/* Nascondere sia negli screen reader che nei browser: h5bp.com/u */
+.hidden { display: none !important; visibility: hidden; }
+
+/* Nascondere solo visivamente, mantenendo la disponibilità negli screen reader: h5bp.com/v */
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+
+/* Estende la classe .visuallyhidden per consentire all'elemento di ricevere lo stato di attivazione se raggiunto tramite tastiera: h5bp.com/p */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+/* Nascondere visivamente e anche negli screen reader, mantenendo il layout */
+.invisible { visibility: hidden; }
+
+/* Con contenuto float: h5bp.com/q */ 
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+
+/* ==|== stampa stili =======================================================
+   Stampa stili.
+   Inserimento in linea per evitare la necessità di una connessione HTTP: h5bp.com/r
+   ========================================================================== */
+ 
+ @media print {
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Stampa più veloce del nero: h5bp.com/s */
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Collegamenti non visualizzati per le immagini, o collegamenti javascript/interni */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* h5bp.com/t */
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
