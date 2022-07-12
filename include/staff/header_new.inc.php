@@ -481,7 +481,7 @@ img, object, embed, video {
     <th width="90px" scope="col"><a href="#"><img src="../include/staff/img_new/home_3d_off.png"/></a></th>
     <th width="90px" scope="col"><a href="#"><img src="../include/staff/img_new/soggettiterzi_3d_off.png"/></a></th>
       <?php
-      $db = new PDO('mysql:host=localhost;dbname=dolibarr;charset=utf8', 'root', 'mysql1989');
+      $db = new PDO('mysql:host=localhost;dbname=dolibarr;charset=utf8', 'admin', 'Iniziale1!?');
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 

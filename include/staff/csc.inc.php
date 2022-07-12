@@ -2,7 +2,7 @@
 //ini_set('display_errors',1);
 //error_reporting(E_ALL);
 $config = array(
-    'url'=>'http://localhost/api/http.php/tickets.json',
+    'url'=>'http://5.249.147.181:8080/api/http.php/tickets.json',
     'key'=>'07B4D26F5CBB16DAD3508C7456D2473C'
 );
 

@@ -3,8 +3,8 @@
 phpinfo();
 
 $servername = "localhost";
-$username = "root";
-$password = "mysql1989";
+$username = "admin";
+$password = "Iniziale1!?";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password);

@@ -3,8 +3,8 @@
 
 NOW=$(date +"%m_%d_%Y")
 FILE=/var/www/fastdata/DB-BACKUP/dolibarr_$NOW
-NAME=root
-PASS=mysql1989
+NAME=admin
+PASS=Iniziale1!?
 DB=dolibarr
 
 
