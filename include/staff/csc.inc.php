@@ -504,6 +504,8 @@ if (!empty($csv)){
 
         }
 
+        echo json_encode($data);
+
         curl_setopt($ch, CURLOPT_URL, $config['url']);
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
