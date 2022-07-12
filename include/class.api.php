@@ -102,8 +102,8 @@ class API {
     function getIdByKey($key, $ip='') {
 
         $sql='SELECT id FROM '.API_KEY_TABLE.' WHERE apikey='.db_input($key);
-        if($ip)
-            $sql.=' AND ipaddr='.db_input($ip);
+        /*if($ip)
+            $sql.=' AND ipaddr='.db_input($ip);*/
 
         if(($res=db_query($sql)) && db_num_rows($res))
             list($id) = db_fetch_row($res);

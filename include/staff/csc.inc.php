@@ -280,7 +280,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
 //echo "DATA:".$line[$key_datascad];
             $date=date('Y-m-d',time());
 
-            echo $line[$key_topicId];
+            //echo $line[$key_topicId];
 
             switch (trim($line[$key_topicId])) {
                 case 'Assistenza':
