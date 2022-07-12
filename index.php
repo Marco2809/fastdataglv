@@ -16,6 +16,6 @@
 //Nothing for now...simply redirect to tickets page.
 
 
-header("Location: http://localhost/scp/index.php");
+header("Location: http://5.249.147.181:8080/scp/index.php");
 die();
 ?>
