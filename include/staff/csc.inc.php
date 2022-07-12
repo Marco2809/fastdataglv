@@ -202,7 +202,12 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                 )
             );
         }*/
-
+        $keys = array_replace($keys,
+            array_fill_keys(
+                array_keys($keys, 'D/O Ricezione'),
+                'zz_date1'
+            )
+        );
 
 
         $keys[]='name';
