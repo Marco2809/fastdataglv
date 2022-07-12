@@ -65,24 +65,24 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                 'customer_middle_name'
             )
         );
-        $keys = array_replace($keys,
+        /*$keys = array_replace($keys,
             array_fill_keys(
                 array_keys($keys, 'Urgente'),
                 'category_sym'
             )
-        );
+        );*/
         $keys = array_replace($keys,
             array_fill_keys(
                 array_keys($keys, 'ModelloNEW'),
                 'affected_resource_zz_wam_string1'
             )
         );
-        $keys = array_replace($keys,
+        /*$keys = array_replace($keys,
             array_fill_keys(
                 array_keys($keys, 'D/O Scadenza'),
                 'ref_contatto'
             )
-        );
+        );*/
 
         $keys = array_replace($keys,
             array_fill_keys(
@@ -219,12 +219,12 @@ document.getElementById('cscino').value='Submitting, please wait...';">
 
         $key_name = array_search('customer_middle_name', $keys);
         $key_topicId = array_search('group_last_name', $keys);
-        $key_subject = array_search('Rag Sociale', $keys);
+        $key_subject = array_search('customer_middle_name', $keys);
         $key_data = array_search('zz_date1', $keys);
         $key_termid = array_search('cr', $keys);
         $key_ordine = array_search('ref_num', $keys);
 
-        $key_datascad = array_search('ref_contatto', $keys);
+        $key_datascad = array_search('D/O Scadenza', $keys);
 
 
         if (array_search('EventualiNote', $keys))
