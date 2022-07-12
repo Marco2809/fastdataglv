@@ -459,7 +459,7 @@ foreach ($csv as $data){
     $result =db_query($sql_2);
   }
 
-//echo json_encode($data);
+echo json_encode($data);
 
 curl_setopt($ch, CURLOPT_URL, $config['url']);
 curl_setopt($ch, CURLOPT_POST, 1);
