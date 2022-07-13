@@ -57,62 +57,7 @@ if($ticket->isOverdue())
 
 ?>
 
-<script>
-    function mostranascondi(div, switchImgTag) {
-        var ele = document.getElementById(div);
-        var imageEle = document.getElementById(switchImgTag);
-        if(ele.style.display == "block") {
-            ele.style.display = "none";
-            imageEle.innerHTML = '<img src="../images/down_new.png">';
-        }
-        else {
-            ele.style.display = "block";
-            imageEle.innerHTML = '<img src="../images/up_new.png">';
-        }
-    }
-</script>
-<script>
-    function mostranascondi2(div, switchImgTag) {
-        var ele = document.getElementById(div);
-        var imageEle = document.getElementById(switchImgTag);
-        if(ele.style.display == "block") {
-            ele.style.display = "none";
-            imageEle.innerHTML = 'EDIT';
-        }
-        else {
-            ele.style.display = "block";
-            imageEle.innerHTML = 'EDIT';
-        }
-    }
-</script>
-<script>
-    function mostranascondi3(div, switchImgTag) {
-        var ele = document.getElementById(div);
-        var imageEle = document.getElementById(switchImgTag);
-        if(ele.style.display == "block") {
-            ele.style.display = "none";
-            imageEle.innerHTML = 'EDIT';
-        }
-        else {
-            ele.style.display = "block";
-            imageEle.innerHTML = 'EDIT';
-        }
-    }
-</script>
-<script>
-    function mostranascondi4(div, switchImgTag) {
-        var ele = document.getElementById(div);
-        var imageEle = document.getElementById(switchImgTag);
-        if(ele.style.display == "block") {
-            ele.style.display = "none";
-            imageEle.innerHTML = 'Allega file';
-        }
-        else {
-            ele.style.display = "block";
-            imageEle.innerHTML = 'Allega file';
-        }
-    }
-</script>
+
 
 <table width="100%" cellpadding="2" cellspacing="0" border="0"><!--width="940"-->
     <tr>
