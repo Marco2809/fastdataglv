@@ -232,6 +232,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
         $key_datascad = array_search('D/O Scadenza', $keys);
 
 
+
         if (array_search('EventualiNote', $keys))
             $key_message = array_search('EventualiNote', $keys);
         else
@@ -273,6 +274,8 @@ document.getElementById('cscino').value='Submitting, please wait...';">
 
             $datasplit=str_split($line[$key_data], 2);
             $nuovadata=$datasplit[2].$datasplit[3].'-'.$datasplit[1].'-'.$datasplit[0];
+            echo "DATA: ".$nuovadata;
+            exit();
             $nuovadata= substr($line[$key_data],7,4)."-".substr($line[$key_data],3,2)."-".substr($line[$key_data],0,2);
             $line[$key_data]=strtotime($nuovadata);
 
