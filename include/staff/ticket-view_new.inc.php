@@ -2057,7 +2057,7 @@ print $response_form->getField('attachments')->render();
 
     <hr/>
     <p class="confirm-action" style="display:none;" id="ws-confirm"></p>
-    <?php require_once(STAFFINC_DIR.'asset.inc1.php'); ?>-->
+    <?php //require_once(STAFFINC_DIR.'asset.inc1.php'); ?>-->
     <a class="close" href=""><i class="icon-remove-circle"></i></a>
     <form id="note" action="tickets.php?id=<?php echo $ticket->getId(); ?>#note" name="note" method="post" enctype="multipart/form-data">
         <?php csrf_token(); ?>
