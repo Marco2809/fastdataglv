@@ -499,11 +499,11 @@ $db = null;
 
       //echo $id;?>
      <?php if ($thisstaff->getId()!=80){?>
-    <th width="90px" scope="col"><a href="http://glvservice.fast-data.it/product/stock/fiche.php?id=<?php echo $id;?>"><img src="../include/staff/img_new/magazzino_3d.png"
+    <th width="90px" scope="col"><a href="http://5.249.147.181:8081/product/stock/fiche.php?id=<?php echo $id;?>"><img src="../include/staff/img_new/magazzino_3d.png"
       onmouseover="this.src='../include/staff/img_new/asset-mngm.png';"
       onmouseout="this.src='../include/staff/img_new/magazzino_3d.png';"/></a></th>
     <?php }else{?>
-	<th width="90px" scope="col"><a href="http://glvservice.fast-data.it/product/elenco_ordini.php?mainmenu=products&leftmenu="><img src="../include/staff/img_new/magazzino_3d.png"
+	<th width="90px" scope="col"><a href="http://5.249.147.181:8081/product/elenco_ordini.php?mainmenu=products&leftmenu="><img src="../include/staff/img_new/magazzino_3d.png"
       onmouseover="this.src='../include/staff/img_new/asset-mngm.png';"
       onmouseout="this.src='../include/staff/img_new/magazzino_3d.png';"/></a></th>
 	<?php }?>

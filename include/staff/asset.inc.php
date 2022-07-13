@@ -44,7 +44,7 @@
            if($_POST['submit']=="Cerca"){
        
         try{
-$gsearch = new SoapClient('http://glvservice.fast-data.it/webservices/ws/wsdl_engine2.wsdl',array('connection_timeout'=>5,'trace'=>true,'soap_version'=>SOAP_1_2,'cache_wsdl' => WSDL_CACHE_NONE));
+$gsearch = new SoapClient('http://5.249.147.181:8081/webservices/ws/wsdl_engine2.wsdl',array('connection_timeout'=>5,'trace'=>true,'soap_version'=>SOAP_1_2,'cache_wsdl' => WSDL_CACHE_NONE));
 
 $result=$gsearch->searchP_F_A($_POST['tipo'].",".$_POST['ricerca_all']);
        $labels= explode("?",$result);
@@ -107,7 +107,7 @@ $result=$gsearch->searchP_F_A($_POST['tipo'].",".$_POST['ricerca_all']);
                 if($_POST['submit']=="Popola"){
        
         try{
-$gsearch = new SoapClient('http://glvservice.fast-data.it/webservices/ws/wsdl_engine2.wsdl',array('connection_timeout'=>5,'trace'=>true,'soap_version'=>SOAP_1_2,'cache_wsdl' => WSDL_CACHE_NONE));
+$gsearch = new SoapClient('http://5.249.147.181:8081/webservices/ws/wsdl_engine2.wsdl',array('connection_timeout'=>5,'trace'=>true,'soap_version'=>SOAP_1_2,'cache_wsdl' => WSDL_CACHE_NONE));
 
 $result=$gsearch->newAsset($_POST['etichetta']);
        $newAsset= explode("?",$result);
@@ -151,7 +151,7 @@ $result=$gsearch->newAsset($_POST['etichetta']);
 
 
 try{
-$gsearch = new SoapClient('http://glvservice.fast-data.it/webservices/ws/wsdl_engine2.wsdl',array('connection_timeout'=>5,'trace'=>true,'soap_version'=>SOAP_1_2,'cache_wsdl' => WSDL_CACHE_NONE));
+$gsearch = new SoapClient('http://5.249.147.181:8081/webservices/ws/wsdl_engine2.wsdl',array('connection_timeout'=>5,'trace'=>true,'soap_version'=>SOAP_1_2,'cache_wsdl' => WSDL_CACHE_NONE));
 
 
          if($_POST['update']=="update")
