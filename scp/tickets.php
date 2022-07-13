@@ -2750,3 +2750,4 @@ function nuovascadenza($from, $days, $holidays) {
     }
     return $from->format('Y-m-d')." 01:00:00"; #  or just return DateTime object
 }
+
