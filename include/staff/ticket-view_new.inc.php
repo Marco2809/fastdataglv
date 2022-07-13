@@ -1,4 +1,8 @@
 <?php
+
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+
 //Note that ticket obj is initiated in tickets.php.
 if(!defined('OSTSCPINC') || !$thisstaff || !is_object($ticket) || !$ticket->getId()) die('Invalid path');
 
