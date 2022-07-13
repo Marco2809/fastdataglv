@@ -282,10 +282,9 @@ document.getElementById('cscino').value='Submitting, please wait...';">
             $date=$nuovadata;
 
             $data_scad = substr($line[$key_datascad],6,4)."-".substr($line[$key_datascad],3,2)."-".substr($line[$key_datascad],0,2);
-            $ora_scad = substr($line[$key_datascad],12,2).":".substr($line[$key_datascad],15,2);
+            $ora_scad = substr($line[$key_datascad],11,2).":".substr($line[$key_datascad],14,2);
             echo "DATA: ".$nuovadata;
             echo "DATASCAD: ".$data_scad." ".$ora_scad;
-            exit();
 
 //echo "DATA:".$line[$key_datascad];
             $date=date('Y-m-d',time());
