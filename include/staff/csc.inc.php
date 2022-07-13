@@ -273,12 +273,12 @@ document.getElementById('cscino').value='Submitting, please wait...';">
 
 
             $datasplit=str_split($line[$key_data], 2);
-            $nuovadata=$datasplit[2].$datasplit[3].'-'.$datasplit[1].'-'.$datasplit[0];
-            echo "DATA: ".$nuovadata;
-            exit();
+            //$nuovadata=substr($line[$key_data],5,4)."-".substr($line[$key_data],3,2)."-".substr($line[$key_data],0,2)." ".;
+
             $nuovadata= substr($line[$key_data],7,4)."-".substr($line[$key_data],3,2)."-".substr($line[$key_data],0,2);
             $line[$key_data]=strtotime($nuovadata);
-
+            echo "DATA: ".$nuovadata;
+            exit();
 
             $date=$nuovadata;
 
