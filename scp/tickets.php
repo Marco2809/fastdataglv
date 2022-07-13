@@ -917,7 +917,7 @@ WHERE ticket.ticket_id='.$chiave);
 
 
 
-            $urlo='http://glvservice.fast-data.it/product/script_swap.php';
+            $urlo='http://5.249.147.181:8081/product/script_swap.php';
             $ch = curl_init();
 
             curl_setopt($ch, CURLOPT_URL, $urlo);
@@ -2185,7 +2185,7 @@ if (strpos($ref_num, 'c') !== false or strpos($ref_num, 'C') !== false){
 
                        //mail('marco.salmi89@gmail.com','array chiusura da zoccali',serialize($data));
 
-                       $urlo='http://glvservice.fast-data.it/product/script_swap.php';
+                       $urlo='http://5.249.147.181:8081/product/script_swap.php';
                        $ch = curl_init();
 
                        curl_setopt($ch, CURLOPT_URL, $urlo);
