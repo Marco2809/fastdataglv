@@ -1598,11 +1598,11 @@ if($thisstaff->canCreateTickets()) {
 
 if($thisstaff->getDeptId()==6) {
 
-    /*$nav->addSubMenu(array('desc'=>'Nexi',
+    $nav->addSubMenu(array('desc'=>'Nexi',
                            'title'=>'Importazione Nexi',
                            'href'=>'?a=ticket_cartasi',
                            'iconclass'=>'newTicket'),
-                        ($_REQUEST['status']=='ticket-cartasi'));*/
+                        ($_REQUEST['status']=='ticket-cartasi'));
 
     $nav->addSubMenu(array('desc'=>'Cooper',
                            'title'=>'Importazione Coopersystem',
