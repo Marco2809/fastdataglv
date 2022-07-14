@@ -1474,9 +1474,10 @@ if ($results_dis) {
             <label for="utopicId">Aziende:</label>
             <select id="utopicId" name="utopicId" tabindex="1">
                 <option value="0" selected >&mdash; Tutte &mdash;</option>
-                <option value="(12,13,14,15,16,17,39,43)">Nexi</option>
+                <option value="(12,13,14,15,16,17,39,43,44)">Nexi</option>
                 <option value="(18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38)">Coopersystem</option>
                 <option value="(40,41,42)">Sisal</option>
+                <option value="(45,46,47,48,49,50,51,52,53,54,55)">CSC</option>
             </select>
         </fieldset>
         <fieldset class="owner span6">
