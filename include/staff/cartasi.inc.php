@@ -129,6 +129,12 @@ $keys = array_replace($keys,
 );
 $keys = array_replace($keys,
     array_fill_keys(
+        array_keys($keys, 'PREFISSO'),
+        'customer_prefiss_number'
+    )
+);
+$keys = array_replace($keys,
+    array_fill_keys(
         array_keys($keys, 'TELEFONO'),
         'customer_phone_number'
     )
@@ -164,7 +170,7 @@ $key_topicId = array_search('group_last_name', $keys);
 $key_data = array_search('zz_date1', $keys);
 $key_ordine = array_search('ref_num', $keys);
 $key_telefono = array_search('customer_phone_number', $keys);
-
+$key_prefix = array_search('customer_prefiss_number', $keys);
 $key_message = array_search('NOTE', $keys);
 $key_provincia = array_search('customer_location_l_addr1', $keys);
 $key_termid = array_search('cr', $keys);
@@ -198,6 +204,7 @@ while (!feof($fh)) {
 	$dtordine=$dataordine[2].'-'.$dataordine[1].'-'.$dataordine[0];
 	$line[$key_data]=strtotime($dtordine);
 	$line[$key_termid]=(string) str_pad($line[$key_termid], 8, '0', STR_PAD_LEFT);
+    $line[$key_telefono]= $line[$key_prefix].$line[$key_telefono];
 	$stripped=preg_replace("(\(|\)|\-|\.|\+|[  ]+)","",$line[$key_telefono]);
 	$line[$key_telefono]=(strlen($stripped)<7)?str_pad($stripped, 7, '0', STR_PAD_LEFT):$stripped;
 	//$line[$key_telefono]=($line[$key_telefono]!='')?$line[$key_telefono]:'123456789';
@@ -253,7 +260,7 @@ if (in_array($line[$key_provincia],$zona1)){
     $line[] = 'x';
 }
 break;
-case 'Upgrade Massivo':
+case 'Riconfigurazionemassiva':
 $n=3650;
 $line[] = 15;
 $line[] = nworkingdaysafter($date,$n,$holidays);
@@ -268,7 +275,7 @@ if (in_array($line[$key_provincia],$zona1)){
     $line[] = 'x';
 }
 break;
-case 'Cambio Gestore':
+case 'Cambiogestore':
 $n=3650;
 $line[] = 16;
 $line[] = nworkingdaysafter($date,$n,$holidays);
