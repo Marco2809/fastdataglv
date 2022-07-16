@@ -303,7 +303,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                     $line[] = 32;
 
                     break;
-                case 'Installazione Massiva':
+                case 'InstallazioneMassiva':
                     $n=180;
                     $line[] = 55;
                     $line[] = nworkingdaysafter($date,$n,$holidays);
@@ -324,7 +324,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                     $line[] = 23;
                     $line[] = 22;
                     break;
-                case 'Installazione POS':
+                case 'InstallazionePOS':
                     $n=180;
                     $line[] = 47;
                     $line[] = nworkingdaysafter($date,$n,$holidays);
@@ -334,7 +334,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                     $line[] = 1;
                     $line[] = 14;
                     break;
-                case 'Installazione POS (reinst. pos in loco)':
+                case 'InstallazionePOS(reinst.posinloco)':
                     $n=180;
                     $line[] = 48;
                     $line[] = nworkingdaysafter($date,$n,$holidays);
@@ -344,7 +344,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                     $line[] = 1;
                     $line[] = 14;
                     break;
-                case 'Installazione POS Urgente':
+                case 'InstallazionePOSUrgente':
                     $n=180;
                     $line[] = 49;
                     $line[] = nworkingdaysafter($date,$n,$holidays);
@@ -354,7 +354,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                     $line[] = 1;
                     $line[] = 14;
                     break;
-                case 'Intervento Straordinario':
+                case 'InterventoStraordinario':
                     $n=180;
                     $line[] = 50;
                     $line[] = nworkingdaysafter($date,$n,$holidays);
@@ -364,7 +364,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                     $line[] = 1;
                     $line[] = 14;
                     break;
-                case 'Intervento Tecnico':
+                case 'InterventoTecnico':
                     $n=180;
                     $line[] = 51;
                     $line[] = nworkingdaysafter($date,$n,$holidays);
@@ -384,7 +384,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                     $line[] = 1;
                     $line[] = 14;
                     break;
-                case 'Sostituzione MASSIVA':
+                case 'SostituzioneMASSIVA':
                     $n=180;
                     $line[] = 53;
                     $line[] = nworkingdaysafter($date,$n,$holidays);
@@ -394,7 +394,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                     $line[] = 1;
                     $line[] = 14;
                     break;
-                case 'Sostituzione Terminale':
+                case 'SostituzioneTerminale':
                     $n=180;
                     $line[] = 54;
                     $line[] = nworkingdaysafter($date,$n,$holidays);
