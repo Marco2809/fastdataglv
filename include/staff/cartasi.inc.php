@@ -455,7 +455,7 @@ foreach ($csv as $data){
     $result_id =db_query($sql_user);
     $id_mail = db_fetch_array($result_id);
     $id_mail = $id_mail['id_email']+1;
-    $mail = $data['email'];
+    $mail = str_replace("'","",$data['email']);
 
     $sql_1 = "INSERT INTO ost_user (id, org_id, default_email_id,status, name) VALUES ($id_user,0,$id_mail,0,'".$nome."')";
     $result =db_query($sql_1);
