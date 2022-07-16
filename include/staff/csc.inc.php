@@ -303,7 +303,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                     $line[] = 32;
 
                     break;
-                case 'InstallazioneMassiva':
+                case 'Installazione Massiva':
                     $n=180;
                     $line[] = 55;
                     $line[] = nworkingdaysafter($date,$n,$holidays);
@@ -324,7 +324,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                     $line[] = 23;
                     $line[] = 22;
                     break;
-                case 'InstallazionePOS':
+                case 'Installazione POS':
                     $n=180;
                     $line[] = 47;
                     $line[] = nworkingdaysafter($date,$n,$holidays);
@@ -334,7 +334,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                     $line[] = 1;
                     $line[] = 14;
                     break;
-                case 'InstallazionePOS(reinst.posinloco)':
+                case 'Installazione POS(reinst. pos in loco)':
                     $n=180;
                     $line[] = 48;
                     $line[] = nworkingdaysafter($date,$n,$holidays);
@@ -344,7 +344,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                     $line[] = 1;
                     $line[] = 14;
                     break;
-                case 'InstallazionePOSUrgente':
+                case 'Installazione POS Urgente':
                     $n=180;
                     $line[] = 49;
                     $line[] = nworkingdaysafter($date,$n,$holidays);
@@ -354,7 +354,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                     $line[] = 1;
                     $line[] = 14;
                     break;
-                case 'InterventoStraordinario':
+                case 'Intervento Straordinario':
                     $n=180;
                     $line[] = 50;
                     $line[] = nworkingdaysafter($date,$n,$holidays);
@@ -364,7 +364,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                     $line[] = 1;
                     $line[] = 14;
                     break;
-                case 'InterventoTecnico':
+                case 'Intervento Tecnico':
                     $n=180;
                     $line[] = 51;
                     $line[] = nworkingdaysafter($date,$n,$holidays);
@@ -384,7 +384,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                     $line[] = 1;
                     $line[] = 14;
                     break;
-                case 'SostituzioneMASSIVA':
+                case 'Sostituzione MASSIVA':
                     $n=180;
                     $line[] = 53;
                     $line[] = nworkingdaysafter($date,$n,$holidays);
@@ -394,7 +394,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                     $line[] = 1;
                     $line[] = 14;
                     break;
-                case 'SostituzioneTerminale':
+                case 'Sostituzione Terminale':
                     $n=180;
                     $line[] = 54;
                     $line[] = nworkingdaysafter($date,$n,$holidays);
@@ -478,8 +478,8 @@ if (!empty($csv)){
 
 
 //$data['phone'] = $data['customer_phone_number'];
-//echo json_encode($data);
-
+echo json_encode($data);
+exit();
 
         $nome = mres($data['name']);
         $sql="select id from ost_user where name = '".$nome."'";
@@ -501,7 +501,7 @@ if (!empty($csv)){
             $result_id =db_query($sql_user);
             $id_mail = db_fetch_array($result_id);
             $id_mail = $id_mail['id_email']+1;
-            $mail = $data['email'];
+            $mail = str_replace("'","",$data['email']);
 
             $sql_1 = "INSERT INTO ost_user (id, org_id, default_email_id,status, name) VALUES ($id_user,0,$id_mail,0,'".$nome."')";
             //echo $sql_1."<br>";
