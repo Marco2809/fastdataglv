@@ -431,10 +431,11 @@ document.getElementById('cscino').value='Submitting, please wait...';">
             );
 
 
-
-
-
             $csv[] = array_combine($keys, $line);
+
+            print_r($csv);
+            echo 'qio';
+            exit();
 
         }
 
