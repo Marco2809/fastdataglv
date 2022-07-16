@@ -433,7 +433,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
 
             $csv[] = array_combine($keys, $line);
 
-            print_r($csv);
+            //print_r($csv);
 
         }
 
@@ -478,7 +478,7 @@ if (!empty($csv)){
 
 
 //$data['phone'] = $data['customer_phone_number'];
-echo json_encode($data);
+//echo json_encode($data);
 
         $nome = mres($data['name']);
         $sql="select id from ost_user where name = '".$nome."'";
