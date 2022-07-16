@@ -283,13 +283,13 @@ document.getElementById('cscino').value='Submitting, please wait...';">
 
             $data_scad = substr($line[$key_datascad],6,4)."-".substr($line[$key_datascad],3,2)."-".substr($line[$key_datascad],0,2);
             $ora_scad = substr($line[$key_datascad],11,2).":".substr($line[$key_datascad],14,2);
-            echo "DATA: ".$nuovadata;
-            echo "DATASCAD: ".$data_scad." ".$ora_scad;
+            //echo "DATA: ".$nuovadata;
+            //echo "DATASCAD: ".$data_scad." ".$ora_scad;
 
 //echo "DATA:".$line[$key_datascad];
             $date=date('Y-m-d',time());
 
-            //echo $line[$key_topicId];
+            echo $line[$key_topicId];
 
             switch (trim($line[$key_topicId])) {
                 case 'Assistenza':
