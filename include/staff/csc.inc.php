@@ -434,8 +434,6 @@ document.getElementById('cscino').value='Submitting, please wait...';">
             $csv[] = array_combine($keys, $line);
 
             print_r($csv);
-            echo 'qio';
-            exit();
 
         }
 
@@ -463,6 +461,7 @@ if (!empty($csv)){
     function_exists('curl_version') or die('CURL support required');
     function_exists('json_encode') or die('JSON support required');
 
+    echo 'quauqa';
 //array_pop($csv);
 
     echo '<table width=100% style="font-size:100%; font-family:play; color:black;"><tr><td>N. interv.</td><td>Codice interv.</td><td>Città</td><td>Prov.</td><td>Cliente</td><td>Soggetto</td><td>Messaggio</td><td>Codice</td></tr>';
