@@ -479,7 +479,6 @@ if (!empty($csv)){
 
 //$data['phone'] = $data['customer_phone_number'];
 echo json_encode($data);
-exit();
 
         $nome = mres($data['name']);
         $sql="select id from ost_user where name = '".$nome."'";
