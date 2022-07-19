@@ -1855,7 +1855,6 @@ $inc = 'tickets_pre.inc.php';
   }
 
       echo $sql;
-	exit();
       //die;
 
       $result=db_query($sql);
