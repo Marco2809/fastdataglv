@@ -19,7 +19,7 @@ for ($i = 0; $i < count($array_unico); $i++)
 {
     $array_ticket = $array_unico[$i];
     //$params = TCPDF_STATIC::serializeTCPDFtagParameters(array($array_ticket['ordine'].'-'.$array_ticket['termid'], 'C128', '', '', 65, 20, 0.4, array('position'=>'S', 'border'=>false, 'padding'=>4, 'fgcolor'=>array(0,0,0), 'bgcolor'=>array(255,255,255), 'text'=>true, 'font'=>'helvetica', 'fontsize'=>8, 'stretchtext'=>4), 'N'));
-    $params = TCPDF_STATIC::serializeTCPDFtagParameters(array(' '.$array_ticket['numero'].' ', 'C39', '', '', 65, 20, 0.4, array('position'=>'S', 'border'=>false, 'padding'=>4, 'fgcolor'=>array(0,0,0), 'bgcolor'=>array(255,255,255), 'text'=>true, 'font'=>'helvetica', 'fontsize'=>8, 'stretchtext'=>4), 'N'));
+    $params = $pdf->serializeTCPDFtagParameters(array(' '.$array_ticket['numero'].' ', 'C39', '', '', 65, 20, 0.4, array('position'=>'S', 'border'=>false, 'padding'=>4, 'fgcolor'=>array(0,0,0), 'bgcolor'=>array(255,255,255), 'text'=>true, 'font'=>'helvetica', 'fontsize'=>8, 'stretchtext'=>4), 'N'));
 
   switch(true) {
             case in_array($array_ticket['topicId'],$matrit):
