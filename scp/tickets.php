@@ -1926,8 +1926,8 @@ $inc = 'tickets_pre.inc.php';
             $blocco=true;
             $inc = 'stampa.inc.php';
           }else{
-              echo 'qui';
-              exit();
+              //echo 'qui';
+              //exit();
             $inc='/tcpdf/examples/ticket_pdf.php';
             header("Refresh:0");
           }
