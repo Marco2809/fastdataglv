@@ -1854,7 +1854,7 @@ $inc = 'tickets_pre.inc.php';
    }
   }
 
-      //echo $sql;
+      echo $sql;
       //die;
 
       $result=db_query($sql);
