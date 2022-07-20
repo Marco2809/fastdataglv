@@ -327,12 +327,12 @@ if (strpos($array_ticket['ordine'], 'C') !== false) {
 
 ob_clean();
 
-$pdf->Output('/var/www/fastdata/ticket_massivi.pdf', 'F');
+$pdf->Output('/var/www/fastdataglv/ticket_massivi.pdf', 'F');
 
 
 ?>
 <script>
-window.open('http://ticketglv.fast-data.it/ticket_massivi.pdf','_blank');
+window.open('http://5.249.147.181:8080/ticket_massivi.pdf','_blank');
 </script>
 <?php
 exit;
