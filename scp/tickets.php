@@ -1911,13 +1911,14 @@ $inc = 'tickets_pre.inc.php';
 	   );
         }
 
-        //$array_unico=array_reverse($array_unico);
+        $array_unico=array_reverse($array_unico);
 
-        /*
+
         echo '<pre>';
         print_r($array_unico);
         echo '</pre>';
-        */
+
+        exit();
 
         if($ticketto){
           if($ticketto->getStatusId()==2 or $ticketto->getStatusId()==8){
@@ -1926,8 +1927,7 @@ $inc = 'tickets_pre.inc.php';
             $blocco=true;
             $inc = 'stampa.inc.php';
           }else{
-              echo 'qui';
-              exit();
+
             $inc='/tcpdf/examples/ticket_pdf.php';
             header("Refresh:0");
           }
