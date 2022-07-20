@@ -47,6 +47,14 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                 'ref_num'
             )
         );
+
+        $keys = array_replace($keys,
+            array_fill_keys(
+                array_keys($keys, 'id scheda'),
+                'area_descrizione_intervento'
+            )
+        );
+
         $keys = array_replace($keys,
             array_fill_keys(
                 array_keys($keys, 'Termid'),
@@ -228,6 +236,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
         $key_data = array_search('zz_date1', $keys);
         $key_termid = array_search('cr', $keys);
         $key_ordine = array_search('ref_num', $keys);
+        $key_ordine2 = array_search('area_descrizione_intervento', $keys);
 
         $key_datascad = array_search('D/O Scadenza', $keys);
 
@@ -253,9 +262,11 @@ document.getElementById('cscino').value='Submitting, please wait...';">
         }
 
         while (!feof($fh)) {
+
+
             $line = fgetcsv($fh, 1000, ";");
             unset($line[count($line)-1]);
-
+            if($line[$key_ordine]=="") $line[$key_ordine] = $line[$key_ordine2];
             if (isset($ordini) and in_array($line[$key_ordine], $ordini)){
                 $ordini_assist[]=$line[$key_ordine];
                 continue;
