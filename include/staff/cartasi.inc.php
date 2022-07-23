@@ -2,8 +2,6 @@
 //ini_set('display_errors','On');
 //error_reporting(E_ALL);
 
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
 
 $config = array(
     'url'=>'http://5.249.147.181:8080/api/http.php/tickets.json',
