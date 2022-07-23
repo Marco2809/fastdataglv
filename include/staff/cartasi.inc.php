@@ -328,12 +328,8 @@ document.getElementById('nexino').value='Submitting, please wait...';">
                     }else{
                         $n=1;
                         $line[] = 17;
-                        if (date('w', time())==6){
-                            $line[]=date('Y-m-d',time()+2*86400);
-                        }else{
-                            $line[]=date('Y-m-d',time()+86400);
-                        }
-                        $line[] = '20:00';
+                        $line[] = $data_scadenza;
+                        $line[] = $ora_scadenza;
                     }
                     if (in_array($line[$key_provincia],$zona1)){
                         $line[] = 'x';//18;
