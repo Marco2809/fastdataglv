@@ -42,8 +42,8 @@ define('ADMIN_EMAIL','domenico.zavattolo@service-tech.org');
 define('DBTYPE','mysql');
 define('DBHOST','localhost');
 define('DBNAME','fd_ticket');
-define('DBUSER','admin');
-define('DBPASS','Iniziale1!?');
+define('DBUSER','root');
+define('DBPASS','myql1989');
 
 # Table prefix
 define('TABLE_PREFIX','ost_');

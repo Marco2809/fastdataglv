@@ -1,8 +1,8 @@
 <?php
 class DBController {
 	private $host = "localhost";
-	private $user = "root";
-	private $password = "mysql1989";
+	private $user = "admin";
+	private $password = "Iniziale1!?";
 	private $database = "fd_ticket";
 	private $conn;
 

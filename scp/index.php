@@ -45,6 +45,5 @@ function callAjaxLoginTicket($username, $pass, $log_ticket)
 }
 */
 
-
 require('tickets.php');
 ?>

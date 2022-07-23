@@ -13,6 +13,11 @@
 
     vim: expandtab sw=4 ts=4 sts=4:
 **********************************************************************/
+
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+
+
 require('staff.inc.php');
 require_once(INCLUDE_DIR.'class.ticket.php');
 require_once(INCLUDE_DIR.'class.dept.php');
@@ -22,6 +27,8 @@ require_once(INCLUDE_DIR.'class.json.php');
 include_once(PEAR_DIR.'Mail.php');
 require_once(INCLUDE_DIR.'class.dynamic_forms.php');
 require_once(INCLUDE_DIR.'class.export.php');       // For paper sizes
+
+
 
 $coopper=array(18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38);
 function prepara_sql($value)

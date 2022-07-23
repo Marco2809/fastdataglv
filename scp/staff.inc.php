@@ -13,6 +13,9 @@
 
     vim: expandtab sw=4 ts=4 sts=4:
 **********************************************************************/
+
+
+
 if(basename($_SERVER['SCRIPT_NAME'])==basename(__FILE__)) die('Access denied'); //Say hi to our friend..
 
 if(!file_exists('../main.inc.php')) die('Fatal error... get technical support');
