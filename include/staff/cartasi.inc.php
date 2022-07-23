@@ -215,8 +215,8 @@ document.getElementById('nexino').value='Submitting, please wait...';">
             $line[]=isset($line[$key_name])?$line[$key_name]:null;
             $line[]=isset($line[$key_name])?$line[$key_name].'@service-tech.org':null;
 
-            $data_scadenza = substr(0,10, $line[$key_datascad]);
-                $ora_scadenza = substr(11,4, $line[$key_datascad]);
+            $data_scadenza = substr($line[$key_datascad],0,10);
+                $ora_scadenza = substr($line[$key_datascad],11,4);
 
                 echo $data_scadenza."    ".$ora_scadenza;
                 exit();
