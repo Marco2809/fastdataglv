@@ -13,7 +13,11 @@
     See LICENSE.TXT for details.
 
     vim: expandtab sw=4 ts=4 sts=4:
-**********************************************************************/
+ **********************************************************************/
+
+error_reporting(1);
+ini_set('display_errors',1);
+
 require('secure.inc.php');
 if(!is_object($thisclient) || !$thisclient->isValid()) die('Access denied'); //Double check again.
 
