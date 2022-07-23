@@ -14,10 +14,6 @@
     vim: expandtab sw=4 ts=4 sts=4:
 **********************************************************************/
 
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
-
-
 require('staff.inc.php');
 require_once(INCLUDE_DIR.'class.ticket.php');
 require_once(INCLUDE_DIR.'class.dept.php');
