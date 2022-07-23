@@ -1,6 +1,10 @@
 <?php
 //ini_set('display_errors','On');
 //error_reporting(E_ALL);
+
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+
 $config = array(
     'url'=>'http://5.249.147.181:8080/api/http.php/tickets.json',
         'key'=>'07B4D26F5CBB16DAD3508C7456D2473C'
@@ -215,7 +219,7 @@ document.getElementById('nexino').value='Submitting, please wait...';">
             $line[]=isset($line[$key_name])?$line[$key_name]:null;
             $line[]=isset($line[$key_name])?$line[$key_name].'@service-tech.org':null;
 
-            $data_scadenza = substr($line[$key_datascad],6,4)."-".substr($line[$key_datascad],3,2)."-".substr($line[$key_datascad],0,2);
+                $data_scadenza = substr($line[$key_datascad],6,4)."-".substr($line[$key_datascad],3,2)."-".substr($line[$key_datascad],0,2);
                 $ora_scadenza = str_replace(".",":",substr($line[$key_datascad],11,5));
 
                 echo $data_scadenza."    ".$ora_scadenza;
