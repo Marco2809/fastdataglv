@@ -215,8 +215,8 @@ document.getElementById('nexino').value='Submitting, please wait...';">
             $line[]=isset($line[$key_name])?$line[$key_name]:null;
             $line[]=isset($line[$key_name])?$line[$key_name].'@service-tech.org':null;
 
-            $data_scadenza = substr($line[$key_datascad],0,10);
-                $ora_scadenza = substr($line[$key_datascad],11,4);
+            $data_scadenza = substr($line[$key_datascad],6,4)."-".substr($line[$key_datascad],3,2)"-".substr($line[$key_datascad],0,2);
+                $ora_scadenza = str_replace(".",":",substr($line[$key_datascad],11,5));
 
                 echo $data_scadenza."    ".$ora_scadenza;
                 exit();
@@ -231,8 +231,10 @@ document.getElementById('nexino').value='Submitting, please wait...';">
                 case 'Disinstallazione':
                     $n=7;
                     $line[] = 12;
-                    $line[] = nworkingdaysafter($date,$n,$holidays);
-                    $line[] = '20:00';
+                    //$line[] = nworkingdaysafter($date,$n,$holidays);
+                    $line[] = $data_scadenza;
+                    $line[] = $ora_scadenza;
+                    //$line[] = '20:00';
                     if (in_array($line[$key_provincia],$zona1)){
                         $line[] = 'x';//14;
                         $line[] = 'x';//7;
@@ -246,8 +248,8 @@ document.getElementById('nexino').value='Submitting, please wait...';">
                 case 'Installazione':
                     $n=2;
                     $line[] = 13;
-                    $line[] = nworkingdaysafter($date,$n,$holidays);
-                    $line[] = '20:00';
+                    $line[] = $data_scadenza;
+                    $line[] = $ora_scadenza;
                     if (in_array($line[$key_provincia],$zona1)){
                         $line[] = 'x';//20;
                         $line[] = 'x';//10;
@@ -261,8 +263,8 @@ document.getElementById('nexino').value='Submitting, please wait...';">
                 case 'Sostituzione':
                     $n=2;
                     $line[] = 14;
-                    $line[] = nworkingdaysafter($date,$n,$holidays);
-                    $line[] = '20:00';
+                    $line[] = $data_scadenza;
+                    $line[] = $ora_scadenza;
                     if (in_array($line[$key_provincia],$zona1)){
                         $line[] = 'x';//20;
                         $line[] = 'x';//10;
@@ -276,8 +278,8 @@ document.getElementById('nexino').value='Submitting, please wait...';">
                 case 'Riconfigurazionemassiva':
                     $n=3650;
                     $line[] = 15;
-                    $line[] = nworkingdaysafter($date,$n,$holidays);
-                    $line[] = '20:00';
+                    $line[] = $data_scadenza;
+                    $line[] = $ora_scadenza;
                     if (in_array($line[$key_provincia],$zona1)){
                         $line[] = 'x';//18;
                         $line[] = 'x';//9;
@@ -291,8 +293,8 @@ document.getElementById('nexino').value='Submitting, please wait...';">
                 case 'Cambiogestore':
                     $n=3650;
                     $line[] = 16;
-                    $line[] = nworkingdaysafter($date,$n,$holidays);
-                    $line[] = '20:00';
+                    $line[] = $data_scadenza;
+                    $line[] = $ora_scadenza;
                     if (in_array($line[$key_provincia],$zona1)){
                         $line[] = 'x';//18;
                         $line[] = 'x';//9;
@@ -306,8 +308,8 @@ document.getElementById('nexino').value='Submitting, please wait...';">
                 case 'ORDINEDIVERSO':
                     $n=3650;
                     $line[] = 43;
-                    $line[] = nworkingdaysafter($date,$n,$holidays);
-                    $line[] = '20:00';
+                    $line[] = $data_scadenza;
+                    $line[] = $ora_scadenza;
                     if (in_array($line[$key_provincia],$zona1)){
                         $line[] = 'x';//18;
                         $line[] = 'x';//9;
@@ -322,8 +324,8 @@ document.getElementById('nexino').value='Submitting, please wait...';">
                     if($eternit) {
                         $n=3650;
                         $line[] = 39;
-                        $line[] = nworkingdaysafter($date,$n,$holidays);
-                        $line[] = '20:00';
+                        $line[] = $data_scadenza;
+                        $line[] = $ora_scadenza;
                     }else{
                         $n=1;
                         $line[] = 17;
