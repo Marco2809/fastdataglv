@@ -1477,7 +1477,11 @@ if ($results_dis) {
                 <option value="(12,13,14,15,16,17,39,43,44)">Nexi</option>
                 <option value="(18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38)">Coopersystem</option>
                 <option value="(40,41,42)">Sisal</option>
-                <option value="(45,46,47,48,49,50,51,52,53,54,55)">CSC</option>
+                <option value="(45,46,47,48,49,50,51,52,53,54,55,56,57,58,72,75)">Q8</option>
+                <option value="(65,66,67,68,69,70,71,73,74,76,77,80,82)">Yamamay</option>
+                <option value="(60,61,78,59)">B2X Care</option>
+                <option value="(62,64,81,63)">WEB-KORNER</option>
+                <option value="(83)">EXTRA</option>
             </select>
         </fieldset>
         <fieldset class="owner span6">

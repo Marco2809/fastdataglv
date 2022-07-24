@@ -150,66 +150,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                 )
             );
         }
-        /*$keys = array_replace($keys,
-            array_fill_keys(
-                array_keys($keys, 'giornochiusura_1'),
-                'area_descrizione_intervento'
-            )
-        );
-        $keys = array_replace($keys,
-            array_fill_keys(
-                array_keys($keys, 'giornochiusura_2'),
-                'desc_statocomponente'
-            )
-        );
-        $keys = array_replace($keys,
-            array_fill_keys(
-                array_keys($keys, 'giornochiusura_3'),
-                'cod_intervento'
-            )
-        );
-        $keys = array_replace($keys,
-            array_fill_keys(
-                array_keys($keys, 'Ora Ordine'),
-                'data_partenza'
-            )
-        );
-        $keys = array_replace($keys,
-            array_fill_keys(
-                array_keys($keys, '1_e_2_Tentativo_di_connessione'),
-                'category_analisiguasto'
-            )
-        );
-        $keys = array_replace($keys,
-            array_fill_keys(
-                array_keys($keys, 'GGchiusura'),
-                'rejected_date'
-            )
-        );
 
-        $keys = array_replace($keys,
-            array_fill_keys(
-                array_keys($keys, 'orario_apertura'),
-                'customer_zz_top_sp_ap_lun'
-            )
-        );
-
-
-        if ((strpos(strtolower ($_FILES['csv']['name']), 'installazioni') !== false) || (strpos(strtolower ($_FILES['csv']['name']), 'sostituzioni_massive') !== false || (strpos(strtolower ($_FILES['csv']['name']), 'migrazione_centroservizi') !== false))) {
-            $keys = array_replace($keys,
-                array_fill_keys(
-                    array_keys($keys, 'Dataordine'),
-                    'zz_date1'
-                )
-            );
-        }else{
-            $keys = array_replace($keys,
-                array_fill_keys(
-                    array_keys($keys, 'DataScheda'),
-                    'zz_date1'
-                )
-            );
-        }*/
         $keys = array_replace($keys,
             array_fill_keys(
                 array_keys($keys, 'D/O Ricezione'),
@@ -237,8 +178,8 @@ document.getElementById('cscino').value='Submitting, please wait...';">
         $key_termid = array_search('cr', $keys);
         $key_ordine = array_search('ref_num', $keys);
         $key_ordine2 = array_search('area_descrizione_intervento', $keys);
-
         $key_datascad = array_search('D/O Scadenza', $keys);
+        $key_cliente = array_search('Cliente', $keys);
 
 
 
@@ -302,74 +243,217 @@ document.getElementById('cscino').value='Submitting, please wait...';">
 
             echo $line[$key_topicId];
 
-            switch (trim($line[$key_topicId])) {
-                case 'Assistenza':
-                    $n=180;
-                    $line[] = 45;
-                    $line[] = nworkingdaysafter($date,$n,$holidays);
-                    $line[] = '20:00';
+            if(in_array($line[$key_provincia],$zona1)){
+                $posto = "L";
+            } else if(in_array($line[$key_provincia],$zona2)){
+                $posto = "A";
+            } $posto = "M";
 
-                    $line[] = 55;
-                    $line[] = 23;
-                    $line[] = 32;
+            switch (trim($line[$key_topicId])) {
+
+
+                case 'Assistenza':
+                    if($line[$key_cliente]=="B2X Care"){
+                        $ci = 55;
+                        $ce = 0;
+                        $ct = 55;
+                        $id_topid = 59;
+                    } else if($line[$key_cliente]=="Q8"){
+                        $ci = 17.5;
+                        if($posto=="L"){
+                            $ce = 10;
+                            $ct = 7.5;
+                        } else {
+                            $ce = 15;
+                            $ct = 2.5;
+                        }
+                        $id_topic = 45;
+                    } else if($line[$key_cliente]=="Yamamay"){
+                        $ci = 17.5;
+                        if($posto=="L"){
+                            $ce = 10;
+                            $ct = 7.5;
+                        } else {
+                            $ce = 15;
+                            $ct = 2.5;
+                        }
+                        $id_topic = 45;
+                    }
+                    $n=180;
+                    $line[] = $id_topic;
+                    $line[] = $data_scad;
+                    $line[] = $ora_scad;
+
+                    $line[] = $ci;
+                    $line[] = $ce;
+                    $line[] = $ct;
 
                     break;
                 case 'Installazione Massiva':
                     $n=180;
-                    $line[] = 55;
-                    $line[] = nworkingdaysafter($date,$n,$holidays);
-                    $line[] = '20:00';
-
-                    $line[] = 55;
-                    $line[] = 23;
-                    $line[] = 32;
+                    if($line[$key_cliente]=="B2X Care"){
+                        $ci = 55;
+                        $ce = 0;
+                        $ct = 55;
+                        $id_topid = 59;
+                    } else if($line[$key_cliente]=="Q8"){
+                        $ci = 17.5;
+                        if($posto=="L"){
+                            $ce = 10;
+                            $ct = 7.5;
+                        } else {
+                            $ce = 15;
+                            $ct = 2.5;
+                        }
+                        $id_topic = 45;
+                    } else if($line[$key_cliente]=="Yamamay"){
+                        $ci = 17.5;
+                        if($posto=="L"){
+                            $ce = 10;
+                            $ct = 7.5;
+                        } else {
+                            $ce = 15;
+                            $ct = 2.5;
+                        }
+                        $id_topic = 65;
+                    }
 
                     break;
                 case 'Disinstallazione':
                     $n=180;
-                    $line[] = 46;
-                    $line[] = nworkingdaysafter($date,$n,$holidays);
-                    $line[] = '20:00';
-
-                    $line[] = 45;
-                    $line[] = 23;
-                    $line[] = 22;
+                    if($line[$key_cliente]=="Q8"){
+                        $ci = 17.5;
+                        if($posto=="L"){
+                            $ce = 6;
+                            $ct = 11.5;
+                        } else {
+                            $ce = 6;
+                            $ct = 11.5;
+                        }
+                        $id_topic = 46;
+                    } else if($line[$key_cliente]=="Yamamay"){
+                        $ci = 12;
+                        if($posto=="L"){
+                            $ce = 6;
+                            $ct = 6;
+                        } else {
+                            $ce = 6;
+                            $ct = 6;
+                        }
+                        $id_topic = 67;
+                    }
                     break;
                 case 'Installazione POS':
                     $n=180;
-                    $line[] = 47;
-                    $line[] = nworkingdaysafter($date,$n,$holidays);
-                    $line[] = '20:00';
-
-                    $line[] = 15;
-                    $line[] = 1;
-                    $line[] = 14;
+                    if($line[$key_cliente]=="Q8"){
+                        $ci = 18.5;
+                        if($posto=="L"){
+                            $ce = 11;
+                            $ct = 7.5;
+                        } else {
+                            $ce = 15;
+                            $ct = 3.5;
+                        }
+                        $id_topic = 47;
+                    } else if($line[$key_cliente]=="Yamamay"){
+                        $ci = 18.5;
+                        if($posto=="L"){
+                            $ce = 11;
+                            $ct = 7.5;
+                        } else {
+                            $ce = 15;
+                            $ct = 3.5;
+                        }
+                        $id_topic = 68;
+                    } else if($line[$key_cliente]=="WEB-KORNER"){
+                        $ci = 26;
+                        if($posto=="L"){
+                            $ce = 13;
+                            $ct = 13;
+                        } else {
+                            $ce = 15;
+                            $ct = 11;
+                        }
+                        $id_topic = 62;
+                    }
                     break;
                 case 'Installazione POS(reinst. pos in loco)':
                     $n=180;
-                    $line[] = 48;
-                    $line[] = nworkingdaysafter($date,$n,$holidays);
-                    $line[] = '20:00';
-
-                    $line[] = 15;
-                    $line[] = 1;
-                    $line[] = 14;
+                    if($line[$key_cliente]=="Q8"){
+                        $ci = 18.5;
+                        if($posto=="L"){
+                            $ce = 11;
+                            $ct = 7.5;
+                        } else {
+                            $ce = 15;
+                            $ct = 3.5;
+                        }
+                        $id_topic = 48;
+                    } else if($line[$key_cliente]=="Yamamay"){
+                        $ci = 18.5;
+                        if($posto=="L"){
+                            $ce = 11;
+                            $ct = 7.5;
+                        } else {
+                            $ce = 15;
+                            $ct = 3.5;
+                        }
+                        $id_topic = 70;
+                    }
                     break;
                 case 'Installazione POS Urgente':
                     $n=180;
-                    $line[] = 49;
-                    $line[] = nworkingdaysafter($date,$n,$holidays);
-                    $line[] = '20:00';
-
-                    $line[] = 15;
-                    $line[] = 1;
-                    $line[] = 14;
+                    if($line[$key_cliente]=="Q8"){
+                        $ci = 28.5;
+                        if($posto=="L"){
+                            $ce = 11;
+                            $ct = 17.5;
+                        } else {
+                            $ce = 15;
+                            $ct = 13.5;
+                        }
+                        $id_topic = 49;
+                    } else if($line[$key_cliente]=="Yamamay"){
+                        $ci = 28.5;
+                        if($posto=="L"){
+                            $ce = 11;
+                            $ct = 17.5;
+                        } else {
+                            $ce = 15;
+                            $ct = 13.5;
+                        }
+                        $id_topic = 69;
+                    }
+                    break;
+                case 'Installazione cassa successiva':
+                    $n=180;
+                    if($line[$key_cliente]=="Q8"){
+                        $ci = 9.25;
+                        if($posto=="L"){
+                            $ce = 11;
+                            $ct = -1.75;
+                        } else {
+                            $ce = 15;
+                            $ct = -5.75;
+                        }
+                        $id_topic = 49;
+                    } else if($line[$key_cliente]=="Yamamay"){
+                        $ci = 9.25;
+                        if($posto=="L"){
+                            $ce = 11;
+                            $ct = -1.75;
+                        } else {
+                            $ce = 15;
+                            $ct = -5.75;
+                        }
+                        $id_topic = 69;
+                    }
                     break;
                 case 'Intervento Straordinario':
                     $n=180;
                     $line[] = 50;
-                    $line[] = nworkingdaysafter($date,$n,$holidays);
-                    $line[] = '20:00';
+                    $line[] = $data_scad;
+                    $line[] = $ora_scad;
 
                     $line[] = 15;
                     $line[] = 1;
@@ -377,50 +461,238 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                     break;
                 case 'Intervento Tecnico':
                     $n=180;
-                    $line[] = 51;
-                    $line[] = nworkingdaysafter($date,$n,$holidays);
-                    $line[] = '20:00';
-
-                    $line[] = 15;
-                    $line[] = 1;
-                    $line[] = 14;
+                    if($line[$key_cliente]=="B2X Care"){
+                        $ci = 55;
+                        $ce = 0;
+                        $ct = 55;
+                        $id_topid = 60;
+                    } else if($line[$key_cliente]=="Q8"){
+                        $ci = 17.5;
+                        if($posto=="L"){
+                            $ce = 10;
+                            $ct = 7.5;
+                        } else {
+                            $ce = 15;
+                            $ct = 2.5;
+                        }
+                        $id_topic = 51;
+                    } else if($line[$key_cliente]=="Yamamay"){
+                        $ci = 17.5;
+                        if($posto=="L"){
+                            $ce = 10;
+                            $ct = 7.5;
+                        } else {
+                            $ce = 15;
+                            $ct = 2.5;
+                        }
+                        $id_topic = 66;
+                    }
                     break;
                 case 'Migrazione':
                     $n=180;
-                    $line[] = 52;
-                    $line[] = nworkingdaysafter($date,$n,$holidays);
-                    $line[] = '20:00';
-
-                    $line[] = 15;
-                    $line[] = 1;
-                    $line[] = 14;
+                    if($line[$key_cliente]=="Q8"){
+                        $ci = 14;
+                        if($posto=="L"){
+                            $ce = 8;
+                            $ct = 6;
+                        } else {
+                            $ce = 10;
+                            $ct = 4;
+                        }
+                        $id_topic = 52;
+                    } else if($line[$key_cliente]=="Yamamay"){
+                        $ci = 14;
+                        if($posto=="L"){
+                            $ce = 8;
+                            $ct = 6;
+                        } else {
+                            $ce = 10;
+                            $ct = 4;
+                        }
+                        $id_topic = 76;
+                    }
                     break;
                 case 'Sostituzione MASSIVA':
                     $n=180;
-                    $line[] = 53;
-                    $line[] = nworkingdaysafter($date,$n,$holidays);
-                    $line[] = '20:00';
-
-                    $line[] = 15;
-                    $line[] = 1;
-                    $line[] = 14;
+                    if($line[$key_cliente]=="Q8"){
+                        $ci = 14;
+                        if($posto=="L"){
+                            $ce = 8;
+                            $ct = 6;
+                        } else {
+                            $ce = 10;
+                            $ct = 4;
+                        }
+                        $id_topic = 53;
+                    } else if($line[$key_cliente]=="Yamamay"){
+                        $ci = 14;
+                        if($posto=="L"){
+                            $ce = 8;
+                            $ct = 6;
+                        } else {
+                            $ce = 10;
+                            $ct = 4;
+                        }
+                        $id_topic = 77;
+                    }
                     break;
                 case 'Sostituzione Terminale':
                     $n=180;
-                    $line[] = 54;
-                    $line[] = nworkingdaysafter($date,$n,$holidays);
-                    $line[] = '20:00';
+                    if($line[$key_cliente]=="Q8"){
+                        $ci = 18.5;
+                        if($posto=="L"){
+                            $ce = 11;
+                            $ct = 7.5;
+                        } else {
+                            $ce = 15;
+                            $ct = 3.5;
+                        }
+                        $id_topic = 54;
+                    } else if($line[$key_cliente]=="Yamamay"){
+                        $ci = 18.5;
+                        if($posto=="L"){
+                            $ce = 11;
+                            $ct = 7.5;
+                        } else {
+                            $ce = 15;
+                            $ct = 3.5;
+                        }
+                        $id_topic = 71;
+                    }
+                    break;
+                case 'Sostituzione POS urgente':
+                    $n=180;
+                    if($line[$key_cliente]=="Q8"){
+                        $ci = 28.5;
+                        if($posto=="L"){
+                            $ce = 11;
+                            $ct = 17.5;
+                        } else {
+                            $ce = 15;
+                            $ct = 13.5;
+                        }
+                        $id_topic = 72;
+                    } else if($line[$key_cliente]=="Yamamay"){
+                        $ci = 28.5;
+                        if($posto=="L"){
+                            $ce = 11;
+                            $ct = 17.5;
+                        } else {
+                            $ce = 15;
+                            $ct = 13.5;
+                        }
+                        $id_topic = 73;
+                    }
+                    break;
+                case 'Sostituzione cassa successiva':
+                    $n=180;
+                    if($line[$key_cliente]=="Q8"){
+                        $ci = 9.25;
+                        if($posto=="L"){
+                            $ce = 11;
+                            $ct = -1.75;
+                        } else {
+                            $ce = 15;
+                            $ct = -5.75;
+                        }
+                        $id_topic = 75;
+                    } else if($line[$key_cliente]=="Yamamay"){
+                        $ci = 9.25;
+                        if($posto=="L"){
+                            $ce = 11;
+                            $ct = -1.75;
+                        } else {
+                            $ce = 15;
+                            $ct = -5.75;
+                        }
+                        $id_topic = 74;
+                    }
+                    break;
+                case 'Uscita a vuoto':
+                    $n=180;
+                    if($line[$key_cliente]=="B2X Care"){
+                        $ci = 24;
+                        $ce = 0;
+                        $ct = 24;
+                        $id_topid = 78;
+                    } else if($line[$key_cliente]=="Q8"){
+                        $ci = 13;
+                        if($posto=="L"){
+                            $ce = 0;
+                            $ct = 13;
+                        } else {
+                            $ce = 7;
+                            $ct = 6;
+                        }
+                        $id_topic = 56;
+                    } else if($line[$key_cliente]=="Yamamay"){
+                        $ci = 13;
+                        if($posto=="L"){
+                            $ce = 0;
+                            $ct = 13;
+                        } else {
+                            $ce = 7;
+                            $ct = 6;
+                        }
+                        $id_topic = 80;
+                    } else if($line[$key_cliente]=="WEB-KORNER"){
+                        $ci = 24;
+                        if($posto=="L"){
+                            $ce = 0;
+                            $ct = 24;
+                        } else {
+                            $ce = 0;
+                            $ct = 24;
+                        }
+                        $id_topic = 81;
+                    }
+                    break;
 
-                    $line[] = 15;
-                    $line[] = 1;
-                    $line[] = 14;
+                case 'Ore Extra':
+                    $n=180;
+                    if($line[$key_cliente]=="B2X Care"){
+                        $ci = 24;
+                        $ce = 0;
+                        $ct = 24;
+                        $id_topid = 61;
+                    } else if($line[$key_cliente]=="Q8"){
+                        $ci = 20;
+                        if($posto=="L"){
+                            $ce = 0;
+                            $ct = 20;
+                        } else {
+                            $ce = 0;
+                            $ct = 20;
+                        }
+                        $id_topic = 57;
+                    } else if($line[$key_cliente]=="Yamamay"){
+                        $ci = 20;
+                        if($posto=="L"){
+                            $ce = 0;
+                            $ct = 20;
+                        } else {
+                            $ce = 5;
+                            $ct = 15;
+                        }
+                        $id_topic = 80;
+                    } else if($line[$key_cliente]=="WEB-KORNER"){
+                        $ci = 20;
+                        if($posto=="L"){
+                            $ce = 0;
+                            $ct = 20;
+                        } else {
+                            $ce = 0;
+                            $ct = 20;
+                        }
+                        $id_topic = 82;
+                    }
                     break;
 
                 default:
                     $n=1;
                     $line[] = 45;
-                    $line[] = nworkingdaysafter($date,$n,$holidays);
-                    $line[] = '20:00';
+                    $line[] = $data_scad;
+                    $line[] = $ora_scad;
                     $line[] = 'x';
                     $line[] = 'x';
                     $line[] = 'x';
