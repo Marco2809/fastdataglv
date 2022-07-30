@@ -1934,8 +1934,6 @@ $inc = 'tickets_pre.inc.php';
 
             $inc='/tcpdf/examples/ticket_pdf.php';
 
-            echo 'qui';
-            exit();
             header("Refresh:0");
           }
         }else{
