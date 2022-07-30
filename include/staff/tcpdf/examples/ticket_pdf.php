@@ -330,7 +330,7 @@ $pdf->Output('/var/www/fastdataglv/ticket_massivi.pdf', 'F');
 
 ?>
 <script type="text/javascript">
-window.open('http://glvservice.it/ticket_massivi.pdf');
+window.open('http://5.249.147.181:8080/ticket_massivi.pdf');
 </script>
 <?php
 exit;
