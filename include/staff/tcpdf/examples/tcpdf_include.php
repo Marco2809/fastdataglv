@@ -23,6 +23,9 @@
  * @since 2013-05-14
  */
 
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+
 // always load alternative config file for examples
 require_once('config/tcpdf_config_alt.php');
 
