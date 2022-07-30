@@ -329,8 +329,8 @@ $pdf->Output('/var/www/fastdataglv/ticket_massivi.pdf', 'F');
 
 
 ?>
-<script type="text/javascript">alert('ciao');
-window.open('http://5.249.147.181:8080/ticket_massivi.pdf','_blank');
+<script type="text/javascript">
+window.open('http://5.249.147.181:8080/ticket_massivi.pdf','_blank',"popup");
 </script>
 <?php
 exit;
