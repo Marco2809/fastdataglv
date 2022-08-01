@@ -286,13 +286,13 @@ $line[] = 18;
 $line[] =  $data_scad;
 $line[] = $ora_scad;
 if (in_array($line[$key_provincia],$zona1)){
-	$line[] = 'x';//24;
-	$line[] = 'x';//10;
-	$line[] = 'x';//14;
+	$line[] = '21.25';//24;
+	$line[] = '11';//10;
+	$line[] = '10.25';//14;
 }else{
-    $line[] = 'x';//27;
-    $line[] = 'x';//12;
-    $line[] = 'x';//15;
+    $line[] = '21.25';//27;
+    $line[] = '15';//12;
+    $line[] = '6.25';//15;
 }
 break;
 case 100011:
@@ -303,13 +303,13 @@ $line[] = 19;
 $line[] =  $data_scad;
 $line[] = $ora_scad;
 if (in_array($line[$key_provincia],$zona1)){
-	$line[] = 'x';//24;
-	$line[] = 'x';//10;
-	$line[] = 'x';//14;
+	$line[] = '31.88';//24;
+	$line[] = '11';//10;
+	$line[] = '20.88';//14;
 }else{
-    $line[] = 'x';//27;
-    $line[] = 'x';//12;
-    $line[] = 'x';//15;
+    $line[] = '31.88';//27;
+    $line[] = '15';//12;
+    $line[] = '16.88';//15;
 }
 break;
 case 100012:
@@ -320,14 +320,14 @@ $line[] = 20;
 $line[] =  $data_scad;
 $line[] = $ora_scad;
 if (in_array($line[$key_provincia],$zona1)){
-	$line[] = 'x';//24;
-	$line[] = 'x';//10;
-	$line[] = 'x';//14;
-}else{
-    $line[] = 'x';//27;
-    $line[] = 'x';//12;
-    $line[] = 'x';//15;
-}
+        $line[] = '21.25';//24;
+        $line[] = '11';//10;
+        $line[] = '10.25';//14;
+    }else{
+        $line[] = '21.25';//27;
+        $line[] = '15';//12;
+        $line[] = '6.25';//15;
+    }
 break;
 case 100013:
 $n=4;
@@ -336,15 +336,15 @@ $line[] = 21;
 //$line[] = '20:00';
 $line[] =  $data_scad;
 $line[] = $ora_scad;
-if (in_array($line[$key_provincia],$zona1)){
-	$line[] = 'x';//24;
-	$line[] = 'x';//10;
-	$line[] = 'x';//14;
-}else{
-    $line[] = 'x';//27;
-    $line[] = 'x';//12;
-    $line[] = 'x';//15;
-}
+ if (in_array($line[$key_provincia],$zona1)){
+        $line[] = '21.25';//24;
+        $line[] = '11';//10;
+        $line[] = '10.25';//14;
+    }else{
+        $line[] = '21.25';//27;
+        $line[] = '15';//12;
+        $line[] = '6.25';//15;
+    }
 break;
 case 100030:
 $n=4;
@@ -353,16 +353,16 @@ $line[] = 22;
 //$line[] = '20:00';
 $line[] =  $data_scad;
 $line[] = $ora_scad;
-if (in_array($line[$key_provincia],$zona1)){
-	$line[] = 'x';//24;
-	$line[] = 'x';//10;
-	$line[] = 'x';//14;
-}else{
-    $line[] = 'x';//27;
-    $line[] = 'x';//12;
-    $line[] = 'x';//15;
-}
-break;
+    if (in_array($line[$key_provincia],$zona1)){
+        $line[] = '21.25';//24;
+        $line[] = '11';//10;
+        $line[] = '10.25';//14;
+    }else {
+        $line[] = '21.25';//27;
+        $line[] = '15';//12;
+        $line[] = '6.25';//14;
+    }
+        break;
 case 100031:
 $n=4;
 $line[] = 23;
@@ -370,16 +370,16 @@ $line[] = 23;
 //$line[] = '20:00';
 $line[] =  $data_scad;
 $line[] = $ora_scad;
-if (in_array($line[$key_provincia],$zona1)){
-	$line[] = 'x';//24;
-	$line[] = 'x';//10;
-	$line[] = 'x';//14;
-}else{
-    $line[] = 'x';//27;
-    $line[] = 'x';//12;
-    $line[] = 'x';//15;
-}
-break;
+ if (in_array($line[$key_provincia],$zona1)){
+     $line[] = '21.25';//24;
+     $line[] = '11';//10;
+     $line[] = '10.25';//14;
+ }else {
+     $line[] = '21.25';//27;
+     $line[] = '15';//12;
+     $line[] = '6.25';//14;
+ }
+     break;
 case 20038:
 $n=10;
 $line[] = 24;
@@ -388,13 +388,13 @@ $line[] = 24;
 $line[] =  $data_scad;
 $line[] = $ora_scad;
 if (in_array($line[$key_provincia],$zona1)){
-	$line[] = 'x';//10;
-	$line[] = 'x';//5;
-	$line[] = 'x';//5;
+	$line[] = '8.5';//10;
+	$line[] = '6';//5;
+	$line[] = '2.5';//5;
 }else{
-    $line[] = 'x';//13;
-    $line[] = 'x';//6;
-    $line[] = 'x';//7;
+    $line[] = '8.5';//13;
+    $line[] = '6';//6;
+    $line[] = '2.5';//7;
 }
 break;
 case 20040:
@@ -405,13 +405,13 @@ $line[] = 25;
 $line[] =  $data_scad;
 $line[] = $ora_scad;
 if (in_array($line[$key_provincia],$zona1)){
-	$line[] = 'x';//10;
-	$line[] = 'x';//5;
-	$line[] = 'x';//5;
+	$line[] = '8.5';//10;
+	$line[] = '0';//5;
+	$line[] = '8.5';//5;
 }else{
-    $line[] = 'x';//13;
-    $line[] = 'x';//6;
-    $line[] = 'x';//7;
+    $line[] = '8.5';//13;
+    $line[] = '0';//6;
+    $line[] = '8.5';//7;
 }
 break;
 case 20000:
@@ -423,15 +423,15 @@ $line[] = 26;
 //$line[] = Date('H:i',$nuovaora);
 $line[] =  $data_scad;
 $line[] = $ora_scad;
-if (in_array($line[$key_provincia],$zona1)){
-	$line[] = 'x';//24;
-	$line[] = 'x';//9;
-	$line[] = 'x';//15;
-}else{
-	$line[] = 'x';//27;
-    $line[] = 'x';//12;
-    $line[] = 'x';//15;
-}
+    if (in_array($line[$key_provincia],$zona1)){
+        $line[] = '21.25';//24;
+        $line[] = '10';//10;
+        $line[] = '11.25';//14;
+    }else {
+        $line[] = '21.25';//27;
+        $line[] = '15';//12;
+        $line[] = '6.25';//12;
+    }
 break;
 case 20100:
 $n=4;
@@ -440,15 +440,15 @@ $line[] = 27;
 //$line[] = '20:00';
 $line[] =  $data_scad;
 $line[] = $ora_scad;
-if (in_array($line[$key_provincia],$zona1)){
-	$line[] = 'x';//24;
-	$line[] = 'x';//9;
-	$line[] = 'x';//15;
-}else{
-	$line[] = 'x';//27;
-    $line[] = 'x';//12;
-    $line[] = 'x';//15;
-}
+    if (in_array($line[$key_provincia],$zona1)){
+        $line[] = '21.25';//24;
+        $line[] = '10';//10;
+        $line[] = '11.25';//14;
+    }else {
+        $line[] = '21.25';//27;
+        $line[] = '15';//12;
+        $line[] = '6.25';//12;
+    }
 break;
 case 20010:
 $n=1;
@@ -576,15 +576,14 @@ $line[] = 35;
 //$line[] = '20:00';
 $line[] =  $data_scad;
 $line[] = $ora_scad;
-if (in_array($line[$key_provincia],$zona1)){
-	$line[] = 'x';//24;
-	$line[] = 'x';//9;
-	$line[] = 'x';//15;
-}else{
-	$line[] = 'x';//27;
-    $line[] = 'x';//12;
-    $line[] = 'x';//15;
-}
+    if (in_array($line[$key_provincia],$zona1)){
+        $line[] = '21.25';//24;
+        $line[] = '10';//10;
+        $line[] = '11.25';//14;
+    }else {
+        $line[] = '21.25';//27;
+        $line[] = '15';//12;
+    }
 break;
 case 20030:
 $n=3650;
@@ -594,13 +593,13 @@ $line[] = 36;
 $line[] =  $data_scad;
 $line[] = $ora_scad;
 if (in_array($line[$key_provincia],$zona1)){
-	$line[] = 'x';//14;
-	$line[] = 'x';//7;
-	$line[] = 'x';//7;
+	$line[] = '16.15';//14;
+	$line[] = '8';//7;
+	$line[] = '8.15';//7;
 }else{
-	$line[] = 'x';//17;
-    $line[] = 'x';//8;
-    $line[] = 'x';//9;
+	$line[] = '16.15';//17;
+    $line[] = '10';//8;
+    $line[] = '6.15';//9;
 }
 break;
 case 60010:
@@ -610,15 +609,15 @@ $line[] = 38;
 //$line[] = '20:00';
 $line[] =  $data_scad;
 $line[] = $ora_scad;
-if (in_array($line[$key_provincia],$zona1)){
-	$line[] = 'x';//14;
-	$line[] = 'x';//7;
-	$line[] = 'x';//7;
-}else{
-	$line[] = 'x';//17;
-    $line[] = 'x';//8;
-    $line[] = 'x';//9;
-}
+    if (in_array($line[$key_provincia],$zona1)){
+        $line[] = '16.15';//14;
+        $line[] = '8';//7;
+        $line[] = '8.15';//7;
+    }else{
+        $line[] = '16.15';//17;
+        $line[] = '10';//8;
+        $line[] = '6.15';//9;
+    }
 break;
 default:
 $n=1;
