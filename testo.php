@@ -5,6 +5,7 @@
 if ( function_exists( 'mail' ) )
 {
     echo 'mail() is available';
+    mail("marco.salmi89@gmail.com","P","P");
 }
 else
 {
