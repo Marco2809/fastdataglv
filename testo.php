@@ -2,18 +2,18 @@
 
 //phpinfo();
 
-error_reporting(-1);
-ini_set('display_errors', 'On');
-set_error_handler("var_dump");
+$header = "From: noreply@example.com\r\n";
+$header.= "MIME-Version: 1.0\r\n";
+$header.= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+$header.= "X-Priority: 1\r\n";
 
-if ( function_exists( 'mail' ) )
+$status = mail("marco.salmi89@gmail.com", "P", "P", $header);
+
+if($status)
 {
-    echo 'mail() is available';
-    mail("marco.salmi89@gmail.com","P","P");
-}
-else
-{
-    echo 'mail() has been disabled';
+    echo '<p>Your mail has been sent!</p>';
+} else {
+    echo '<p>Something went wrong. Please try again!</p>';
 }
 
 $servername = "localhost";
