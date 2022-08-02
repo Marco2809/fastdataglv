@@ -2,9 +2,9 @@
 //ini_set('display_errors',1);
 //error_reporting(E_ALL);
 $config = array(
-        'url'=>'62.75.155.64/api/http.php/tickets.json',
-        'key'=>'07B4D26F5CBB16DAD3508C7456D2473C'
-        );
+    'url'=>'http://5.249.147.181:8080/api/http.php/tickets.json',
+    'key'=>'07B4D26F5CBB16DAD3508C7456D2473C'
+);
 
 $zona1=array('RM','RI','VT','LT','FR');
 $zona2=array('AQ','PE','TE','CH');
