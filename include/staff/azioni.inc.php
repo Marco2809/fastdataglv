@@ -170,7 +170,7 @@ if(input_count < max_fields){
 if(input_count_ini<10) input_count_ini = '0'+input_count_ini;
 $(field_wrapper).append('<?php echo $template_chiusure;?>');
 var script = document.createElement("script");
-script.innerHTML = "$('#chiusura_"+input_count+"').on('change paste keyup',function(){var num = encodeURIComponent($('#chiusura_"+input_count+"').val());$.ajax({url: 'http://ticketglv.fast-data.it/api/ticket_control.php',type: 'post',data: 'num=' + num,success: function (response) {$('#result_chiusura_"+input_count+"').html(response); if($('[id^=\"result_chiusura_\"]').text().includes('Ticket')){ $('#save').prop( 'disabled', true);} else{ $('#save').prop('disabled', false)};},error: function(jqXHR, textStatus, errorThrown) {console.log(textStatus, errorThrown);}});});";
+script.innerHTML = "$('#chiusura_"+input_count+"').on('change paste keyup',function(){var num = encodeURIComponent($('#chiusura_"+input_count+"').val());$.ajax({url: 'http://5.249.147.181:8080/api/ticket_control.php',type: 'post',data: 'num=' + num,success: function (response) {$('#result_chiusura_"+input_count+"').html(response); if($('[id^=\"result_chiusura_\"]').text().includes('Ticket')){ $('#save').prop( 'disabled', true);} else{ $('#save').prop('disabled', false)};},error: function(jqXHR, textStatus, errorThrown) {console.log(textStatus, errorThrown);}});});";
 $(field_wrapper).append(script);
 input_count_ini++;
 input_count++;
@@ -204,7 +204,7 @@ if(input_count < max_fields){
 if(input_count_ini<10) input_count_ini = '0'+input_count_ini;
 $(field_wrapper).append('<?php echo $template_recesso;?>');
 var script = document.createElement("script");
-script.innerHTML = "$('#recesso_"+input_count+"').on('change paste keyup',function(){var num = encodeURIComponent($('#recesso_"+input_count+"').val());$.ajax({url: 'http://ticketglv.fast-data.it/api/ticket_control.php',type: 'post',data: 'num=' + num,success: function (response) {$('#result_recesso_"+input_count+"').html(response); if($('[id^=\"result_recesso_\"]').text().includes('Ticket')){ $('#save').prop( 'disabled', true);} else{ $('#save').prop('disabled', false)};},error: function(jqXHR, textStatus, errorThrown) {console.log(textStatus, errorThrown);}});});";
+script.innerHTML = "$('#recesso_"+input_count+"').on('change paste keyup',function(){var num = encodeURIComponent($('#recesso_"+input_count+"').val());$.ajax({url: 'http://5.249.147.181:8080/api/ticket_control.php',type: 'post',data: 'num=' + num,success: function (response) {$('#result_recesso_"+input_count+"').html(response); if($('[id^=\"result_recesso_\"]').text().includes('Ticket')){ $('#save').prop( 'disabled', true);} else{ $('#save').prop('disabled', false)};},error: function(jqXHR, textStatus, errorThrown) {console.log(textStatus, errorThrown);}});});";
 $(field_wrapper).append(script);
 input_count_ini++;
 input_count++;
@@ -238,7 +238,7 @@ if(input_count < max_fields){
 if(input_count_ini<10) input_count_ini = '0'+input_count_ini;
 $(field_wrapper).append('<?php echo $template_sospensione;?>');
 var script = document.createElement("script");
-script.innerHTML = "$('#blocco_"+input_count+"').on('change paste keyup',function(){var num = encodeURIComponent($('#blocco_"+input_count+"').val());$.ajax({url: 'http://ticketglv.fast-data.it/api/ticket_control.php',type: 'post',data: 'num=' + num,success: function (response) {$('#result_blocco_"+input_count+"').html(response); if($('[id^=\"result_blocco_\"]').text().includes('Ticket')){ $('#save').prop( 'disabled', true);} else{ $('#save').prop('disabled', false)};},error: function(jqXHR, textStatus, errorThrown) {console.log(textStatus, errorThrown);}});});";
+script.innerHTML = "$('#blocco_"+input_count+"').on('change paste keyup',function(){var num = encodeURIComponent($('#blocco_"+input_count+"').val());$.ajax({url: 'http://5.249.147.181:8080/api/ticket_control.php',type: 'post',data: 'num=' + num,success: function (response) {$('#result_blocco_"+input_count+"').html(response); if($('[id^=\"result_blocco_\"]').text().includes('Ticket')){ $('#save').prop( 'disabled', true);} else{ $('#save').prop('disabled', false)};},error: function(jqXHR, textStatus, errorThrown) {console.log(textStatus, errorThrown);}});});";
 $(field_wrapper).append(script);
 input_count_ini++;
 input_count++;
@@ -272,7 +272,7 @@ if(input_count < max_fields){
 if(input_count_ini<10) input_count_ini = '0'+input_count_ini;
 $(field_wrapper).append('<?php echo $template_ripreso;?>');
 var script = document.createElement("script");
-script.innerHTML = "$('#ripresa_"+input_count+"').on('change paste keyup',function(){var num = encodeURIComponent($('#ripresa_"+input_count+"').val());$.ajax({url: 'http://ticketglv.fast-data.it/api/ticket_control.php',type: 'post',data: 'num=' + num,success: function (response) {$('#result_ripresa_"+input_count+"').html(response); if($('[id^=\"result_ripresa_\"]').text().includes('Ticket')){ $('#save').prop( 'disabled', true);} else{ $('#save').prop('disabled', false)};},error: function(jqXHR, textStatus, errorThrown) {console.log(textStatus, errorThrown);}});});";
+script.innerHTML = "$('#ripresa_"+input_count+"').on('change paste keyup',function(){var num = encodeURIComponent($('#ripresa_"+input_count+"').val());$.ajax({url: 'http://5.249.147.181:8080/api/ticket_control.php',type: 'post',data: 'num=' + num,success: function (response) {$('#result_ripresa_"+input_count+"').html(response); if($('[id^=\"result_ripresa_\"]').text().includes('Ticket')){ $('#save').prop( 'disabled', true);} else{ $('#save').prop('disabled', false)};},error: function(jqXHR, textStatus, errorThrown) {console.log(textStatus, errorThrown);}});});";
 $(field_wrapper).append(script);
 input_count_ini++;
 input_count++;
@@ -313,7 +313,7 @@ if(input_count < max_fields){
 if(input_count_ini<10) input_count_ini = '0'+input_count_ini;
 $(field_wrapper).append('<?php echo $template_assegna;?>');
 var script = document.createElement("script");
-script.innerHTML = "$('#assegna_"+input_count+"').on('change paste keyup',function(){var num = encodeURIComponent($('#assegna_"+input_count+"').val());$.ajax({url: 'http://ticketglv.fast-data.it/api/ticket_control.php',type: 'post',data: 'num=' + num,success: function (response) {$('#result_assegna_"+input_count+"').html(response); if($('[id^=\"result_assegna_\"]').text().includes('Ticket')){ $('#save').prop( 'disabled', true);} else{ $('#save').prop('disabled', false)};},error: function(jqXHR, textStatus, errorThrown) {console.log(textStatus, errorThrown);}});});";
+script.innerHTML = "$('#assegna_"+input_count+"').on('change paste keyup',function(){var num = encodeURIComponent($('#assegna_"+input_count+"').val());$.ajax({url: 'http://5.249.147.181:8080/api/ticket_control.php',type: 'post',data: 'num=' + num,success: function (response) {$('#result_assegna_"+input_count+"').html(response); if($('[id^=\"result_assegna_\"]').text().includes('Ticket')){ $('#save').prop( 'disabled', true);} else{ $('#save').prop('disabled', false)};},error: function(jqXHR, textStatus, errorThrown) {console.log(textStatus, errorThrown);}});});";
 $(field_wrapper).append(script);
 input_count_ini++;
 input_count++;
@@ -373,7 +373,7 @@ $('#chiusura_0').on('change paste keyup',function(){
 
 var num = encodeURIComponent($("#chiusura_0").val());// "%2B"
 $.ajax({
-        url: "http://ticketglv.fast-data.it/api/ticket_control.php",
+        url: "http://5.249.147.181:8080/api/ticket_control.php",
         type: "post",
         data: "num=" + num,
         success: function (response) {
@@ -400,7 +400,7 @@ $('#recesso_0').on('change paste keyup',function(){
 
 var num = encodeURIComponent($("#recesso_0").val());// "%2B"
 $.ajax({
-        url: "http://ticketglv.fast-data.it/api/ticket_control.php",
+        url: "http://5.249.147.181:8080/api/ticket_control.php",
         type: "post",
         data: "num=" + num,
         success: function (response) {
@@ -427,7 +427,7 @@ $('#blocco_0').on('change paste keyup',function(){
 
 var num = encodeURIComponent($("#blocco_0").val());// "%2B"
 $.ajax({
-        url: "http://ticketglv.fast-data.it/api/ticket_control.php",
+        url: "http://5.249.147.181:8080/api/ticket_control.php",
         type: "post",
         data: "num=" + num,
         success: function (response) {
@@ -454,7 +454,7 @@ $('#ripresa_0').on('change paste keyup',function(){
 
 var num = encodeURIComponent($("#ripresa_0").val());// "%2B"
 $.ajax({
-        url: "http://ticketglv.fast-data.it/api/ticket_control.php",
+        url: "http://5.249.147.181:8080/api/ticket_control.php",
         type: "post",
         data: "num=" + num,
         success: function (response) {
@@ -483,7 +483,7 @@ $('#assegna_0').on('change paste keyup',function(){
 
 var num = encodeURIComponent($("#assegna_0").val());// "%2B"
 $.ajax({
-        url: "http://ticketglv.fast-data.it/api/ticket_control.php",
+        url: "http://5.249.147.181:8080/api/ticket_control.php",
         type: "post",
         data: "num=" + num,
         success: function (response) {
@@ -500,7 +500,7 @@ $.ajax({
            if(input_count_ini<10) input_count_ini = '0'+input_count_ini;
            $(field_wrapper).append('<?php echo $template_assegna;?>');
            var script = document.createElement("script");
-           script.innerHTML = "$('#assegna_"+input_count+"').on('change paste keyup',function(){var num = encodeURIComponent($('#assegna_"+input_count+"').val());$.ajax({url: 'http://ticketglv.fast-data.it/api/ticket_control.php',type: 'post',data: 'num=' + num,success: function (response) {$('#result_assegna_"+input_count+"').html(response); if($('[id^=\"result_assegna_\"]').text().includes('Ticket')){ $('#save').prop( 'disabled', true);} else{ $('#save').prop('disabled', false)};},error: function(jqXHR, textStatus, errorThrown) {console.log(textStatus, errorThrown);}});});";
+           script.innerHTML = "$('#assegna_"+input_count+"').on('change paste keyup',function(){var num = encodeURIComponent($('#assegna_"+input_count+"').val());$.ajax({url: 'http://5.249.147.181:8080/api/ticket_control.php',type: 'post',data: 'num=' + num,success: function (response) {$('#result_assegna_"+input_count+"').html(response); if($('[id^=\"result_assegna_\"]').text().includes('Ticket')){ $('#save').prop( 'disabled', true);} else{ $('#save').prop('disabled', false)};},error: function(jqXHR, textStatus, errorThrown) {console.log(textStatus, errorThrown);}});});";
            $(field_wrapper).append(script);
            input_count_ini++;
            input_count++;
@@ -525,7 +525,7 @@ $.ajax({
 
             var num = encodeURIComponent($("#scontrino_0").val());// "%2B"
             $.ajax({
-                url: "http://ticketglv.fast-data.it/api/ticket_control.php",
+                url: "http://5.249.147.181:8080/api/ticket_control.php",
                 type: "post",
                 data: "num=" + num,
                 success: function (response) {
