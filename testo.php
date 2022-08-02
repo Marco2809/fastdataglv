@@ -2,18 +2,9 @@
 
 //phpinfo();
 
-$header = "From: noreply@example.com\r\n";
-$header.= "MIME-Version: 1.0\r\n";
-$header.= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-$header.= "X-Priority: 1\r\n";
-
-$status = mail("marco.salmi89@gmail.com", "P", "P", $header);
-
-if($status)
-{
-    echo '<p>Your mail has been sent!</p>';
-} else {
-    echo '<p>Something went wrong. Please try again!</p>';
+$success = mail('marco.salmi89@gmail.com','New Enquiry',"PPPPPPPPP");
+if (!$success) {
+    print_r(error_get_last()['message']);
 }
 
 $servername = "localhost";
