@@ -37,7 +37,7 @@ for ($i = 0; $i < count($array_unico); $i++)
    }else if (strpos($array_ticket['ordine'], 'C') !== false or strpos($array_ticket['ordine'], 'c') !== false) {
 
     $html .= '<img alt="coopersystem" width="120" src="http://5.249.147.181:8080/include/staff/tcpdf/examples/coopersystem.png">  URG: '.$array_ticket['urgenza'];
-    mail("marco.salmi89@gmail.com","PROVA","PROVA");
+
    }elseif(strpos($array_ticket['ordine'], 'T') !== false or strpos($array_ticket['ordine'], 't') !== false){
     //$html .= "<br><br>REGISTRAZIONE EFFETTUATA NEXI BUSINESS &nbsp;&nbsp;&nbsp;|SI|&nbsp;&nbsp;|NO|";
   }else{
