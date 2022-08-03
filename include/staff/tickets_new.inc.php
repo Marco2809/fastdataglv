@@ -1480,7 +1480,8 @@ if ($results_dis) {
                 <option value="(45,46,47,48,49,50,51,52,53,54,55,56,57,58,72,75)">Q8</option>
                 <option value="(65,66,67,68,69,70,71,73,74,76,77,80,82)">Yamamay</option>
                 <option value="(60,61,78,59)">B2X Care</option>
-                <option value="( )">WEB-KORNER</option>
+                <option value="(84,85,86,87,88)">CSE</option>
+                <option value="(62,63,64,81)">WEB-KORNER</option>
                 <option value="(83)">EXTRA</option>
             </select>
         </fieldset>
