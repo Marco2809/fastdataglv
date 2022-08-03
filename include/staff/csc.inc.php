@@ -744,7 +744,7 @@ if (!empty($csv)){
     function_exists('curl_version') or die('CURL support required');
     function_exists('json_encode') or die('JSON support required');
 
-    echo 'quauqa';
+    //echo 'quauqa';
 //array_pop($csv);
 
     echo '<table width=100% style="font-size:100%; font-family:play; color:black;"><tr><td>N. interv.</td><td>Codice interv.</td><td>Città</td><td>Prov.</td><td>Cliente</td><td>Soggetto</td><td>Messaggio</td><td>Codice</td></tr>';
@@ -795,7 +795,7 @@ if (!empty($csv)){
 
         }
 
-        echo json_encode($data);
+        //echo json_encode($data);
 
         curl_setopt($ch, CURLOPT_URL, $config['url']);
         curl_setopt($ch, CURLOPT_POST, 1);
