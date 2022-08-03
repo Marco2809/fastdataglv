@@ -534,6 +534,26 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                             $ct = 4;
                         }
                         $id_topic = 77;
+                    } else if($line[$key_cliente]=="Yamamay"){
+                        $ci = 14;
+                        if($posto=="L"){
+                            $ce = 8;
+                            $ct = 6;
+                        } else {
+                            $ce = 10;
+                            $ct = 4;
+                        }
+                        $id_topic = 77;
+                    } else if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici"){
+                        $ci = 14;
+                        if($posto=="L"){
+                            $ce = 8;
+                            $ct = 6;
+                        } else {
+                            $ce = 10;
+                            $ct = 4;
+                        }
+                        $id_topic = 77;
                     }
                     break;
                 case 'Sostituzione Terminale':
