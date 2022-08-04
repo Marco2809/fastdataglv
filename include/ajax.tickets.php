@@ -330,7 +330,7 @@ class TicketsAjaxAPI extends AjaxController {
         //mail('marco.salmi89@gmail.com','da ajax',$sql);
         //mail('openunit3@gmail.com', 'zoccali1', $sql);
 
-        $sql_log = 'INSERT INTO ost_ticket_mylog (log) VALUES ('.$sql.')';
+        $sql_log = 'INSERT INTO ost_ticket_mylog (id_log,log) VALUES (NULL, "'.$sql.'")';
         db_query($sql_log);
 
         if (!($res = db_query($sql)))
