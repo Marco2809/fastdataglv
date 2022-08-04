@@ -330,7 +330,7 @@ class TicketsAjaxAPI extends AjaxController {
         //mail('marco.salmi89@gmail.com','da ajax',$sql);
         //mail('openunit3@gmail.com', 'zoccali1', $sql);
 
-        $myfile = fopen("testfile.txt", "w");
+        $myfile = fopen(INCLUDE_DIR."textfile.txt", "w");
         fwrite($myfile, $sql);
 
         if (!($res = db_query($sql)))
