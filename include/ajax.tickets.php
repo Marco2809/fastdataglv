@@ -329,6 +329,10 @@ class TicketsAjaxAPI extends AjaxController {
         $sql=implode(' union ', $sections);
         //mail('marco.salmi89@gmail.com','da ajax',$sql);
         //mail('openunit3@gmail.com', 'zoccali1', $sql);
+
+        $myfile = fopen("testfile.txt", "w");
+        fwrite($myfile, $sql);
+
         if (!($res = db_query($sql)))
             return TicketForm::dropDynamicDataView();
 
