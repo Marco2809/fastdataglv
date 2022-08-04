@@ -935,7 +935,7 @@ WHERE ticket.ticket_id='.$chiave);
             curl_close($ch);
 
             if ($error)
-                mail('openunit3@gmail.com','errore curl zoccali',$error);
+               // mail('openunit3@gmail.com','errore curl zoccali',$error);
 
             if (strpos($cresult, 'Errore') !== false){
               $mat=explode('_',$cresult);
@@ -1926,7 +1926,7 @@ $inc = 'tickets_pre.inc.php';
 
         if($ticketto){
           if($ticketto->getStatusId()==2 or $ticketto->getStatusId()==8){
-            mail("marco.salmi89@gmail.com","PROVA",$ticketto->getStatusId());
+            //mail("marco.salmi89@gmail.com","PROVA",$ticketto->getStatusId());
             $focus=$ticketto->problem();
             $blocco=true;
             $inc = 'stampa.inc.php';
@@ -2205,7 +2205,7 @@ if (strpos($ref_num, 'c') !== false or strpos($ref_num, 'C') !== false){
                        curl_close($ch);
 
                        if ($error)
-                           mail('domenico.zavattolo@service-tech.it','errore curl_massivo zoccali',$error);
+                           //mail('domenico.zavattolo@service-tech.it','errore curl_massivo zoccali',$error);
 
                        if (strpos($cresult, 'Errore') !== false){
                          $mat=explode('_',$cresult);

@@ -344,6 +344,10 @@ class TicketsAjaxAPI extends AjaxController {
     }
 
     function search() {
+
+        print_r($_REQUEST);
+        exit();
+
         $tickets = self::_search($_REQUEST);
         if(!empty($tickets)){
         $ricavo=db_query("select sum(costo_ext) from ost_ticket__cdata where ticket_id in (".implode(',',$tickets).")");
