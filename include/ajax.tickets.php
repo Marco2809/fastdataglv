@@ -365,8 +365,7 @@ class TicketsAjaxAPI extends AjaxController {
                 ))
                 . " - <a href='tickets.php?advsid=$uid'>".__('view')."</a><br>Costo ditta: ".round($ricavo1,2)."<br>Costo tecnico: ".$costo1;
 
-            $rr=print_r($_REQUEST);
-            $result['success'] = $rr;
+            $result['success'] = "ciao";
 
         } else {
             $result['fail']=__('No tickets found matching your search criteria.');
