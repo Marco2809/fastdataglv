@@ -483,7 +483,7 @@ if($_POST && !$errors):
 				       $costo_int =0;
 				}
 
-				db_query("UPDATE ".TICKET_TABLE."__cdata SET costo_ext='".$costo_ext."',costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$ticket->getId());
+				//db_query("UPDATE ".TICKET_TABLE."__cdata SET costo_ext='".$costo_ext."',costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$ticket->getId());
 
 
 
@@ -1454,7 +1454,7 @@ WHERE ticket.ticket_id='.$chiave);
          				       $costo_int =0;
          				}
 
-				db_query("UPDATE ".TICKET_TABLE."__cdata SET costo_ext='".$costo_ext."',costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$id_ticket);
+				//db_query("UPDATE ".TICKET_TABLE."__cdata SET costo_ext='".$costo_ext."',costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$id_ticket);
 
 
 
@@ -2140,7 +2140,7 @@ $inc = 'tickets_pre.inc.php';
                 				       $costo_int =0;
                 				}
 
-       				          db_query("UPDATE ".TICKET_TABLE."__cdata SET costo_ext='".$costo_ext."',costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$id_ticket);
+       				          //db_query("UPDATE ".TICKET_TABLE."__cdata SET costo_ext='".$costo_ext."',costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$id_ticket);
                         //echo "UPDATE ".TICKET_TABLE."__cdata SET costo_ext='".$costo_ext."',costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$id_ticket."<br>";
 
 
@@ -2684,7 +2684,7 @@ $msg="I seguenti ticket sono stati ripresi in carico: ".$avviso;
               				       $costo_int =0;
               				}
 
-     				          db_query("UPDATE ".TICKET_TABLE."__cdata SET costo_ext='".$costo_ext."',costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$id_ticket);
+     				          //db_query("UPDATE ".TICKET_TABLE."__cdata SET costo_ext='".$costo_ext."',costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$id_ticket);
                       //echo "UPDATE ".TICKET_TABLE."__cdata SET costo_ext='".$costo_ext."',costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$id_ticket."<br>";
 
 
