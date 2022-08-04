@@ -345,9 +345,6 @@ class TicketsAjaxAPI extends AjaxController {
 
     function search() {
 
-        print_r($_REQUEST);
-        exit();
-
         $tickets = self::_search($_REQUEST);
         if(!empty($tickets)){
         $ricavo=db_query("select sum(costo_ext) from ost_ticket__cdata where ticket_id in (".implode(',',$tickets).")");
@@ -367,6 +364,10 @@ class TicketsAjaxAPI extends AjaxController {
                     sprintf(_N('%d ticket', '%d tickets', count($tickets)), count($tickets)
                 ))
                 . " - <a href='tickets.php?advsid=$uid'>".__('view')."</a><br>Costo ditta: ".round($ricavo1,2)."<br>Costo tecnico: ".$costo1;
+
+            $rr=print_r($_REQUEST);
+            $result['success'] = $rr;
+
         } else {
             $result['fail']=__('No tickets found matching your search criteria.');
         }
