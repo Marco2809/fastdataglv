@@ -150,25 +150,14 @@ if($search):
             # XXX: What about searching for email addresses in the body of
             #      the thread message
             $qwhere.=" AND email.address='$queryterm'";
-        } elseif (strpos($searchTerm,'+')) {
-            $sql_log = "INSERT INTO ost_ticket_mylog (id_log,log) VALUES (NULL,'+')";
-            db_query($sql_log);
-            //pulling all tricks!
-            # XXX: What about searching for email addresses in the body of
-            #      the thread message
-            $queryterm = str_replace("+","",$queryterm);
-            $qwhere.=" AND (cdata.`ref_num` = '$queryterm' OR cdata.`cr` = '$queryterm' OR thread.`body` LIKE '%$queryterm%')";
         } else {//Deep search!
             //This sucks..mass scan! search anything that moves!
             //mail('marco.salmi89@gmail.com','PROFONDO',$query);
             $sql_log = "INSERT INTO ost_ticket_mylog (id_log,log) VALUES (NULL,'DEEP SEARCH')";
             db_query($sql_log);
-            require_once(INCLUDE_DIR.'ajax.tickets.php');
+            /*require_once(INCLUDE_DIR.'ajax.tickets.php');
 
             $tickets = TicketsAjaxApi::_search(array('query'=>$queryterm));
-            //$queryterm = str_replace("+","",$queryterm);
-            //$qwhere.=" AND cdata.`ref_num` LIKE '%$queryterm%' OR cdata.`affected_resource_zz_wam_string2` LIKE '%$queryterm%' OR cdata.`zz_desc_op_eff` LIKE '%$queryterm%'";
-            //mail('marco.salmi89@gmail.com','PROFONDO',$queryterm);
             if (count($tickets)) {
                 $ticket_ids = implode(',',db_input($tickets));
                 $qwhere .= ' AND ticket.ticket_id IN ('.$ticket_ids.')';
@@ -178,7 +167,9 @@ if($search):
             }
             else
                 // No hits -- there should be an empty list of results
-                $qwhere .= ' AND false';
+                $qwhere .= ' AND false';*/
+            $queryterm = str_replace("+","",$queryterm);
+            $qwhere.=" AND (cdata.`ref_num` = '$queryterm' OR cdata.`cr` = '$queryterm' OR thread.`body` LIKE '%$queryterm%')";
         }
    }
 
@@ -258,7 +249,7 @@ $qfrom=' FROM '.TICKET_TABLE.' ticket '.
        ' LEFT JOIN '.USER_TABLE.' user ON user.id = ticket.user_id'.
        ' LEFT JOIN '.USER_EMAIL_TABLE.' email ON user.id = email.user_id'.
        ' LEFT JOIN ost_ticket_tempi tempi ON tempi.ticket_id = ticket.ticket_id'.
-       ' LEFT JOIN ost_ticket__cdata cdata ON cdata.ticket_id = ticket.ticket_id'.
+       //' LEFT JOIN ost_ticket__cdata cdata ON cdata.ticket_id = ticket.ticket_id'.
         ' LEFT JOIN ost_ticket_thread thread ON (thread.ticket_id = ticket.ticket_id)'.
        ' LEFT JOIN '.DEPT_TABLE.' dept ON ticket.dept_id=dept.dept_id ';
 
@@ -270,7 +261,7 @@ if ($_REQUEST['uid'])
 $sjoin='';
 
 if($search && $deep_search) {
-    //$sjoin.=' LEFT JOIN '.TICKET_THREAD_TABLE.' thread ON (ticket.ticket_id=thread.ticket_id )';
+    $sjoin.=' LEFT JOIN '.TICKET_THREAD_TABLE.' thread ON (ticket.ticket_id=thread.ticket_id )';
 }
 
 //get ticket count based on the query so far..
