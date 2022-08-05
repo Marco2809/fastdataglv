@@ -169,8 +169,9 @@ if($search):
                 // No hits -- there should be an empty list of results
                 $qwhere .= ' AND false';*/
             $deep_search = true;
+            //OR thread.`body` LIKE '%$queryterm%'
             $queryterm = str_replace("+","",$queryterm);
-            $qwhere.=" AND (cdata.`ref_num` = '$queryterm' OR cdata.`cr` = '$queryterm' OR thread.`body` LIKE '%$queryterm%')";
+            $qwhere.=" AND (cdata.`ref_num` = '$queryterm' OR cdata.`cr` = '$queryterm' )";
         }
    }
 
