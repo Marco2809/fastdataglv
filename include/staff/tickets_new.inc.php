@@ -270,7 +270,7 @@ if ($_REQUEST['uid'])
 $sjoin='';
 
 if($search && $deep_search) {
-    $sjoin.=' LEFT JOIN '.TICKET_THREAD_TABLE.' thread ON (ticket.ticket_id=thread.ticket_id )';
+    //$sjoin.=' LEFT JOIN '.TICKET_THREAD_TABLE.' thread ON (ticket.ticket_id=thread.ticket_id )';
 }
 
 //get ticket count based on the query so far..
