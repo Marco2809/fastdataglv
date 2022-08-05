@@ -152,8 +152,8 @@ if($search):
             //pulling all tricks!
             # XXX: What about searching for email addresses in the body of
             #      the thread message
-            $searchTerm = str_replace("+","",$searchTerm);
-            $qwhere.=" AND ticket.`ref_num` = '$queryterm'";
+            $queryterm = str_replace("+","",$queryterm);
+            $qwhere.=" AND cdata.`ref_num` = '$queryterm'";
         } else {//Deep search!
             //This sucks..mass scan! search anything that moves!
             //mail('marco.salmi89@gmail.com','PROFONDO',$query);
@@ -178,8 +178,6 @@ if($search):
         }
    }
 
-    $sql_log = "INSERT INTO ost_ticket_mylog (id_log,log) VALUES (NULL,'".$searchTerm."')";
-    db_query($sql_log);
     //mail('marco.salmi89@gmail.com','query old',$searchTerm);
 endif;
 
