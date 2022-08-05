@@ -171,7 +171,7 @@ if($search):
             $deep_search = true;
             //OR thread.`body` LIKE '%$queryterm%'
             $queryterm = str_replace("+","",$queryterm);
-            $qwhere.=" AND (cdata.`ref_num` = '$queryterm' OR cdata.`cr` = '$queryterm' )";
+            $qwhere.=" AND (cdata.`ref_num` = '$queryterm' OR cdata.`cr` = '%$queryterm' )";
         }
    }
 
