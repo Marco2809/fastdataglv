@@ -264,7 +264,10 @@ if ($_REQUEST['uid'])
 $sjoin='';
 
 if($search && $deep_search) {
+
     $sjoin.=' LEFT JOIN '.TICKET_THREAD_TABLE.' thread ON (ticket.ticket_id=thread.ticket_id )';
+    $sql_log = "INSERT INTO ost_ticket_mylog (id_log,log) VALUES (NULL,'DEEP SEARCH JOIN: ". $sjoin."')";
+    db_query($sql_log);
 }
 
 //get ticket count based on the query so far..
