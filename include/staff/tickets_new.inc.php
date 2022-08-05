@@ -148,6 +148,12 @@ if($search):
             # XXX: What about searching for email addresses in the body of
             #      the thread message
             $qwhere.=" AND email.address='$queryterm'";
+        } elseif (strpos($searchTerm,'+')) {
+            //pulling all tricks!
+            # XXX: What about searching for email addresses in the body of
+            #      the thread message
+            $searchTerm = str_replace("+","",$searchTerm);
+            $qwhere.=" AND ticket.`ref_num` = '$queryterm'";
         } else {//Deep search!
             //This sucks..mass scan! search anything that moves!
             //mail('marco.salmi89@gmail.com','PROFONDO',$query);
