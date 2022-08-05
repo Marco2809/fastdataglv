@@ -327,6 +327,10 @@ class TicketsAjaxAPI extends AjaxController {
             $sections[] = "$select $from $where";
 
         $sql=implode(' union ', $sections);
+
+        $sql_log = "INSERT INTO ost_ticket_mylog (id_log,log) VALUES (NULL,'".mysqli_real_escape_string($sql)."')";
+        db_query($sql_log);
+
         //mail('marco.salmi89@gmail.com','da ajax',$sql);
         //mail('openunit3@gmail.com', 'zoccali1', $sql);
 
