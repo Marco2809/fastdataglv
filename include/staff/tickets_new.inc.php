@@ -153,7 +153,8 @@ if($search):
         } else {//Deep search!
             //This sucks..mass scan! search anything that moves!
             //mail('marco.salmi89@gmail.com','PROFONDO',$query);
-            $sql_log = "INSERT INTO ost_ticket_mylog (id_log,log) VALUES (NULL,'DEEP SEARCH')";
+            $deep_search = true;
+            $sql_log = "INSERT INTO ost_ticket_mylog (id_log,log) VALUES (NULL,'DEEP SEARCH: ". $deep_search."')";
             db_query($sql_log);
             /*require_once(INCLUDE_DIR.'ajax.tickets.php');
 
@@ -168,7 +169,7 @@ if($search):
             else
                 // No hits -- there should be an empty list of results
                 $qwhere .= ' AND false';*/
-            $deep_search = true;
+
             //OR thread.`body` LIKE '%$queryterm%'
             $queryterm = str_replace("+","",$queryterm);
             $qwhere.=" AND (cdata.`ref_num` = '$queryterm' OR cdata.`cr` = '%$queryterm' )";
