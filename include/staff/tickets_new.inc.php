@@ -151,6 +151,8 @@ if($search):
             #      the thread message
             $qwhere.=" AND email.address='$queryterm'";
         } elseif (strpos($searchTerm,'+')) {
+            $sql_log = "INSERT INTO ost_ticket_mylog (id_log,log) VALUES (NULL,'+')";
+            db_query($sql_log);
             //pulling all tricks!
             # XXX: What about searching for email addresses in the body of
             #      the thread message
