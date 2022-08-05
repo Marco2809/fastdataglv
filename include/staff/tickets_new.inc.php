@@ -151,6 +151,8 @@ if($search):
         } else {//Deep search!
             //This sucks..mass scan! search anything that moves!
             //mail('marco.salmi89@gmail.com','PROFONDO',$query);
+            $sql_log = "INSERT INTO ost_ticket_mylog (id_log,log) VALUES (NULL,'DEEP SEARCH')";
+            db_query($sql_log);
             require_once(INCLUDE_DIR.'ajax.tickets.php');
 
             $tickets = TicketsAjaxApi::_search(array('query'=>$queryterm));
