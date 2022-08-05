@@ -331,6 +331,8 @@ if($search or $_REQUEST['advsid'] or $status=='closed'){
 
 }
 
+$sql_log = "INSERT INTO ost_ticket_mylog (id_log,log) VALUES (NULL,'".mysqli_real_escape_string($query_exp)."')";
+db_query($sql_log);
 //mail('domenico.zavattolo@service-tech.org','da ticket',$query_exp);
 //echo $query_exp;
 $hash = md5($query_exp);
