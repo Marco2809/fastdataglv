@@ -157,7 +157,7 @@ if($search):
             # XXX: What about searching for email addresses in the body of
             #      the thread message
             $queryterm = str_replace("+","",$queryterm);
-            $qwhere.=" AND (cdata.`ref_num` = '$queryterm' OR cdata.`cr` = '$queryterm')";
+            $qwhere.=" AND (cdata.`ref_num` = '$queryterm' OR cdata.`cr` = '$queryterm' OR thread.`body` LIKE '%$queryterm%')";
         } else {//Deep search!
             //This sucks..mass scan! search anything that moves!
             //mail('marco.salmi89@gmail.com','PROFONDO',$query);
@@ -332,6 +332,7 @@ $qfrom.=' LEFT JOIN '.TICKET_LOCK_TABLE.' tlock ON (ticket.ticket_id=tlock.ticke
        //.' LEFT JOIN '.TABLE_PREFIX.'banche banche ON (banche.abi = cdata.customer_last_name) '
        .' LEFT JOIN ost_province province ON (province.siglaprovincia = cdata.customer_location_l_addr1)'
        .' LEFT JOIN ost_regioni regioni ON (regioni.idregione = province.idregione)'
+        .' LEFT JOIN ost_ticket_thread thread ON (thread.ticket_id = ticket.ticket_id)'
        .' LEFT JOIN ost_commesse commesse ON (commesse.comm_id = cdata.comm_id)'
        .' LEFT JOIN '.PRIORITY_TABLE.' pri ON (pri.priority_id = cdata.priority)';
 
