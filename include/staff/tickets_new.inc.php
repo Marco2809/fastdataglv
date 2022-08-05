@@ -249,8 +249,8 @@ $qfrom=' FROM '.TICKET_TABLE.' ticket '.
        ' LEFT JOIN '.USER_TABLE.' user ON user.id = ticket.user_id'.
        ' LEFT JOIN '.USER_EMAIL_TABLE.' email ON user.id = email.user_id'.
        ' LEFT JOIN ost_ticket_tempi tempi ON tempi.ticket_id = ticket.ticket_id'.
-       //' LEFT JOIN ost_ticket__cdata cdata ON cdata.ticket_id = ticket.ticket_id'.
-        ' LEFT JOIN ost_ticket_thread thread ON (thread.ticket_id = ticket.ticket_id)'.
+       ' LEFT JOIN ost_ticket__cdata cdata ON cdata.ticket_id = ticket.ticket_id'.
+        //' LEFT JOIN ost_ticket_thread thread ON (thread.ticket_id = ticket.ticket_id)'.
        ' LEFT JOIN '.DEPT_TABLE.' dept ON ticket.dept_id=dept.dept_id ';
 
 if ($_REQUEST['uid'])
