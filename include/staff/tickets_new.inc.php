@@ -169,6 +169,9 @@ if($search):
                 $qwhere .= ' AND false';
         }
    }
+
+    $sql_log = "INSERT INTO ost_ticket_mylog (id_log,log) VALUES (NULL,'".$searchTerm."')";
+    db_query($sql_log);
     //mail('marco.salmi89@gmail.com','query old',$searchTerm);
 endif;
 
