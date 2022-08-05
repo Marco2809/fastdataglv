@@ -157,7 +157,7 @@ if($search):
             # XXX: What about searching for email addresses in the body of
             #      the thread message
             $queryterm = str_replace("+","",$queryterm);
-            $qwhere.=" AND cdata.`ref_num` = '$queryterm'";
+            $qwhere.=" AND (cdata.`ref_num` = '$queryterm' OR cdata.`cr`)";
         } else {//Deep search!
             //This sucks..mass scan! search anything that moves!
             //mail('marco.salmi89@gmail.com','PROFONDO',$query);
