@@ -172,7 +172,7 @@ if($search):
 
             //OR thread.`body` LIKE '%$queryterm%'
             $queryterm = str_replace("+","",$queryterm);
-            $qwhere.=" AND (cdata.`ref_num` = '$queryterm' OR cdata.`cr` = '%$queryterm' OR thread.`body` LIKE '%$queryterm%)";
+            $qwhere.=" AND (cdata.`ref_num` = '$queryterm' OR cdata.`cr` LIKE '%$queryterm' OR thread.`body` LIKE '%$queryterm%')";
         }
    }
 
