@@ -142,8 +142,7 @@ if($search):
         $queryterm=db_real_escape($searchTerm,false); //escape the term ONLY...no quotes.
         if (is_numeric($searchTerm)) {
             $qwhere.=" AND ticket.`number` LIKE '$queryterm%'";
-            $sql_log = "INSERT INTO ost_ticket_mylog (id_log,log) VALUES (NULL,'NUMERIC: ".$queryterm."')";
-            db_query($sql_log);
+
             //mail('marco.salmi89@gmail.com','CLASSICO',$query);
         } elseif (strpos($searchTerm,'@') && Validator::is_email($searchTerm)) {
             //pulling all tricks!
