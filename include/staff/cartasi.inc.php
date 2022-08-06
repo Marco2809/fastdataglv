@@ -211,6 +211,7 @@ document.getElementById('nexino').value='Submitting, please wait...';">
             $stripped=preg_replace("(\(|\)|\-|\.|\+|[  ]+)","",$line[$key_telefono]);
             $line[$key_telefono]=(strlen($stripped)<7)?str_pad($stripped, 7, '0', STR_PAD_LEFT):$stripped;
             $line[$key_name] = str_replace("'","",$line[$key_name]);
+            $line[$key_name] = str_replace('"','',$line[$key_name]);
             $line[$key_message] = str_replace("'","\'",$line[$key_message]);
             //$line[$key_telefono]=($line[$key_telefono]!='')?$line[$key_telefono]:'123456789';
             //$line[$key_name] = str_replace("'","",$line[$key_name]);
