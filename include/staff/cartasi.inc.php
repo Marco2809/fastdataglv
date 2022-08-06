@@ -236,13 +236,13 @@ document.getElementById('nexino').value='Submitting, please wait...';">
                     $line[] = $ora_scadenza;
                     //$line[] = '20:00';
                     if (in_array($line[$key_provincia],$zona1)){
-                        $line[] = 'x';//14;
-                        $line[] = 'x';//7;
-                        $line[] = 'x';//7;
+                        $line[] = '12';//14;
+                        $line[] = '6';//7;
+                        $line[] = '6';//7;
                     }else{
-                        $line[] = 'x';
-                        $line[] = 'x';
-                        $line[] = 'x';
+                        $line[] = '12';
+                        $line[] = '6';
+                        $line[] = '6';
                     }
                     break;
                 case 'Installazione':
@@ -251,13 +251,13 @@ document.getElementById('nexino').value='Submitting, please wait...';">
                     $line[] = $data_scadenza;
                     $line[] = $ora_scadenza;
                     if (in_array($line[$key_provincia],$zona1)){
-                        $line[] = 'x';//20;
-                        $line[] = 'x';//10;
-                        $line[] = 'x';//10;
+                        $line[] = '18.5';//20;
+                        $line[] = '11';//10;
+                        $line[] = '7.5';//10;
                     }else{
-                        $line[] = 'x';
-                        $line[] = 'x';
-                        $line[] = 'x';
+                        $line[] = '18.5';
+                        $line[] = '15';
+                        $line[] = '3.5';
                     }
                     break;
                 case 'Sostituzione':
@@ -266,13 +266,13 @@ document.getElementById('nexino').value='Submitting, please wait...';">
                     $line[] = $data_scadenza;
                     $line[] = $ora_scadenza;
                     if (in_array($line[$key_provincia],$zona1)){
-                        $line[] = 'x';//20;
-                        $line[] = 'x';//10;
-                        $line[] = 'x';//10;
+                        $line[] = '14';//20;
+                        $line[] = '8';//10;
+                        $line[] = '6';//10;
                     }else{
-                        $line[] = 'x';
-                        $line[] = 'x';
-                        $line[] = 'x';
+                        $line[] = '14';
+                        $line[] = '10';
+                        $line[] = '4';
                     }
                     break;
                 case 'Riconfigurazionemassiva':
@@ -281,13 +281,13 @@ document.getElementById('nexino').value='Submitting, please wait...';">
                     $line[] = $data_scadenza;
                     $line[] = $ora_scadenza;
                     if (in_array($line[$key_provincia],$zona1)){
-                        $line[] = 'x';//18;
-                        $line[] = 'x';//9;
-                        $line[] = 'x';//9;
+                        $line[] = '14';//20;
+                        $line[] = '8';//10;
+                        $line[] = '6';//10;
                     }else{
-                        $line[] = 'x';
-                        $line[] = 'x';
-                        $line[] = 'x';
+                        $line[] = '14';
+                        $line[] = '10';
+                        $line[] = '4';
                     }
                     break;
                 case 'Cambiogestore':
@@ -296,13 +296,13 @@ document.getElementById('nexino').value='Submitting, please wait...';">
                     $line[] = $data_scadenza;
                     $line[] = $ora_scadenza;
                     if (in_array($line[$key_provincia],$zona1)){
-                        $line[] = 'x';//18;
-                        $line[] = 'x';//9;
-                        $line[] = 'x';//9;
+                        $line[] = '14';//18;
+                        $line[] = '8';//9;
+                        $line[] = '6';//9;
                     }else{
-                        $line[] = 'x';
-                        $line[] = 'x';
-                        $line[] = 'x';
+                        $line[] = '14';
+                        $line[] = '10';
+                        $line[] = '4';
                     }
                     break;
                 case 'ORDINEDIVERSO':
