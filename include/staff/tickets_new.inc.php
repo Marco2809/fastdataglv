@@ -150,13 +150,14 @@ if($search):
             # XXX: What about searching for email addresses in the body of
             #      the thread message
             $qwhere.=" AND email.address='$queryterm'";
-        } else {//Deep search!
+        } elseif(strpos($searchTerm,'+')) {
+            $queryterm = str_replace("+","",$queryterm);
+            $qwhere.=" AND (cdata.`ref_num` = '$queryterm' OR cdata.`cr` LIKE '%$queryterm')";
+        }else {//Deep search!
             //This sucks..mass scan! search anything that moves!
             //mail('marco.salmi89@gmail.com','PROFONDO',$query);
-            $deep_search = true;
-            $sql_log = "INSERT INTO ost_ticket_mylog (id_log,log) VALUES (NULL,'DEEP SEARCH: ". $deep_search."')";
-            db_query($sql_log);
-            /*require_once(INCLUDE_DIR.'ajax.tickets.php');
+
+            require_once(INCLUDE_DIR.'ajax.tickets.php');
 
             $tickets = TicketsAjaxApi::_search(array('query'=>$queryterm));
             if (count($tickets)) {
@@ -168,11 +169,10 @@ if($search):
             }
             else
                 // No hits -- there should be an empty list of results
-                $qwhere .= ' AND false';*/
+                $qwhere .= ' AND false';
 
             //OR thread.`body` LIKE '%$queryterm%'
-            $queryterm = str_replace("+","",$queryterm);
-            $qwhere.=" AND (cdata.`ref_num` = '$queryterm' OR cdata.`cr` LIKE '%$queryterm')";
+
         }
    }
 
