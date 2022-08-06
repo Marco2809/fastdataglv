@@ -36,7 +36,7 @@ for ($i = 0; $i < count($array_unico); $i++)
      $html .= '<img alt="sisal" width="120" src="http://5.249.147.181:8080/include/staff/tcpdf/examples/Sisal.png">';
    }else if (strpos($array_ticket['ordine'], 'C') !== false or strpos($array_ticket['ordine'], 'c') !== false) {
 
-    $html .= '<img alt="coopersystem" width="120" src="http://5.249.147.181:8080/include/staff/tcpdf/examples/coop.png">  URG: '.$array_ticket['urgenza'];
+    $html .= '<img alt="coopersystem" width="120" src="http://5.249.147.181:8080/include/staff/tcpdf/examples/coop.jpg">  URG: '.$array_ticket['urgenza'];
 
    }elseif(strpos($array_ticket['ordine'], 'T') !== false or strpos($array_ticket['ordine'], 't') !== false){
     //$html .= "<br><br>REGISTRAZIONE EFFETTUATA NEXI BUSINESS &nbsp;&nbsp;&nbsp;|SI|&nbsp;&nbsp;|NO|";
