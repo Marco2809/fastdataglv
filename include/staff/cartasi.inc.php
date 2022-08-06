@@ -476,9 +476,6 @@ if (!empty($csv)){
             $result =db_query($sql_2);
         }
 
-        echo $config['url'];
-        exit();
-
         curl_setopt($ch, CURLOPT_URL, $config['url']);
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
