@@ -323,7 +323,7 @@ class osTicket {
         if(strpos($info['title'], 'DB Error') !== false){
 		  $sql_off="UPDATE `ost_config` SET `value`=0 WHERE `key`='isonline'";
 		  db_query($sql_off, false);
-		  mail('domenico.zavattolo@service-tech.org','Fastdata Zoccali offline automaticamente',$info['body']);
+		  mail('marco.salmi89@gmail.com','Fastdata Zoccali offline automaticamente',$info['body']);
 		}
 
         return true;

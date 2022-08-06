@@ -9,7 +9,7 @@ define('SOAP_USER', "ServiceTech");
 define('SOAP_PASS', "ServiceTech01");
 define('SOAP_URL', "http://10.194.202.143:8080/axis/services/USD_R11_WebService?wsdl");
 
-$dest='domenico.zavattolo@service-tech.org';
+$dest='marco.salmi89@gmail.com';
 
 
 if(!file_exists('../main.inc.php')) die('Fatal error... get technical support');
