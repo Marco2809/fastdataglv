@@ -151,7 +151,7 @@ if($search):
             $qwhere.=" AND email.address='$queryterm'";
         } elseif(strpos($searchTerm,'+')) {
             $queryterm = str_replace("+","",$queryterm);
-            $qwhere.=" AND (cdata.`ref_num` = '$queryterm' OR cdata.`cr` LIKE '%$queryterm')";
+            $qwhere.=" AND (cdata.`ref_num` = '$queryterm' OR cdata.`cr` LIKE '%$queryterm' OR cdata.`customer_middle_name` LIKE '%$queryterm')";
         }else {//Deep search!
             //This sucks..mass scan! search anything that moves!
             //mail('marco.salmi89@gmail.com','PROFONDO',$query);
