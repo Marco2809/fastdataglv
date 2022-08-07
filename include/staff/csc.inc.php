@@ -258,7 +258,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         $ce = 0;
                         $ct = 55;
                         $id_topid = 59;
-                    } else if($line[$key_cliente]=="Q8"){
+                    } else if($line[$key_cliente]=="Q8"||$line[$key_cliente]=="C.S.E. Centro Servizi Elettronici"){
                         $ci = 17.5;
                         if($posto=="L"){
                             $ce = 10;
@@ -296,7 +296,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         $ce = 0;
                         $ct = 55;
                         $id_topid = 59;
-                    } else if($line[$key_cliente]=="Q8"){
+                    } else if($line[$key_cliente]=="Q8"||$line[$key_cliente]=="C.S.E. Centro Servizi Elettronici"){
                         $ci = 17.5;
                         if($posto=="L"){
                             $ce = 10;
@@ -321,7 +321,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                     break;
                 case 'Disinstallazione':
                     $n=180;
-                    if($line[$key_cliente]=="Q8"){
+                    if($line[$key_cliente]=="Q8"||$line[$key_cliente]=="C.S.E. Centro Servizi Elettronici"){
                         $ci = 17.5;
                         if($posto=="L"){
                             $ce = 6;
@@ -345,7 +345,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                     break;
                 case 'Installazione POS':
                     $n=180;
-                    if($line[$key_cliente]=="Q8"){
+                    if($line[$key_cliente]=="Q8"||$line[$key_cliente]=="C.S.E. Centro Servizi Elettronici"){
                         $ci = 18.5;
                         if($posto=="L"){
                             $ce = 11;
@@ -379,7 +379,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                     break;
                 case 'Installazione POS(reinst. pos in loco)':
                     $n=180;
-                    if($line[$key_cliente]=="Q8"){
+                    if($line[$key_cliente]=="Q8"||$line[$key_cliente]=="C.S.E. Centro Servizi Elettronici"){
                         $ci = 18.5;
                         if($posto=="L"){
                             $ce = 11;
@@ -403,7 +403,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                     break;
                 case 'Installazione POS Urgente':
                     $n=180;
-                    if($line[$key_cliente]=="Q8"){
+                    if($line[$key_cliente]=="Q8"||$line[$key_cliente]=="C.S.E. Centro Servizi Elettronici"){
                         $ci = 28.5;
                         if($posto=="L"){
                             $ce = 11;
@@ -427,7 +427,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                     break;
                 case 'Installazione cassa successiva':
                     $n=180;
-                    if($line[$key_cliente]=="Q8"){
+                    if($line[$key_cliente]=="Q8"||$line[$key_cliente]=="C.S.E. Centro Servizi Elettronici"){
                         $ci = 9.25;
                         if($posto=="L"){
                             $ce = 11;
@@ -466,7 +466,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         $ce = 0;
                         $ct = 55;
                         $id_topid = 60;
-                    } else if($line[$key_cliente]=="Q8"){
+                    } else if($line[$key_cliente]=="Q8"||$line[$key_cliente]=="C.S.E. Centro Servizi Elettronici"){
                         $ci = 17.5;
                         if($posto=="L"){
                             $ce = 10;
@@ -490,7 +490,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                     break;
                 case 'Migrazione':
                     $n=180;
-                    if($line[$key_cliente]=="Q8"){
+                    if($line[$key_cliente]=="Q8"||$line[$key_cliente]=="C.S.E. Centro Servizi Elettronici"){
                         $ci = 14;
                         if($posto=="L"){
                             $ce = 8;
@@ -558,7 +558,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                     break;
                 case 'Sostituzione Terminale':
                     $n=180;
-                    if($line[$key_cliente]=="Q8"){
+                    if($line[$key_cliente]=="Q8"||$line[$key_cliente]=="C.S.E. Centro Servizi Elettronici"){
                         $ci = 18.5;
                         if($posto=="L"){
                             $ce = 11;
@@ -582,7 +582,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                     break;
                 case 'Sostituzione POS urgente':
                     $n=180;
-                    if($line[$key_cliente]=="Q8"){
+                    if($line[$key_cliente]=="Q8"||$line[$key_cliente]=="C.S.E. Centro Servizi Elettronici"){
                         $ci = 28.5;
                         if($posto=="L"){
                             $ce = 11;
@@ -606,7 +606,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                     break;
                 case 'Sostituzione cassa successiva':
                     $n=180;
-                    if($line[$key_cliente]=="Q8"){
+                    if($line[$key_cliente]=="Q8"||$line[$key_cliente]=="C.S.E. Centro Servizi Elettronici"){
                         $ci = 9.25;
                         if($posto=="L"){
                             $ce = 11;
@@ -635,7 +635,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         $ce = 0;
                         $ct = 24;
                         $id_topid = 78;
-                    } else if($line[$key_cliente]=="Q8"){
+                    } else if($line[$key_cliente]=="Q8"||$line[$key_cliente]=="C.S.E. Centro Servizi Elettronici"){
                         $ci = 13;
                         if($posto=="L"){
                             $ce = 0;
@@ -675,7 +675,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         $ce = 0;
                         $ct = 24;
                         $id_topid = 61;
-                    } else if($line[$key_cliente]=="Q8"){
+                    } else if($line[$key_cliente]=="Q8"||$line[$key_cliente]=="C.S.E. Centro Servizi Elettronici"){
                         $ci = 20;
                         if($posto=="L"){
                             $ce = 0;
