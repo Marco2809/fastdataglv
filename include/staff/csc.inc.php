@@ -268,6 +268,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                             $ct = 2.5;
                         }
                         $id_topic = 45;
+                        if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 84;
                     } else if($line[$key_cliente]=="Yamamay"){
                         $ci = 17.5;
                         if($posto=="L"){
@@ -277,7 +278,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                             $ce = 15;
                             $ct = 2.5;
                         }
-                        $id_topic = 45;
+                        $id_topic = 65;
                     }
                     $n=180;
                     $line[] = $id_topic;
@@ -295,7 +296,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         $ci = 55;
                         $ce = 0;
                         $ct = 55;
-                        $id_topid = 59;
+                        $id_topid = 87;
                     } else if($line[$key_cliente]=="Q8"||$line[$key_cliente]=="C.S.E. Centro Servizi Elettronici"){
                         $ci = 17.5;
                         if($posto=="L"){
@@ -305,7 +306,8 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                             $ce = 15;
                             $ct = 2.5;
                         }
-                        $id_topic = 45;
+                        $id_topic = 55;
+                        if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 85;
                     } else if($line[$key_cliente]=="Yamamay"){
                         $ci = 17.5;
                         if($posto=="L"){
@@ -315,7 +317,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                             $ce = 15;
                             $ct = 2.5;
                         }
-                        $id_topic = 65;
+                        $id_topic = 86;
                     }
 
                     break;
@@ -331,6 +333,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                             $ct = 11.5;
                         }
                         $id_topic = 46;
+                        if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 88;
                     } else if($line[$key_cliente]=="Yamamay"){
                         $ci = 12;
                         if($posto=="L"){
@@ -341,6 +344,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                             $ct = 6;
                         }
                         $id_topic = 67;
+
                     }
                     break;
                 case 'Installazione POS':
@@ -355,6 +359,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                             $ct = 3.5;
                         }
                         $id_topic = 47;
+                        if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 89;
                     } else if($line[$key_cliente]=="Yamamay"){
                         $ci = 18.5;
                         if($posto=="L"){
@@ -389,6 +394,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                             $ct = 3.5;
                         }
                         $id_topic = 48;
+                        if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 90;
                     } else if($line[$key_cliente]=="Yamamay"){
                         $ci = 18.5;
                         if($posto=="L"){
@@ -413,6 +419,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                             $ct = 13.5;
                         }
                         $id_topic = 49;
+                        if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 91;
                     } else if($line[$key_cliente]=="Yamamay"){
                         $ci = 28.5;
                         if($posto=="L"){
@@ -437,6 +444,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                             $ct = -5.75;
                         }
                         $id_topic = 49;
+                        if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 89;
                     } else if($line[$key_cliente]=="Yamamay"){
                         $ci = 9.25;
                         if($posto=="L"){
@@ -448,16 +456,6 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         }
                         $id_topic = 69;
                     }
-                    break;
-                case 'Intervento Straordinario':
-                    $n=180;
-                    $line[] = 50;
-                    $line[] = $data_scad;
-                    $line[] = $ora_scad;
-
-                    $line[] = 15;
-                    $line[] = 1;
-                    $line[] = 14;
                     break;
                 case 'Intervento Tecnico':
                     $n=180;
@@ -476,6 +474,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                             $ct = 2.5;
                         }
                         $id_topic = 51;
+                        if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 92;
                     } else if($line[$key_cliente]=="Yamamay"){
                         $ci = 17.5;
                         if($posto=="L"){
@@ -500,6 +499,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                             $ct = 4;
                         }
                         $id_topic = 52;
+                        if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 93;
                     } else if($line[$key_cliente]=="Yamamay"){
                         $ci = 14;
                         if($posto=="L"){
@@ -534,16 +534,6 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                             $ct = 4;
                         }
                         $id_topic = 77;
-                    } else if($line[$key_cliente]=="Yamamay"){
-                        $ci = 14;
-                        if($posto=="L"){
-                            $ce = 8;
-                            $ct = 6;
-                        } else {
-                            $ce = 10;
-                            $ct = 4;
-                        }
-                        $id_topic = 77;
                     } else if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici"){
                         $ci = 14;
                         if($posto=="L"){
@@ -553,7 +543,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                             $ce = 10;
                             $ct = 4;
                         }
-                        $id_topic = 77;
+                        $id_topic = 94;
                     }
                     break;
                 case 'Sostituzione Terminale':
@@ -568,6 +558,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                             $ct = 3.5;
                         }
                         $id_topic = 54;
+                        if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 95;
                     } else if($line[$key_cliente]=="Yamamay"){
                         $ci = 18.5;
                         if($posto=="L"){
@@ -592,6 +583,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                             $ct = 13.5;
                         }
                         $id_topic = 72;
+                        if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 96;
                     } else if($line[$key_cliente]=="Yamamay"){
                         $ci = 28.5;
                         if($posto=="L"){
@@ -606,7 +598,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                     break;
                 case 'Sostituzione cassa successiva':
                     $n=180;
-                    if($line[$key_cliente]=="Q8"||$line[$key_cliente]=="C.S.E. Centro Servizi Elettronici"){
+                    if($line[$key_cliente]=="Q8"){
                         $ci = 9.25;
                         if($posto=="L"){
                             $ce = 11;
@@ -616,6 +608,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                             $ct = -5.75;
                         }
                         $id_topic = 75;
+                        if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 97;
                     } else if($line[$key_cliente]=="Yamamay"){
                         $ci = 9.25;
                         if($posto=="L"){
@@ -635,7 +628,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         $ce = 0;
                         $ct = 24;
                         $id_topid = 78;
-                    } else if($line[$key_cliente]=="Q8"||$line[$key_cliente]=="C.S.E. Centro Servizi Elettronici"){
+                    } else if($line[$key_cliente]=="Q8"){
                         $ci = 13;
                         if($posto=="L"){
                             $ce = 0;
@@ -675,7 +668,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         $ce = 0;
                         $ct = 24;
                         $id_topid = 61;
-                    } else if($line[$key_cliente]=="Q8"||$line[$key_cliente]=="C.S.E. Centro Servizi Elettronici"){
+                    } else if($line[$key_cliente]=="Q8"){
                         $ci = 20;
                         if($posto=="L"){
                             $ce = 0;
