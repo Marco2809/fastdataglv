@@ -184,7 +184,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
 
 
 
-        if (array_search('EventualiNote', $keys))
+        if (array_search('Anomalia', $keys))
             $key_message = array_search('Anomalia', $keys);
         else
             $key_message = array_search('Note tecnico', $keys);
