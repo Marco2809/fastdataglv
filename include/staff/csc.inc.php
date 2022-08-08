@@ -43,14 +43,14 @@ document.getElementById('cscino').value='Submitting, please wait...';">
 
         $keys = array_replace($keys,
             array_fill_keys(
-                array_keys($keys, 'id scheda'),
+                array_keys($keys, 'ID intervento cliente'),
                 'ref_num'
             )
         );
 
         $keys = array_replace($keys,
             array_fill_keys(
-                array_keys($keys, 'ID intervento cliente'),
+                array_keys($keys, 'id scheda'),
                 'area_descrizione_intervento'
             )
         );
@@ -170,7 +170,6 @@ document.getElementById('cscino').value='Submitting, please wait...';">
         $keys[]='subject';
         $keys[]='message';
         $keys[]='ip';
-        $keys[] = 'ref_num';
 
         $key_name = array_search('customer_middle_name', $keys);
         $key_topicId = array_search('group_last_name', $keys);
@@ -209,7 +208,6 @@ document.getElementById('cscino').value='Submitting, please wait...';">
             $line = fgetcsv($fh, 1000, ";");
             unset($line[count($line)-1]);
             if($line[$key_ordine]=="") $line[$key_ordine] = $line[$key_ordine2];
-            $line[$key_ordine] = $line[$key_ordine]."CSC";
             if (isset($ordini) and in_array($line[$key_ordine], $ordini)){
                 $ordini_assist[]=$line[$key_ordine];
                 continue;
@@ -250,9 +248,6 @@ document.getElementById('cscino').value='Submitting, please wait...';">
             } else if(in_array($line[$key_provincia],$zona2)){
                 $posto = "A";
             } $posto = "M";
-
-            print_r($line);
-            exit();
 
             switch (trim($line[$key_topicId])) {
 
@@ -353,7 +348,6 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                     }
                     break;
                 case 'Installazione POS':
-
                     $n=180;
                     if($line[$key_cliente]=="Q8"||$line[$key_cliente]=="C.S.E. Centro Servizi Elettronici"){
                         $ci = 18.5;
@@ -727,7 +721,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
             $line[]=isset($line[$key_subject])?$line[$key_subject]:null;
             $line[]=isset($line[$key_message])?$line[$key_message]:null;
             $line[]=$_SERVER['REMOTE_ADDR'];
-            $line[] = isset($line[$key_message])?$line[$key_message]:null;
+
             array_map('db_input', $line);
 
 
@@ -741,13 +735,8 @@ document.getElementById('cscino').value='Submitting, please wait...';">
 
             $csv[] = array_combine($keys, $line);
 
-            print_r($keys);
-            echo '<br><br>';
-            print_r($line);
-            echo '<br><br>';
             print_r($csv);
             exit();
-
 
         }
 
