@@ -43,7 +43,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
 
         $keys = array_replace($keys,
             array_fill_keys(
-                array_keys($keys, 'ID intervento cliente'),
+                array_keys($keys, 'id scheda'),
                 'ref_num'
             )
         );
