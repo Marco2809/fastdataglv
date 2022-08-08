@@ -349,7 +349,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                     }
                     break;
                 case 'Installazione POS':
-                    echo 'QUI';
+
                     $n=180;
                     if($line[$key_cliente]=="Q8"||$line[$key_cliente]=="C.S.E. Centro Servizi Elettronici"){
                         $ci = 18.5;
@@ -712,6 +712,13 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                     $line[] = 'x';
                     $line[] = 'x';
             }
+
+            $line[] = $id_topic;
+            $line[] = $data_scad;
+            $line[] = $ora_scad;
+            $line[] = $ci;
+            $line[] = $ce;
+            $line[] = $ct;
             
             $line[]=isset($line[$key_subject])?$line[$key_subject]:null;
             $line[]=isset($line[$key_message])?$line[$key_message]:null;
