@@ -41,7 +41,6 @@ document.getElementById('cscino').value='Submitting, please wait...';">
         unset($keys[count($keys)-1]);
         $keys = array_map('trim',$keys);
 
-var_dump($keys);
 
         $keys = array_replace($keys,
             array_fill_keys(
@@ -732,6 +731,9 @@ var_dump($keys);
 
 
             $csv[] = array_combine($keys, $line);
+
+            print_r($csv);
+            exit();
 
         }
 
