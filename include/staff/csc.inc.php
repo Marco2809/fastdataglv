@@ -349,6 +349,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                     }
                     break;
                 case 'Installazione POS':
+                    echo 'QUI';
                     $n=180;
                     if($line[$key_cliente]=="Q8"||$line[$key_cliente]=="C.S.E. Centro Servizi Elettronici"){
                         $ci = 18.5;
@@ -726,11 +727,6 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                     $entry = iconv('Windows-1252', 'UTF-8', $entry);
                 }
             );
-
-            print_r($keys);
-            echo "<br><br>";
-            print_r($line);
-            exit();
 
             $csv[] = array_combine($keys, $line);
 
