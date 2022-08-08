@@ -43,14 +43,14 @@ document.getElementById('cscino').value='Submitting, please wait...';">
 
         $keys = array_replace($keys,
             array_fill_keys(
-                array_keys($keys, 'ID intervento cliente'),
+                array_keys($keys, 'id scheda'),
                 'ref_num'
             )
         );
 
         $keys = array_replace($keys,
             array_fill_keys(
-                array_keys($keys, 'id scheda'),
+                array_keys($keys, 'ID intervento cliente'),
                 'area_descrizione_intervento'
             )
         );
@@ -208,6 +208,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
             $line = fgetcsv($fh, 1000, ";");
             unset($line[count($line)-1]);
             if($line[$key_ordine]=="") $line[$key_ordine] = $line[$key_ordine2];
+            $line[$key_ordine] = $line[$key_ordine]."CSC";
             if (isset($ordini) and in_array($line[$key_ordine], $ordini)){
                 $ordini_assist[]=$line[$key_ordine];
                 continue;
