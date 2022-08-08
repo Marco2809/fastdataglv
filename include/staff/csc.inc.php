@@ -41,8 +41,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
         unset($keys[count($keys)-1]);
         $keys = array_map('trim',$keys);
 
-        var_dump($keys);
-        exit();
+
 
         $keys = array_replace($keys,
             array_fill_keys(
@@ -50,6 +49,9 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                 'ref_num'
             )
         );
+
+        var_dump($keys);
+        exit();
 
         $keys = array_replace($keys,
             array_fill_keys(
