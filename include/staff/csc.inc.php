@@ -563,6 +563,16 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                             $ct = 3.5;
                         }
                         $id_topic = 71;
+                    } else if($line[$key_cliente]=="WEB-KORNER"){
+                        $ci = 18.5;
+                        if($posto=="L"){
+                            $ce = 11;
+                            $ct = 7.5;
+                        } else {
+                            $ce = 15;
+                            $ct = 3.5;
+                        }
+                        $id_topic = 98;
                     }
                     break;
                 case 'Sostituzione POS urgente':
