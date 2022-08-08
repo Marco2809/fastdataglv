@@ -214,11 +214,6 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                 continue;
             }
 
-            echo $key_ordine;
-            echo "<br>";
-            echo $line[$key_ordine];
-            exit();
-
             if (substr( $line[$key_abi], 0, 1 ) != 0)
                 $line[$key_abi]='0'.$line[$key_abi];
 
