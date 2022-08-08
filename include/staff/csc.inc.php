@@ -42,7 +42,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
 
         unset($keys[count($keys)-1]);
         $keys = array_map('trim',$keys);
-        var_dump($keys);
+
         $keys = array_replace($keys,
             array_fill_keys(
                 array_keys($keys, 'id scheda'),
@@ -183,7 +183,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
         $key_datascad = array_search('D/O Scadenza', $keys);
         $key_cliente = array_search('Cliente', $keys);
 
-
+        var_dump($keys);
 
         if (array_search('EventualiNote', $keys))
             $key_message = array_search('EventualiNote', $keys);
