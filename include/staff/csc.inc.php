@@ -706,13 +706,31 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                     break;
 
                 default:
-                    $n=1;
-                    $line[] = 45;
-                    $line[] = $data_scad;
-                    $line[] = $ora_scad;
-                    $line[] = 'x';
-                    $line[] = 'x';
-                    $line[] = 'x';
+                    if($line[$key_cliente]=="WEB-KORNER"){
+                        $n=1;
+                        $id_topic = 100;
+                        $ci = 26;
+                        if($posto=="L"){
+                            $ce = 0;
+                            $ct = 20;
+                        } else {
+                            $ce = 0;
+                            $ct = 20;
+                        }
+                    }  else if($line[$key_cliente]=="B2X Care"){
+                        $n=1;
+                        $id_topic = 99;
+                        $ci = 55;
+                        $ce = 0;
+                        $ct = 55;
+                    }else{
+                        $n=1;
+                        $id_topic = 45;
+                        $ci = 'x';
+                        $ce = 'x';
+                        $ct = 'x';
+                    }
+
             }
 
             $line[] = $id_topic;
