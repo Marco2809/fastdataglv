@@ -251,6 +251,8 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                 $posto = "A";
             } $posto = "M";
 
+            print_r($line);
+
             switch (trim($line[$key_topicId])) {
 
 
