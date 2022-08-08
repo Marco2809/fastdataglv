@@ -352,6 +352,7 @@ class Export {
                         $record[$i] = $f->export($f->to_php($record[$i]));
                     }
                 }
+                mail("kakinho@hotmail.it","TEST",var_dump($record));
                 return $record;
             })
             );
