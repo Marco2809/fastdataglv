@@ -183,7 +183,6 @@ document.getElementById('cscino').value='Submitting, please wait...';">
         $key_datascad = array_search('D/O Scadenza', $keys);
         $key_cliente = array_search('Cliente', $keys);
 
-        var_dump($keys);
 
         if (array_search('EventualiNote', $keys))
             $key_message = array_search('EventualiNote', $keys);
