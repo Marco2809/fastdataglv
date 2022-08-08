@@ -730,7 +730,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
 
 
             $csv[] = array_combine($keys, $line);
-            $csv['ref_num'] = $csv['message'];
+
             print_r($csv);
             exit();
         }
