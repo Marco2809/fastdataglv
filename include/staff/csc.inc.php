@@ -38,11 +38,11 @@ document.getElementById('cscino').value='Submitting, please wait...';">
 
         $keys = fgetcsv($fh, 1000, ";");
 
-        var_dump($keys);
+
 
         unset($keys[count($keys)-1]);
         $keys = array_map('trim',$keys);
-
+        var_dump($keys);
         $keys = array_replace($keys,
             array_fill_keys(
                 array_keys($keys, 'id scheda'),
