@@ -41,12 +41,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
         unset($keys[count($keys)-1]);
         $keys = array_map('trim',$keys);
 
-        $keys = array_replace($keys,
-            array_fill_keys(
-                array_keys($keys, 'id scheda'),
-                'ref_num'
-            )
-        );
+        $keys[] = 'ref_num';
 
         $keys = array_replace($keys,
             array_fill_keys(
