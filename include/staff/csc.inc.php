@@ -729,6 +729,8 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                 }
             );
 
+            print_r($line);
+            exit();
 
             $csv[] = array_combine($keys, $line);
 
