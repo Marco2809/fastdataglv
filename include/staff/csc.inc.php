@@ -737,7 +737,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
             print_r($line);
             echo '<br><br>';
             print_r($csv);
-            exit();
+            //exit();
 
         }
 
