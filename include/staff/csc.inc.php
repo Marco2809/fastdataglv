@@ -727,10 +727,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
             $line[] = isset($line[$key_message])?$line[$key_message]:null;
             array_map('db_input', $line);
 
-            print_r($keys);
-            echo '<br><br>';
-            print_r($line);
-            exit();
+
 
             array_walk(
                 $line,
@@ -740,6 +737,13 @@ document.getElementById('cscino').value='Submitting, please wait...';">
             );
 
             $csv[] = array_combine($keys, $line);
+
+            print_r($keys);
+            echo '<br><br>';
+            print_r($line);
+            echo '<br><br>';
+            print_r($csv);
+            exit();
 
 
         }
