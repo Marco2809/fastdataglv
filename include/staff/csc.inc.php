@@ -41,14 +41,12 @@ document.getElementById('cscino').value='Submitting, please wait...';">
         unset($keys[count($keys)-1]);
         $keys = array_map('trim',$keys);
 
-
         $keys = array_replace($keys,
             array_fill_keys(
                 array_keys($keys, 'id scheda'),
                 'ref_num'
             )
         );
-
 
         $keys = array_replace($keys,
             array_fill_keys(
@@ -178,10 +176,11 @@ document.getElementById('cscino').value='Submitting, please wait...';">
         $key_subject = array_search('customer_middle_name', $keys);
         $key_data = array_search('zz_date1', $keys);
         $key_termid = array_search('cr', $keys);
-        $key_ordine = array_search('EventualiNote', $keys);
+        $key_ordine = array_search('ref_num', $keys);
         $key_ordine2 = array_search('area_descrizione_intervento', $keys);
         $key_datascad = array_search('D/O Scadenza', $keys);
         $key_cliente = array_search('Cliente', $keys);
+
 
 
         if (array_search('EventualiNote', $keys))
@@ -243,7 +242,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
 //echo "DATA:".$line[$key_datascad];
             $date=date('Y-m-d',time());
 
-            //echo $line[$key_topicId];
+            echo $line[$key_topicId];
 
             if(in_array($line[$key_provincia],$zona1)){
                 $posto = "L";
@@ -716,7 +715,6 @@ document.getElementById('cscino').value='Submitting, please wait...';">
             $line[]=isset($line[$key_subject])?$line[$key_subject]:null;
             $line[]=isset($line[$key_message])?$line[$key_message]:null;
             $line[]=$_SERVER['REMOTE_ADDR'];
-            //$line[] = isset($line[$key_message])?$line[$key_message]:null;
 
             array_map('db_input', $line);
 
@@ -729,16 +727,13 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                 }
             );
 
-            print_r($keys);
-            echo '<br><br>';
-            print_r($line);
-            exit();
 
             $csv[] = array_combine($keys, $line);
 
+            print_r($keys);
+            echo "<br><br>";
             print_r($csv);
             exit();
-
         }
 
 
