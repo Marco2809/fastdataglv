@@ -252,6 +252,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
             } $posto = "M";
 
             print_r($line);
+            exit();
 
             switch (trim($line[$key_topicId])) {
 
