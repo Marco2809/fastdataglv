@@ -178,11 +178,12 @@ document.getElementById('cscino').value='Submitting, please wait...';">
         $key_subject = array_search('customer_middle_name', $keys);
         $key_data = array_search('zz_date1', $keys);
         $key_termid = array_search('cr', $keys);
-        $key_ordine = 0;
+        $key_ordine = array_search('ref_num', $keys);
         $key_ordine2 = array_search('area_descrizione_intervento', $keys);
         $key_datascad = array_search('D/O Scadenza', $keys);
         $key_cliente = array_search('Cliente', $keys);
 
+        var_dump($keys);
 
         if (array_search('EventualiNote', $keys))
             $key_message = array_search('EventualiNote', $keys);
