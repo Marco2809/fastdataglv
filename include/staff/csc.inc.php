@@ -173,7 +173,6 @@ document.getElementById('cscino').value='Submitting, please wait...';">
         $keys[]='subject';
         $keys[]='message';
         $keys[]='ip';
-        $keys[]='ref_num';
 
         $key_name = array_search('customer_middle_name', $keys);
         $key_topicId = array_search('group_last_name', $keys);
@@ -718,7 +717,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
             $line[]=isset($line[$key_subject])?$line[$key_subject]:null;
             $line[]=isset($line[$key_message])?$line[$key_message]:null;
             $line[]=$_SERVER['REMOTE_ADDR'];
-            $line[] = isset($line[$key_message])?$line[$key_message]:null;
+            //$line[] = isset($line[$key_message])?$line[$key_message]:null;
 
             array_map('db_input', $line);
 
@@ -734,8 +733,6 @@ document.getElementById('cscino').value='Submitting, please wait...';">
 
             $csv[] = array_combine($keys, $line);
 
-            print_r($csv);
-            exit();
         }
 
 
