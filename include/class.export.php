@@ -352,11 +352,11 @@ class Export {
                         $record[$i] = $f->export($f->to_php($record[$i]));
                     }
                 }
-                $record[25] = number_format($record[25]);
-                $record[26] = number_format($record[26]);
-                $record[27] = number_format($record[27]);
-                $test = var_export($record,true);
-                mail("kakinho@hotmail.it","TEST",$test);
+                //$record[25] = number_format($record[25]);
+                //$record[26] = number_format($record[26]);
+                //$record[27] = number_format($record[27]);
+                //$test = var_export($record,true);
+                //mail("kakinho@hotmail.it","TEST",$test);
                 return $record;
             })
             );
