@@ -715,7 +715,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
             $line[]=isset($line[$key_subject])?$line[$key_subject]:null;
             $line[]=isset($line[$key_message])?$line[$key_message]:null;
             $line[]=$_SERVER['REMOTE_ADDR'];
-            $line[] = isset($line[$key_message])?$line[$key_message]:null;
+            $line[] = $line[0];
 
             array_map('db_input', $line);
 
@@ -731,7 +731,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
             $csv[] = array_combine($keys, $line);
 
             echo "KEY ORDINE:".$key_ordine."<br><br>";
-            echo "LINE ORDINE".$line[$key_ordine]."<br><br>";
+            echo "LINE ORDINE".$line[0]."<br><br>";
             print_r($keys);
             echo "<br><br>";
             print_r($line);
