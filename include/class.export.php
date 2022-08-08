@@ -352,6 +352,9 @@ class Export {
                         $record[$i] = $f->export($f->to_php($record[$i]));
                     }
                 }
+                $record[25] = str_replace(".",",",$record[25]);
+                $record[26] = str_replace(".",",",$record[26]);
+                $record[27] = str_replace(".",",",$record[27]);
                 $test = var_export($record,true);
                 mail("kakinho@hotmail.it","TEST",$test);
                 return $record;
