@@ -112,7 +112,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
         );
         $keys = array_replace($keys,
             array_fill_keys(
-                array_keys($keys, 'Provincia'),
+                array_keys($keys, 'Prov'),
                 'customer_location_l_addr1'
             )
         );
@@ -185,9 +185,9 @@ document.getElementById('cscino').value='Submitting, please wait...';">
 
 
         if (array_search('EventualiNote', $keys))
-            $key_message = array_search('EventualiNote', $keys);
+            $key_message = array_search('Anomalia', $keys);
         else
-            $key_message = array_search('Descrizionerichiesta', $keys);
+            $key_message = array_search('Note tecnico', $keys);
 
         $key_provincia = array_search('customer_location_l_addr1', $keys);
         $key_abi = array_search('customer_last_name', $keys);
