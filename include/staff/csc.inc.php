@@ -244,7 +244,7 @@ var_dump($keys);
 //echo "DATA:".$line[$key_datascad];
             $date=date('Y-m-d',time());
 
-            echo $line[$key_topicId];
+            //echo $line[$key_topicId];
 
             if(in_array($line[$key_provincia],$zona1)){
                 $posto = "L";
