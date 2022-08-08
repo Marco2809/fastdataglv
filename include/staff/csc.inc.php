@@ -205,6 +205,10 @@ document.getElementById('cscino').value='Submitting, please wait...';">
         while (!feof($fh)) {
 
 
+            echo $key_ordine."<br>";
+            echo $line[$key_ordine];
+            exit();
+
             $line = fgetcsv($fh, 1000, ";");
             unset($line[count($line)-1]);
             if($line[$key_ordine]=="") $line[$key_ordine] = $line[$key_ordine2];
