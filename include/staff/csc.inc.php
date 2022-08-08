@@ -271,7 +271,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         }
                         $id_topic = 45;
                         if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 84;
-                    } else if($line[$key_cliente]=="Yamamay"){
+                    } else if($line[$key_cliente]=="Pay Distribution-YAMAMAY"){
                         $ci = 17.5;
                         if($posto=="L"){
                             $ce = 10;
@@ -302,7 +302,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         }
                         $id_topic = 55;
                         if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 85;
-                    } else if($line[$key_cliente]=="Yamamay"){
+                    } else if($line[$key_cliente]=="Pay Distribution-YAMAMAY"){
                         $ci = 17.5;
                         if($posto=="L"){
                             $ce = 10;
@@ -328,7 +328,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         }
                         $id_topic = 46;
                         if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 88;
-                    } else if($line[$key_cliente]=="Yamamay"){
+                    } else if($line[$key_cliente]=="Pay Distribution-YAMAMAY"){
                         $ci = 12;
                         if($posto=="L"){
                             $ce = 6;
@@ -354,7 +354,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         }
                         $id_topic = 47;
                         if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 89;
-                    } else if($line[$key_cliente]=="Yamamay"){
+                    } else if($line[$key_cliente]=="Pay Distribution-YAMAMAY"){
                         $ci = 18.5;
                         if($posto=="L"){
                             $ce = 11;
@@ -389,7 +389,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         }
                         $id_topic = 48;
                         if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 90;
-                    } else if($line[$key_cliente]=="Yamamay"){
+                    } else if($line[$key_cliente]=="Pay Distribution-YAMAMAY"){
                         $ci = 18.5;
                         if($posto=="L"){
                             $ce = 11;
@@ -414,7 +414,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         }
                         $id_topic = 49;
                         if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 91;
-                    } else if($line[$key_cliente]=="Yamamay"){
+                    } else if($line[$key_cliente]=="Pay Distribution-YAMAMAY"){
                         $ci = 28.5;
                         if($posto=="L"){
                             $ce = 11;
@@ -439,7 +439,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         }
                         $id_topic = 49;
                         if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 89;
-                    } else if($line[$key_cliente]=="Yamamay"){
+                    } else if($line[$key_cliente]=="Pay Distribution-YAMAMAY"){
                         $ci = 9.25;
                         if($posto=="L"){
                             $ce = 11;
@@ -469,7 +469,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         }
                         $id_topic = 51;
                         if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 92;
-                    } else if($line[$key_cliente]=="Yamamay"){
+                    } else if($line[$key_cliente]=="Pay Distribution-YAMAMAY"){
                         $ci = 17.5;
                         if($posto=="L"){
                             $ce = 10;
@@ -494,7 +494,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         }
                         $id_topic = 52;
                         if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 93;
-                    } else if($line[$key_cliente]=="Yamamay"){
+                    } else if($line[$key_cliente]=="Pay Distribution-YAMAMAY"){
                         $ci = 14;
                         if($posto=="L"){
                             $ce = 8;
@@ -518,7 +518,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                             $ct = 4;
                         }
                         $id_topic = 53;
-                    } else if($line[$key_cliente]=="Yamamay"){
+                    } else if($line[$key_cliente]=="Pay Distribution-YAMAMAY"){
                         $ci = 14;
                         if($posto=="L"){
                             $ce = 8;
@@ -553,7 +553,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         }
                         $id_topic = 54;
                         if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 95;
-                    } else if($line[$key_cliente]=="Yamamay"){
+                    } else if($line[$key_cliente]=="Pay Distribution-YAMAMAY"){
                         $ci = 18.5;
                         if($posto=="L"){
                             $ce = 11;
@@ -588,7 +588,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         }
                         $id_topic = 72;
                         if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 96;
-                    } else if($line[$key_cliente]=="Yamamay"){
+                    } else if($line[$key_cliente]=="Pay Distribution-YAMAMAY"){
                         $ci = 28.5;
                         if($posto=="L"){
                             $ce = 11;
@@ -613,7 +613,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         }
                         $id_topic = 75;
                         if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 97;
-                    } else if($line[$key_cliente]=="Yamamay"){
+                    } else if($line[$key_cliente]=="Pay Distribution-YAMAMAY"){
                         $ci = 9.25;
                         if($posto=="L"){
                             $ce = 11;
@@ -642,7 +642,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                             $ct = 6;
                         }
                         $id_topic = 56;
-                    } else if($line[$key_cliente]=="Yamamay"){
+                    } else if($line[$key_cliente]=="Pay Distribution-YAMAMAY"){
                         $ci = 13;
                         if($posto=="L"){
                             $ce = 0;
@@ -682,7 +682,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                             $ct = 20;
                         }
                         $id_topic = 57;
-                    } else if($line[$key_cliente]=="Yamamay"){
+                    } else if($line[$key_cliente]=="Pay Distribution-YAMAMAY"){
                         $ci = 20;
                         if($posto=="L"){
                             $ce = 0;
