@@ -730,13 +730,13 @@ document.getElementById('cscino').value='Submitting, please wait...';">
 
             $csv[] = array_combine($keys, $line);
 
-            echo "KEY ORDINE:".$key_ordine."<br><br>";
+            /*echo "KEY ORDINE:".$key_ordine."<br><br>";
             echo "LINE ORDINE".$line[0]."<br><br>";
             print_r($keys);
             echo "<br><br>";
             print_r($line);
             echo '<br><br>';
-            print_r($csv);
+            print_r($csv);*/
             //exit();
 
         }
