@@ -204,7 +204,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
 
         while (!feof($fh)) {
 
-
+            echo 'prova';
             echo $key_ordine."<br>";
             echo $line[$key_ordine];
             exit();
