@@ -140,7 +140,7 @@ if($search):
     if($searchTerm){
         $qs += array('query' => $searchTerm);
         $queryterm=db_real_escape($searchTerm,false); //escape the term ONLY...no quotes.
-        if (is_numeric($searchTerm)) {
+        if (is_numeric($searchTerm)&&strlen($searchTerm)<=6) {
             $qwhere.=" AND ticket.`number` LIKE '$queryterm%'";
 
             //mail('marco.salmi89@gmail.com','CLASSICO',$query);
