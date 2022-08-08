@@ -50,7 +50,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
 
         $keys = array_replace($keys,
             array_fill_keys(
-                array_keys($keys, 'id scheda'),
+                array_keys($keys, 'ID intervento cliente'),
                 'area_descrizione_intervento'
             )
         );
@@ -177,7 +177,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
         $key_subject = array_search('customer_middle_name', $keys);
         $key_data = array_search('zz_date1', $keys);
         $key_termid = array_search('cr', $keys);
-        $key_ordine = array_search('ref_num', $keys);
+        $key_ordine = array_search('id scheda', $keys);
         $key_ordine2 = array_search('area_descrizione_intervento', $keys);
         $key_datascad = array_search('D/O Scadenza', $keys);
         $key_cliente = array_search('Cliente', $keys);
