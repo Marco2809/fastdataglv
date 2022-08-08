@@ -206,10 +206,6 @@ document.getElementById('cscino').value='Submitting, please wait...';">
 
         while (!feof($fh)) {
 
-            echo 'prova';
-            echo $key_ordine."<br>";
-            echo $line[$key_ordine];
-            exit();
 
             $line = fgetcsv($fh, 1000, ";");
             unset($line[count($line)-1]);
@@ -736,7 +732,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
 
             $csv[] = array_combine($keys, $line);
 
-            print_r($csv);
+            print_r($line);
             exit();
         }
 
