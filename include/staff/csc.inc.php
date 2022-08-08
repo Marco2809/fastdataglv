@@ -728,6 +728,8 @@ document.getElementById('cscino').value='Submitting, please wait...';">
             array_map('db_input', $line);
 
 
+            print_r($line);
+            exit();
 
             array_walk(
                 $line,
