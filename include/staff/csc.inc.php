@@ -281,14 +281,6 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         }
                         $id_topic = 65;
                     }
-                    $n=180;
-                    $line[] = $id_topic;
-                    $line[] = $data_scad;
-                    $line[] = $ora_scad;
-
-                    $line[] = $ci;
-                    $line[] = $ce;
-                    $line[] = $ct;
 
                     break;
                 case 'Installazione Massiva':
