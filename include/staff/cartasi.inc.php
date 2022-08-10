@@ -415,9 +415,7 @@ document.getElementById('nexino').value='Submitting, please wait...';">
         echo "</pre>";
         die;
         */
-        echo "<pre>";
-        print_r($csv);
-        echo "</pre>";
+
     }
 }
 //array_pop($csv);
