@@ -140,7 +140,7 @@ if($search):
     if($searchTerm){
         $qs += array('query' => $searchTerm);
         $queryterm=db_real_escape($searchTerm,false); //escape the term ONLY...no quotes.
-        if (is_numeric($searchTerm)) {
+        if (is_numeric($searchTerm)&&strlen($searchTerm)<=6) {
             $qwhere.=" AND ticket.`number` LIKE '$queryterm%'";
 
             //mail('marco.salmi89@gmail.com','CLASSICO',$query);
@@ -1485,13 +1485,13 @@ if ($results_dis) {
             <label for="utopicId">Aziende:</label>
             <select id="utopicId" name="utopicId" tabindex="1">
                 <option value="0" selected >&mdash; Tutte &mdash;</option>
-                <option value="(12,13,14,15,16,17,39,43,44)">Nexi</option>
-                <option value="(18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38)">Coopersystem</option>
+                <option value="(12,13,14,15,16,17,39,43)">Nexi</option>
+                <option value="(18,19,20,21,22,23,24,25,26,27,35,36,37,38)">Coopersystem</option>
                 <option value="(40,41,42)">Sisal</option>
                 <option value="(45,46,47,48,49,50,51,52,53,54,55,56,57,58,72,75)">Q8</option>
-                <option value="(65,66,67,68,69,70,71,73,74,76,77,80,82)">Yamamay</option>
-                <option value="(60,61,78,59)">B2X Care</option>
-                <option value="(84,85,86,87,88)">CSE</option>
+                <option value="(65,66,67,68,69,70,71,74,76,77,80,82,86)">Yamamay</option>
+                <option value="(59,60,61,78,87)">B2X Care</option>
+                <option value="(84,85,88,89,90,91,92,93,94,95,96,97)">CSE</option>
                 <option value="(62,63,64,81)">WEB-KORNER</option>
                 <option value="(83)">EXTRA</option>
             </select>

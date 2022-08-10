@@ -43,14 +43,14 @@ document.getElementById('cscino').value='Submitting, please wait...';">
 
         $keys = array_replace($keys,
             array_fill_keys(
-                array_keys($keys, 'ID intervento cliente'),
+                array_keys($keys, 'id scheda'),
                 'ref_num'
             )
         );
 
         $keys = array_replace($keys,
             array_fill_keys(
-                array_keys($keys, 'id scheda'),
+                array_keys($keys, 'ID intervento cliente'),
                 'area_descrizione_intervento'
             )
         );
@@ -112,7 +112,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
         );
         $keys = array_replace($keys,
             array_fill_keys(
-                array_keys($keys, 'Provincia'),
+                array_keys($keys, 'Prov'),
                 'customer_location_l_addr1'
             )
         );
@@ -170,23 +170,24 @@ document.getElementById('cscino').value='Submitting, please wait...';">
         $keys[]='subject';
         $keys[]='message';
         $keys[]='ip';
+        $keys[]= 'ref_num';
 
         $key_name = array_search('customer_middle_name', $keys);
         $key_topicId = array_search('group_last_name', $keys);
         $key_subject = array_search('customer_middle_name', $keys);
         $key_data = array_search('zz_date1', $keys);
         $key_termid = array_search('cr', $keys);
-        $key_ordine = array_search('ref_num', $keys);
+        $key_ordine = array_search('id scheda', $keys);
         $key_ordine2 = array_search('area_descrizione_intervento', $keys);
         $key_datascad = array_search('D/O Scadenza', $keys);
         $key_cliente = array_search('Cliente', $keys);
 
 
 
-        if (array_search('EventualiNote', $keys))
-            $key_message = array_search('EventualiNote', $keys);
+        if (array_search('Anomalia', $keys))
+            $key_message = array_search('Anomalia', $keys);
         else
-            $key_message = array_search('Descrizionerichiesta', $keys);
+            $key_message = array_search('Note tecnico', $keys);
 
         $key_provincia = array_search('customer_location_l_addr1', $keys);
         $key_abi = array_search('customer_last_name', $keys);
@@ -208,6 +209,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
             $line = fgetcsv($fh, 1000, ";");
             unset($line[count($line)-1]);
             if($line[$key_ordine]=="") $line[$key_ordine] = $line[$key_ordine2];
+            $line[$key_ordine] = $line[$key_ordine]."S";
             if (isset($ordini) and in_array($line[$key_ordine], $ordini)){
                 $ordini_assist[]=$line[$key_ordine];
                 continue;
@@ -269,7 +271,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         }
                         $id_topic = 45;
                         if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 84;
-                    } else if($line[$key_cliente]=="Yamamay"){
+                    } else if($line[$key_cliente]=="Pay Distribution-YAMAMAY"){
                         $ci = 17.5;
                         if($posto=="L"){
                             $ce = 10;
@@ -280,14 +282,6 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         }
                         $id_topic = 65;
                     }
-                    $n=180;
-                    $line[] = $id_topic;
-                    $line[] = $data_scad;
-                    $line[] = $ora_scad;
-
-                    $line[] = $ci;
-                    $line[] = $ce;
-                    $line[] = $ct;
 
                     break;
                 case 'Installazione Massiva':
@@ -308,7 +302,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         }
                         $id_topic = 55;
                         if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 85;
-                    } else if($line[$key_cliente]=="Yamamay"){
+                    } else if($line[$key_cliente]=="Pay Distribution-YAMAMAY"){
                         $ci = 17.5;
                         if($posto=="L"){
                             $ce = 10;
@@ -334,7 +328,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         }
                         $id_topic = 46;
                         if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 88;
-                    } else if($line[$key_cliente]=="Yamamay"){
+                    } else if($line[$key_cliente]=="Pay Distribution-YAMAMAY"){
                         $ci = 12;
                         if($posto=="L"){
                             $ce = 6;
@@ -360,7 +354,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         }
                         $id_topic = 47;
                         if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 89;
-                    } else if($line[$key_cliente]=="Yamamay"){
+                    } else if($line[$key_cliente]=="Pay Distribution-YAMAMAY"){
                         $ci = 18.5;
                         if($posto=="L"){
                             $ce = 11;
@@ -395,7 +389,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         }
                         $id_topic = 48;
                         if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 90;
-                    } else if($line[$key_cliente]=="Yamamay"){
+                    } else if($line[$key_cliente]=="Pay Distribution-YAMAMAY"){
                         $ci = 18.5;
                         if($posto=="L"){
                             $ce = 11;
@@ -420,7 +414,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         }
                         $id_topic = 49;
                         if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 91;
-                    } else if($line[$key_cliente]=="Yamamay"){
+                    } else if($line[$key_cliente]=="Pay Distribution-YAMAMAY"){
                         $ci = 28.5;
                         if($posto=="L"){
                             $ce = 11;
@@ -445,7 +439,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         }
                         $id_topic = 49;
                         if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 89;
-                    } else if($line[$key_cliente]=="Yamamay"){
+                    } else if($line[$key_cliente]=="Pay Distribution-YAMAMAY"){
                         $ci = 9.25;
                         if($posto=="L"){
                             $ce = 11;
@@ -475,7 +469,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         }
                         $id_topic = 51;
                         if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 92;
-                    } else if($line[$key_cliente]=="Yamamay"){
+                    } else if($line[$key_cliente]=="Pay Distribution-YAMAMAY"){
                         $ci = 17.5;
                         if($posto=="L"){
                             $ce = 10;
@@ -500,7 +494,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         }
                         $id_topic = 52;
                         if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 93;
-                    } else if($line[$key_cliente]=="Yamamay"){
+                    } else if($line[$key_cliente]=="Pay Distribution-YAMAMAY"){
                         $ci = 14;
                         if($posto=="L"){
                             $ce = 8;
@@ -524,7 +518,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                             $ct = 4;
                         }
                         $id_topic = 53;
-                    } else if($line[$key_cliente]=="Yamamay"){
+                    } else if($line[$key_cliente]=="Pay Distribution-YAMAMAY"){
                         $ci = 14;
                         if($posto=="L"){
                             $ce = 8;
@@ -559,7 +553,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         }
                         $id_topic = 54;
                         if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 95;
-                    } else if($line[$key_cliente]=="Yamamay"){
+                    } else if($line[$key_cliente]=="Pay Distribution-YAMAMAY"){
                         $ci = 18.5;
                         if($posto=="L"){
                             $ce = 11;
@@ -569,6 +563,16 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                             $ct = 3.5;
                         }
                         $id_topic = 71;
+                    } else if($line[$key_cliente]=="WEB-KORNER"){
+                        $ci = 18.5;
+                        if($posto=="L"){
+                            $ce = 11;
+                            $ct = 7.5;
+                        } else {
+                            $ce = 15;
+                            $ct = 3.5;
+                        }
+                        $id_topic = 98;
                     }
                     break;
                 case 'Sostituzione POS urgente':
@@ -584,7 +588,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         }
                         $id_topic = 72;
                         if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 96;
-                    } else if($line[$key_cliente]=="Yamamay"){
+                    } else if($line[$key_cliente]=="Pay Distribution-YAMAMAY"){
                         $ci = 28.5;
                         if($posto=="L"){
                             $ce = 11;
@@ -609,7 +613,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         }
                         $id_topic = 75;
                         if($line[$key_cliente]=="C.S.E. Centro Servizi Elettronici") $id_topic = 97;
-                    } else if($line[$key_cliente]=="Yamamay"){
+                    } else if($line[$key_cliente]=="Pay Distribution-YAMAMAY"){
                         $ci = 9.25;
                         if($posto=="L"){
                             $ce = 11;
@@ -638,7 +642,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                             $ct = 6;
                         }
                         $id_topic = 56;
-                    } else if($line[$key_cliente]=="Yamamay"){
+                    } else if($line[$key_cliente]=="Pay Distribution-YAMAMAY"){
                         $ci = 13;
                         if($posto=="L"){
                             $ce = 0;
@@ -678,7 +682,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                             $ct = 20;
                         }
                         $id_topic = 57;
-                    } else if($line[$key_cliente]=="Yamamay"){
+                    } else if($line[$key_cliente]=="Pay Distribution-YAMAMAY"){
                         $ci = 20;
                         if($posto=="L"){
                             $ce = 0;
@@ -702,18 +706,44 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                     break;
 
                 default:
-                    $n=1;
-                    $line[] = 45;
-                    $line[] = $data_scad;
-                    $line[] = $ora_scad;
-                    $line[] = 'x';
-                    $line[] = 'x';
-                    $line[] = 'x';
+                    if($line[$key_cliente]=="WEB-KORNER"){
+                        $n=1;
+                        $id_topic = 100;
+                        $ci = 26;
+                        if($posto=="L"){
+                            $ce = 0;
+                            $ct = 20;
+                        } else {
+                            $ce = 0;
+                            $ct = 20;
+                        }
+                    }  else if($line[$key_cliente]=="B2X Care"){
+                        $n=1;
+                        $id_topic = 99;
+                        $ci = 55;
+                        $ce = 0;
+                        $ct = 55;
+                    }else{
+                        $n=1;
+                        $id_topic = 45;
+                        $ci = 'x';
+                        $ce = 'x';
+                        $ct = 'x';
+                    }
+
             }
+
+            $line[] = $id_topic;
+            $line[] = $data_scad;
+            $line[] = $ora_scad;
+            $line[] = $ci;
+            $line[] = $ce;
+            $line[] = $ct;
             
             $line[]=isset($line[$key_subject])?$line[$key_subject]:null;
             $line[]=isset($line[$key_message])?$line[$key_message]:null;
             $line[]=$_SERVER['REMOTE_ADDR'];
+            $line[] = $line[0];
 
             array_map('db_input', $line);
 
@@ -726,10 +756,16 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                 }
             );
 
-
             $csv[] = array_combine($keys, $line);
 
-            //print_r($csv);
+            /*echo "KEY ORDINE:".$key_ordine."<br><br>";
+            echo "LINE ORDINE".$line[0]."<br><br>";
+            print_r($keys);
+            echo "<br><br>";
+            print_r($line);
+            echo '<br><br>';
+            print_r($csv);*/
+            //exit();
 
         }
 
