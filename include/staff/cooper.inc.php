@@ -396,7 +396,7 @@ if (in_array($line[$key_provincia],$zona1)){
     $line[] = '6';//6;
     $line[] = '2.5';//7;
 }
-break;
+break; 
 case 20040:
 $n=10;
 $line[] = 25;
