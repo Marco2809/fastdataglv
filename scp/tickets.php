@@ -2204,7 +2204,7 @@ if (strpos($ref_num, 'c') !== false or strpos($ref_num, 'C') !== false){
                        $error  = curl_error($ch);
                        curl_close($ch);
 
-                       if ($error)
+                       //if ($error)
                            //mail('domenico.zavattolo@service-tech.it','errore curl_massivo zoccali',$error);
 
                        if (strpos($cresult, 'Errore') !== false){
