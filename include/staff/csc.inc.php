@@ -249,7 +249,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                 $posto = "L";
             } else if(in_array($line[$key_provincia],$zona2)){
                 $posto = "A";
-            } $posto = "M";
+            } else $posto = "M";
 
             switch (trim($line[$key_topicId])) {
 
