@@ -1,8 +1,8 @@
 <?php
 
-//phpinfo();
+phpinfo();
 
-$success = mail('marco.salmi89@gmail.com','New Enquiry',"PPPPPPPPP");
+/*$success = mail('marco.salmi89@gmail.com','New Enquiry',"PPPPPPPPP");
 if (!$success) {
     print_r(error_get_last()['message']);
 }
@@ -20,6 +20,6 @@ if ($conn->connect_error) {
 }
 echo "Connected successfully";
 
-echo  time();
+echo  time();*/
 
 ?>
