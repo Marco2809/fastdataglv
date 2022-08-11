@@ -333,13 +333,13 @@ document.getElementById('nexino').value='Submitting, please wait...';">
                         $line[] = $ora_scadenza;
                     }
                     if (in_array($line[$key_provincia],$zona1)){
-                        $line[] = '18.5';
-                        $line[] = '15';
-                        $line[] = '3.5';
+                        $line[] = '17.5';
+                        $line[] = '10';
+                        $line[] = '7.5';
                     }else{
-                        $line[] = '18.5';
+                        $line[] = '17.5';
                         $line[] = '15';
-                        $line[] = '3.5';
+                        $line[] = '2.5';
                     }
             }
 
