@@ -258,7 +258,7 @@ var scp_prep = function() {
 
     /* Typeahead tickets lookup */
     var last_req;
-    $('#basic-ticket-search').typeahead({
+    /*$('#basic-ticket-search').typeahead({
         source: function (typeahead, query) {
             if (last_req) last_req.abort();
             last_req = $.ajax({
@@ -274,7 +274,7 @@ var scp_prep = function() {
             $('#basic-ticket-search').closest('form').submit();
         },
         property: "matches"
-    });
+    });*/
 
     /* Typeahead user lookup */
     $('.email.typeahead').typeahead({

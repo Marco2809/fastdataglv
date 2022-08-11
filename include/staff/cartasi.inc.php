@@ -470,7 +470,6 @@ if (!empty($csv)){
             $id_mail = db_fetch_array($result_id);
             $id_mail = $id_mail['id_email']+1;
             $mail = str_replace("'","",$data['email']);
-            $mail = preg_replace('/\s+/', '', $data['email']);
 
             $sql_1 = "INSERT INTO ost_user (id, org_id, default_email_id,status, name) VALUES ($id_user,0,$id_mail,0,'".$nome."')";
             $result =db_query($sql_1);
