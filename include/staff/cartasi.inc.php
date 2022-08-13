@@ -492,6 +492,8 @@ if (!empty($csv)){
 
         echo json_encode($data);
 
+        echo $config['url'];
+
 
         if ($code != 201){
             if ($i % 2 == 0)
