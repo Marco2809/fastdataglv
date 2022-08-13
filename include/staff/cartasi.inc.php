@@ -232,9 +232,13 @@ document.getElementById('nexino').value='Submitting, please wait...';">
                 case 'Disinstallazione':
                     $n=7;
                     $line[] = 12;
-                    //$line[] = nworkingdaysafter($date,$n,$holidays);
-                    $line[] = $data_scadenza;
-                    $line[] = $ora_scadenza;
+                    if($data_scadenza=="--") {
+                        $line[] = nworkingdaysafter($date,$n,$holidays);
+                        $line[] = '20:00';
+                    } else {
+                        $line[] = $data_scadenza;
+                        $line[] = $ora_scadenza;
+                    }
                     //$line[] = '20:00';
                     if (in_array($line[$key_provincia],$zona1)){
                         $line[] = '12';//14;
@@ -249,8 +253,13 @@ document.getElementById('nexino').value='Submitting, please wait...';">
                 case 'Installazione':
                     $n=2;
                     $line[] = 13;
-                    $line[] = $data_scadenza;
-                    $line[] = $ora_scadenza;
+                    if($data_scadenza=="--") {
+                        $line[] = nworkingdaysafter($date,$n,$holidays);
+                        $line[] = '20:00';
+                    } else {
+                        $line[] = $data_scadenza;
+                        $line[] = $ora_scadenza;
+                    }
                     if (in_array($line[$key_provincia],$zona1)){
                         $line[] = '18.5';//20;
                         $line[] = '11';//10;
@@ -264,8 +273,13 @@ document.getElementById('nexino').value='Submitting, please wait...';">
                 case 'Sostituzione':
                     $n=2;
                     $line[] = 14;
-                    $line[] = $data_scadenza;
-                    $line[] = $ora_scadenza;
+                    if($data_scadenza=="--") {
+                        $line[] = nworkingdaysafter($date,$n,$holidays);
+                        $line[] = '20:00';
+                    } else {
+                        $line[] = $data_scadenza;
+                        $line[] = $ora_scadenza;
+                    }
                     if (in_array($line[$key_provincia],$zona1)){
                         $line[] = '14';//20;
                         $line[] = '8';//10;
@@ -279,8 +293,13 @@ document.getElementById('nexino').value='Submitting, please wait...';">
                 case 'Riconfigurazionemassiva':
                     $n=3650;
                     $line[] = 15;
-                    $line[] = $data_scadenza;
-                    $line[] = $ora_scadenza;
+                    if($data_scadenza=="--") {
+                        $line[] = nworkingdaysafter($date,$n,$holidays);
+                        $line[] = '20:00';
+                    } else {
+                        $line[] = $data_scadenza;
+                        $line[] = $ora_scadenza;
+                    }
                     if (in_array($line[$key_provincia],$zona1)){
                         $line[] = '14';//20;
                         $line[] = '8';//10;
@@ -294,8 +313,13 @@ document.getElementById('nexino').value='Submitting, please wait...';">
                 case 'Cambiogestore':
                     $n=3650;
                     $line[] = 16;
-                    $line[] = $data_scadenza;
-                    $line[] = $ora_scadenza;
+                    if($data_scadenza=="--") {
+                        $line[] = nworkingdaysafter($date,$n,$holidays);
+                        $line[] = '20:00';
+                    } else {
+                        $line[] = $data_scadenza;
+                        $line[] = $ora_scadenza;
+                    }
                     if (in_array($line[$key_provincia],$zona1)){
                         $line[] = '14';//18;
                         $line[] = '8';//9;
@@ -309,8 +333,13 @@ document.getElementById('nexino').value='Submitting, please wait...';">
                 case 'ORDINEDIVERSO':
                     $n=3650;
                     $line[] = 43;
-                    $line[] = $data_scadenza;
-                    $line[] = $ora_scadenza;
+                    if($data_scadenza=="--") {
+                        $line[] = nworkingdaysafter($date,$n,$holidays);
+                        $line[] = '20:00';
+                    } else {
+                        $line[] = $data_scadenza;
+                        $line[] = $ora_scadenza;
+                    }
                     if (in_array($line[$key_provincia],$zona1)){
                         $line[] = 'x';//18;
                         $line[] = 'x';//9;
@@ -325,13 +354,23 @@ document.getElementById('nexino').value='Submitting, please wait...';">
                     if($eternit) {
                         $n=3650;
                         $line[] = 39;
-                        $line[] = $data_scadenza;
-                        $line[] = $ora_scadenza;
+                        if($data_scadenza=="--") {
+                            $line[] = nworkingdaysafter($date,$n,$holidays);
+                            $line[] = '20:00';
+                        } else {
+                            $line[] = $data_scadenza;
+                            $line[] = $ora_scadenza;
+                        }
                     }else{
                         $n=1;
                         $line[] = 17;
-                        $line[] = $data_scadenza;
-                        $line[] = $ora_scadenza;
+                        if($data_scadenza=="--") {
+                            $line[] = nworkingdaysafter($date,$n,$holidays);
+                            $line[] = '20:00';
+                        } else {
+                            $line[] = $data_scadenza;
+                            $line[] = $ora_scadenza;
+                        }
                     }
                     if (in_array($line[$key_provincia],$zona1)){
                         $line[] = '17.5';
