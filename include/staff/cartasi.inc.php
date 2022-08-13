@@ -214,7 +214,8 @@ document.getElementById('nexino').value='Submitting, please wait...';">
             $line[$key_name] = str_replace('"','',$line[$key_name]);
             $line[$key_message] = str_replace("'","\'",$line[$key_message]);
             //$line[$key_telefono]=($line[$key_telefono]!='')?$line[$key_telefono]:'123456789';
-            //$line[$key_name] = str_replace("'","",$line[$key_name]);
+            $line[$key_name] = str_replace("'","",$line[$key_name]);
+            $line[$key_name] = str_replace(" ","",$line[$key_name]);
             $line[]=isset($line[$key_name])?$line[$key_name]:null;
             $line[]=isset($line[$key_name])?$line[$key_name].'@service-tech.org':null;
 
