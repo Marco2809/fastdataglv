@@ -531,9 +531,9 @@ if (!empty($csv)){
         $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         $error  = curl_error($ch);
 
-        echo json_encode($data);
+        //echo json_encode($data);
 
-        echo $config['url'];
+        //echo $config['url'];
 
 
         if ($code != 201){
