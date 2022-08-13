@@ -490,7 +490,7 @@ if (!empty($csv)){
         $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         $error  = curl_error($ch);
 
-        json_encode($data);
+        echo json_encode($data);
 
 
         if ($code != 201){
