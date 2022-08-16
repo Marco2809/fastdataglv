@@ -2741,7 +2741,8 @@ class Ticket {
 
         $test = print_r($vars,true);
 
-        mail("kakinho@hotmail.it","TEST",$test);
+       // mail("kakinho@hotmail.it","TEST",$test);
+       // mail("kakinho@hotmail.it","TEST",$test);
 
         // Don't enforce form validation for email
         $field_filter = function($type) use ($origin) {
