@@ -2739,6 +2739,10 @@ class Ticket {
             $alertstaff=true) {
         global $ost, $cfg, $thisclient, $_FILES;
 
+        $test = print_r($vars,true);
+
+        mail("kakinho@hotmail.it","TEST",$test);
+
         // Don't enforce form validation for email
         $field_filter = function($type) use ($origin) {
             return function($f) use ($origin, $type) {
