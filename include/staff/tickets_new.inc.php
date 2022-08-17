@@ -343,7 +343,7 @@ if($search or $_REQUEST['advsid'] or $status=='closed'){
 
 }
 
-mail('kakinho@hotmail.it','PROFONDO',$query_exp);
+//mail('kakinho@hotmail.it','PROFONDO',$query_exp);
 //mail('domenico.zavattolo@service-tech.org','da ticket',$query_exp);
 //echo $query_exp;
 $hash = md5($query_exp);
