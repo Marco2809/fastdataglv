@@ -164,7 +164,7 @@ if($search):
                 $qwhere .= ' AND ticket.ticket_id IN ('.$ticket_ids.')';
                 $order_by = 'FIELD(ticket.ticket_id, '.$ticket_ids.')';
                 $order = ' ';
-                //mail('marco.salmi89@gmail.com','PROFONDO',$query);
+                mail('kakinho@hotmail.it','PROFONDO',$query);
             }
             else
                 // No hits -- there should be an empty list of results
