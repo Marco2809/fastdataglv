@@ -336,14 +336,14 @@ $qfrom.=' LEFT JOIN '.TICKET_LOCK_TABLE.' tlock ON (ticket.ticket_id=tlock.ticke
 TicketForm::ensureDynamicDataView();
 
 if($search or $_REQUEST['advsid'] or $status=='closed'){
-  $query_exp="$qselect $qfrom ".str_replace("AND ticket.topic_id NOT IN (15,16,36,38,39)"," ",$qwhere)." ORDER BY $order_by $order LIMIT ".$pageExp->getStart().",".$pageExp->getLimit();
+  $query_exp="$qselect $qfrom ".str_replace("AND ticket.topic_id NOT IN (15,16,36,38,39)"," ",$qwhere)." ORDER BY $order_by $order LIMIT ".$pageExp->getStart().",".$pageExp->getLimit()." GROUP BY ticket.ticket_id";
 
 }else{
-  $query_exp="$qselect $qfrom $qwhere AND ticket.status_id!=21 AND ticket.status_id!=8 ORDER BY $order_by $order LIMIT ".$pageExp->getStart().",".$pageExp->getLimit();
+  $query_exp="$qselect $qfrom $qwhere AND ticket.status_id!=21 AND ticket.status_id!=8 ORDER BY $order_by $order LIMIT ".$pageExp->getStart().",".$pageExp->getLimit() ." GROUP BY ticket.ticket_id";
 
 }
 
-mail('kakinho@hotmail.it','PROFONDO',$query_exp);
+//mail('kakinho@hotmail.it','PROFONDO',$query_exp);
 //mail('domenico.zavattolo@service-tech.org','da ticket',$query_exp);
 //echo $query_exp;
 $hash = md5($query_exp);
