@@ -149,13 +149,13 @@ if($search):
             # XXX: What about searching for email addresses in the body of
             #      the thread message
             $qwhere.=" AND email.address='$queryterm'";
-        } elseif(strpos($searchTerm,'+')) {
+        } /*elseif(strpos($searchTerm,'+')) {
             $queryterm = str_replace("+","",$queryterm);
             $qwhere.=" AND (cdata.`ref_num` = '$queryterm' OR cdata.`cr` LIKE '%$queryterm' OR cdata.`customer_middle_name` LIKE '%$queryterm')";
-        }else {//Deep search!
+        }*/else {//Deep search!
             //This sucks..mass scan! search anything that moves!
             //mail('marco.salmi89@gmail.com','PROFONDO',$query);
-
+            $queryterm = str_replace("+","",$queryterm);
             require_once(INCLUDE_DIR.'ajax.tickets.php');
 
             $tickets = TicketsAjaxApi::_search(array('query'=>$queryterm));
