@@ -389,7 +389,6 @@ document.getElementById('nexino').value='Submitting, please wait...';">
             $line[]=$_SERVER['REMOTE_ADDR'];
 
 
-            print_r($line);
 
             array_map('db_input', $line);
 
@@ -409,7 +408,7 @@ document.getElementById('nexino').value='Submitting, please wait...';">
 
             */
 
-
+            print_r($keys);
             if ((strpos($_FILES['userfile']['name'], 'assist') !== false) or (strpos($_FILES['userfile']['name'], 'updgrm') !== false)) {
                 $csv[] = array_combine($keys, array_filter($line));
 
