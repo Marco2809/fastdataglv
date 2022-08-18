@@ -425,7 +425,8 @@ document.getElementById('nexino').value='Submitting, please wait...';">
                 echo "<pre>";
                 //print_r($keys);
                 echo "</pre>";
-
+                echo count($keys);
+                echo "<br>".count($line);
                 $csv[] = array_combine($keys, $line);
             }
 
