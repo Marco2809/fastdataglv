@@ -459,7 +459,9 @@ document.getElementById('nexino').value='Submitting, please wait...';">
     }
 }
 //array_pop($csv);
-
+echo "<pre>";
+print_r($csv);
+echo "</pre>";
 function mres($value)
 {
     $search = array("\\",  "\x00", "\n",  "\r",  "'",  '"', "\x1a");
