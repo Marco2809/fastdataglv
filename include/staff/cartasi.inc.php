@@ -540,7 +540,7 @@ if (!empty($csv)){
             }
 
         } else{
-            echo $nome. " già esistente<br>";
+            print_r($data);
         }
 
 
