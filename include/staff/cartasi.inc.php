@@ -408,7 +408,7 @@ document.getElementById('nexino').value='Submitting, please wait...';">
 
             */
 
-            print_r($keys);
+
             if ((strpos($_FILES['userfile']['name'], 'assist') !== false) or (strpos($_FILES['userfile']['name'], 'updgrm') !== false)) {
                 $csv[] = array_combine($keys, array_filter($line));
 
@@ -426,7 +426,7 @@ document.getElementById('nexino').value='Submitting, please wait...';">
                 //print_r($line);
                 echo "</pre>";
                 $csv[] = array_combine($keys, $line);
-
+                print_r($csv);
             }
 
 
