@@ -389,7 +389,7 @@ document.getElementById('nexino').value='Submitting, please wait...';">
             $line[]=$_SERVER['REMOTE_ADDR'];
 
 
-
+            print_r($line);
 
             array_map('db_input', $line);
 
@@ -459,9 +459,6 @@ document.getElementById('nexino').value='Submitting, please wait...';">
     }
 }
 //array_pop($csv);
-echo "<pre>";
-print_r($csv);
-echo "</pre>";
 function mres($value)
 {
     $search = array("\\",  "\x00", "\n",  "\r",  "'",  '"', "\x1a");
