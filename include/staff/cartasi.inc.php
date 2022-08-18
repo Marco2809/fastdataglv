@@ -497,6 +497,16 @@ if (!empty($csv)){
         $result=db_query($sql);
         $num = db_num_rows($result);
 
+        $mail = str_replace("'","",$data['email']);
+        $mail = str_replace(" ","",$data['email']);
+
+        $sql1="select id from ost_user_email where address = '".$mail."'";
+        //echo $sql."<br><br>";
+        //else
+        //$sql="select ref_num from ost_ticket__cdata natural join ost_ticket where status_id!=2";
+        $result1=db_query($sql1);
+        $num1 = db_num_rows($result1);
+        $id_mail_1 = db_fetch_array($result1);
         //echo $num."<br><br>";
         if($num<1){
 
@@ -509,15 +519,26 @@ if (!empty($csv)){
             $result_id =db_query($sql_user);
             $id_mail = db_fetch_array($result_id);
             $id_mail = $id_mail['id_email']+1;
+            if($num1>=1){
+                $id_mail = $id_mail_1;
+            }
+
+
             $mail = str_replace("'","",$data['email']);
             $mail = str_replace(" ","",$data['email']);
+
+
 
             $sql_1 = "INSERT INTO ost_user (id, org_id, default_email_id,status, name) VALUES ($id_user,0,$id_mail,0,'".$nome."')";
             $result =db_query($sql_1);
 
-            $sql_2 = "INSERT INTO ost_user_email (id, user_id, address) VALUES ($id_mail,$id_user,'".$mail."')";
-            $result =db_query($sql_2);
+            if($num1<1){
+                $sql_2 = "INSERT INTO ost_user_email (id, user_id, address) VALUES ($id_mail,$id_user,'".$mail."')";
+                $result =db_query($sql_2);
+            }
+
         }
+
 
         curl_setopt($ch, CURLOPT_URL, $config['url']);
         curl_setopt($ch, CURLOPT_POST, 1);
