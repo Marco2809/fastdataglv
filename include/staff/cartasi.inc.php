@@ -540,6 +540,7 @@ if (!empty($csv)){
             }
 
         } else{
+            echo 'qui';
             print_r($data);
         }
 
