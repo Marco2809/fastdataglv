@@ -510,6 +510,8 @@ if (!empty($csv)){
         //echo $num."<br><br>";
         if($num<1){
 
+            echo $nome. " già esistente<br>";
+
             $sql_user = "SELECT MAX(id) as id_user FROM ost_user";
             $result_id =db_query($sql_user);
             $id_user = db_fetch_array($result_id);
