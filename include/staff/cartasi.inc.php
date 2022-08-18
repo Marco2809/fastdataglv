@@ -423,10 +423,9 @@ document.getElementById('nexino').value='Submitting, please wait...';">
                */
             }else{
                 echo "<pre>";
-                //print_r($line);
+                print_r($line);
                 echo "</pre>";
                 $csv[] = array_combine($keys, $line);
-                print_r($csv);
             }
 
 
