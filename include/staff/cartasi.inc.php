@@ -510,7 +510,7 @@ if (!empty($csv)){
         //echo $num."<br><br>";
         if($num<1){
 
-            echo $nome. " già esistente<br>";
+
 
             $sql_user = "SELECT MAX(id) as id_user FROM ost_user";
             $result_id =db_query($sql_user);
@@ -539,6 +539,8 @@ if (!empty($csv)){
                 $result =db_query($sql_2);
             }
 
+        } else{
+            echo $nome. " già esistente<br>";
         }
 
 
