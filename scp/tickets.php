@@ -367,7 +367,7 @@ if($_POST && !$errors):
 
 
 
-				if (in_array($utopico, Array(15,16,17))){
+				/*if (in_array($utopico, Array(15,16,17))){
 
 
                if(($utopica=='VT' || $utopica=='RI') && $utopico==17)
@@ -481,9 +481,17 @@ if($_POST && !$errors):
 
                $costo_ext =0;
 				       $costo_int =0;
-				}
+				}*/
 
-				//db_query("UPDATE ".TICKET_TABLE."__cdata SET costo_ext='".$costo_ext."',costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$ticket->getId());
+                     if($tecnico==80) {
+                         $costo_int=0;
+                         $topico=db_query("SELECT `costo_ext` FROM ".TICKET_TABLE."__cdata WHERE `ticket_id`=".$ticket->getId());
+                         $row=db_fetch_array($topico);
+                         $costo_ext=$row['costo_ext'];
+                         db_query("UPDATE ".TICKET_TABLE."__cdata SET costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$ticket->getId());
+                     }
+
+				//db_query("UPDATE ".TICKET_TABLE."__cdata SET costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$ticket->getId());
 
 
 
@@ -1337,7 +1345,7 @@ WHERE ticket.ticket_id='.$chiave);
 
 
 
-				if (in_array($utopico, Array(15,16,17))){
+				/*if (in_array($utopico, Array(15,16,17))){
 
 
                if(($utopica=='VT' || $utopica=='RI') && $utopico==17)
@@ -1452,10 +1460,15 @@ WHERE ticket.ticket_id='.$chiave);
 
                         $costo_ext =0;
          				       $costo_int =0;
-         				}
+         				}*/
 
-				//db_query("UPDATE ".TICKET_TABLE."__cdata SET costo_ext='".$costo_ext."',costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$id_ticket);
-
+                    if($tecnico==80) {
+                        $costo_int=0;
+                        $topico=db_query("SELECT `costo_ext` FROM ".TICKET_TABLE."__cdata WHERE `ticket_id`=".$id_ticket);
+                        $row=db_fetch_array($topico);
+                        $costo_ext=$row['costo_ext'];
+                        db_query("UPDATE ".TICKET_TABLE."__cdata SET costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$id_ticket);
+                    }
 
 
 				$sql="INSERT INTO ost_ticket_thread (pid,ticket_id,staff_id,user_id,thread_type,poster,title, body, format, ip_address, created)
@@ -2023,7 +2036,7 @@ $inc = 'tickets_pre.inc.php';
 
 
 
-      				if (in_array($utopico, Array(15,16,17))){
+      				/*if (in_array($utopico, Array(15,16,17))){
 
 
                      if(($utopica=='VT' || $utopica=='RI') && $utopico==17)
@@ -2138,10 +2151,18 @@ $inc = 'tickets_pre.inc.php';
 
                                $costo_ext =0;
                 				       $costo_int =0;
-                				}
+                				}*/
 
-       				          //db_query("UPDATE ".TICKET_TABLE."__cdata SET costo_ext='".$costo_ext."',costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$id_ticket);
-                        //echo "UPDATE ".TICKET_TABLE."__cdata SET costo_ext='".$costo_ext."',costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$id_ticket."<br>";
+                           if($tecnico==80) {
+                               $costo_int=0;
+                               $topico=db_query("SELECT `costo_ext` FROM ".TICKET_TABLE."__cdata WHERE `ticket_id`=".$id_ticket);
+                               $row=db_fetch_array($topico);
+                               $costo_ext=$row['costo_ext'];
+                               db_query("UPDATE ".TICKET_TABLE."__cdata SET costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$id_ticket);
+
+                           }
+
+                                //echo "UPDATE ".TICKET_TABLE."__cdata SET costo_ext='".$costo_ext."',costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$id_ticket."<br>";
 
 
        				          $sql="INSERT INTO ost_ticket_thread (pid,ticket_id,staff_id,user_id,thread_type,poster,title, body, format, ip_address, created)
@@ -2567,7 +2588,7 @@ $msg="I seguenti ticket sono stati ripresi in carico: ".$avviso;
 
 
 
-    				if (in_array($utopico, Array(15,16,17))){
+    				/*if (in_array($utopico, Array(15,16,17))){
 
 
                    if(($utopica=='VT' || $utopica=='RI') && $utopico==17)
@@ -2682,10 +2703,16 @@ $msg="I seguenti ticket sono stati ripresi in carico: ".$avviso;
 
                              $costo_ext =0;
               				       $costo_int =0;
-              				}
+              				}*/
 
-     				          //db_query("UPDATE ".TICKET_TABLE."__cdata SET costo_ext='".$costo_ext."',costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$id_ticket);
-                      //echo "UPDATE ".TICKET_TABLE."__cdata SET costo_ext='".$costo_ext."',costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$id_ticket."<br>";
+                         if($tecnico==80) {
+                             $costo_int=0;
+                             $topico=db_query("SELECT `costo_ext` FROM ".TICKET_TABLE."__cdata WHERE `ticket_id`=".$id_ticket);
+                             $row=db_fetch_array($topico);
+                             $costo_ext=$row['costo_ext'];
+                             db_query("UPDATE ".TICKET_TABLE."__cdata SET costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$id_ticket);
+
+                         } //echo "UPDATE ".TICKET_TABLE."__cdata SET costo_ext='".$costo_ext."',costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$id_ticket."<br>";
 
 
      				          $sql="INSERT INTO ost_ticket_thread (pid,ticket_id,staff_id,user_id,thread_type,poster,title, body, format, ip_address, created)
