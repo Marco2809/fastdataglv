@@ -1,6 +1,6 @@
 <?php
-//ini_set('display_errors',1);
-//error_reporting(E_ALL);
+ini_set('display_errors',1);
+error_reporting(E_ALL);
 $config = array(
     'url'=>'http://5.249.147.181:8080/api/http.php/tickets.json',
     'key'=>'07B4D26F5CBB16DAD3508C7456D2473C'
@@ -186,7 +186,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
         $key_datascad = array_search('D/O Scadenza', $keys);
         $key_cliente = array_search('Cliente', $keys);
 
-        print_r($keys);
+
 
 
         if (array_search('Anomalia', $keys))
