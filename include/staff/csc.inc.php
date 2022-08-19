@@ -266,6 +266,8 @@ $error2 = "";
 
             $r[24] = trim($line[$key_topicId]);
 
+            echo $line[$key_cliente];
+
             switch(trim($line[$key_cliente])){
 
                 case 'B2X Care':
@@ -302,7 +304,7 @@ $error2 = "";
                     include('/var/www/dolibarr/htdocs/product/prezzi/banca5.php');
                     break;
                 default:
-                    $error2 .= "Il ticket ".$r[0]." non è stato inserito in quanto il cliente ".$r[10]." non risulta censito";
+                    //$error2 .= "Il ticket ".$r[0]." non è stato inserito in quanto il cliente ".$r[10]." non risulta censito";
                     continue;
             }
 
@@ -812,7 +814,7 @@ $error2 = "";
             );
 
             $csv[] = array_combine($keys, $line);
-            print_r($csv);
+
             /*echo "KEY ORDINE:".$key_ordine."<br><br>";
             echo "LINE ORDINE".$line[0]."<br><br>";
             print_r($keys);
