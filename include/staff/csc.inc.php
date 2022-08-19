@@ -812,7 +812,7 @@ $error2 = "";
             );
 
             $csv[] = array_combine($keys, $line);
-
+            print_r($csv);
             /*echo "KEY ORDINE:".$key_ordine."<br><br>";
             echo "LINE ORDINE".$line[0]."<br><br>";
             print_r($keys);
