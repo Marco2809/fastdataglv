@@ -1,6 +1,6 @@
 <?php
-ini_set('display_errors',1);
-error_reporting(E_ALL);
+//ini_set('display_errors',1);
+//error_reporting(E_ALL);
 $config = array(
     'url'=>'http://5.249.147.181:8080/api/http.php/tickets.json',
     'key'=>'07B4D26F5CBB16DAD3508C7456D2473C'
@@ -266,7 +266,7 @@ $error2 = "";
 
             $r[24] = trim($line[$key_topicId]);
 
-            echo $line[$key_cliente];
+
 
             switch(trim($line[$key_cliente])){
 
@@ -286,6 +286,7 @@ $error2 = "";
                     include('/var/www/dolibarr/htdocs/product/prezzi/bnl.php');
                     break;
                 case 'WEB-KORNER':
+                    echo "CLIENTE:".$line[$key_cliente];
                     include('/var/www/dolibarr/htdocs/product/prezzi/webkorner.php');
                     break;
                 case 'COOPERSYSTEM':
