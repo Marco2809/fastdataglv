@@ -186,6 +186,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
         $key_datascad = array_search('D/O Scadenza', $keys);
         $key_cliente = array_search('Cliente', $keys);
 
+        print_r($keys);
 
 
         if (array_search('Anomalia', $keys))
@@ -211,7 +212,6 @@ document.getElementById('cscino').value='Submitting, please wait...';">
 
 
             $line = fgetcsv($fh, 1000, ";");
-            print_r($line);
             unset($line[count($line)-1]);
             if($line[$key_ordine]=="") $line[$key_ordine] = $line[$key_ordine2];
             $line[$key_ordine] = $line[$key_ordine]."S";
