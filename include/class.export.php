@@ -287,7 +287,7 @@ class Export {
 
             ###punto 15 del papiro
             $sql = str_replace('(pri.priority_id = cdata.priority)', ' (pri.priority_id = cdata.priority) LEFT JOIN ost_ticket_thread th ON (th.ticket_id = ticket.ticket_id) ', $sql);
-            $sql = str_replace('ORDER BY', ' GROUP BY ticket.ticket_id ORDER BY ', $sql);
+            //MODIFICATO DA MARCO $sql = str_replace('ORDER BY', 'ORDER BY ', $sql);
 
             #####
             //print_r($sql);
