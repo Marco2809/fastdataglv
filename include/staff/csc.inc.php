@@ -8,6 +8,10 @@ $config = array(
 
 $zona1=array('RM','RI','VT','LT','FR');
 $zona2=array('AQ','PE','TE','CH');
+$zona3=array('AN','AP','FM','MC','PU');
+$zona4=array('AR','FI','GR','LI','LU','MS','PI','PT','PO','SI');
+
+
 $holidays = ['2018-12-08', '2018-12-25', '2018-12-26', '2019-01-01', '2019-01-06', '2019-04-22', '2019-04-25', '2019-05-01'];
 
 if (!isset($_FILES['csv']) ) {
@@ -243,15 +247,59 @@ document.getElementById('cscino').value='Submitting, please wait...';">
 //echo "DATA:".$line[$key_datascad];
             $date=date('Y-m-d',time());
 
-            echo $line[$key_topicId];
+            //echo $line[$key_topicId];
 
             if(in_array($line[$key_provincia],$zona1)){
                 $posto = "L";
             } else if(in_array($line[$key_provincia],$zona2)){
                 $posto = "A";
-            } else $posto = "M";
+            } else if(in_array($line[$key_provincia],$zona3)){
+                $posto = "M";
+            } else if(in_array($line[$key_provincia],$zona4)){
+                $posto = "T";
+            }
 
-            switch (trim($line[$key_topicId])) {
+            switch(trim($r[10])){
+
+                case 'B2X Care':
+                    include('/var/www/dolibarr/htdocs/product/prezzi/b2x.php');
+                    break;
+                case 'Q8':
+                    include('/var/www/dolibarr/htdocs/product/prezzi/q8.php');
+                    break;
+                case 'C.S.E. Centro Servizi Elettronici':
+                    include('/var/www/dolibarr/htdocs/product/prezzi/cse.php');
+                    break;
+                case 'Pay Distribution-YAMAMAY':
+                    include('/var/www/dolibarr/htdocs/product/prezzi/yamamay.php');
+                    break;
+                case 'BNL':
+                    include('/var/www/dolibarr/htdocs/product/prezzi/bnl.php');
+                    break;
+                case 'WEB-KORNER':
+                    include('/var/www/dolibarr/htdocs/product/prezzi/webkorner.php');
+                    break;
+                case 'COOPERSYSTEM':
+                    include('/var/www/dolibarr/htdocs/product/prezzi/coop.php');
+                    break;
+                case 'NEXI':
+                    include('/var/www/dolibarr/htdocs/product/prezzi/nexi.php');
+                    break;
+                case 'C GLOBAL':
+                    include('/var/www/dolibarr/htdocs/product/prezzi/cglobal.php');
+                    break;
+                case 'EDENRED':
+                    include('/var/www/dolibarr/htdocs/product/prezzi/edenred.php');
+                    break;
+                case 'BANCA 5':
+                    include('/var/www/dolibarr/htdocs/product/prezzi/banca5.php');
+                    break;
+                default:
+                    $error .= "Il ticket ".$r[0]." non è stato inserito in quanto il cliente ".$r[10]." non risulta censito";
+                    continue;
+            }
+
+            /*switch (trim($line[$key_topicId])) {
 
 
                 case 'Assistenza':
@@ -731,7 +779,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                         $ct = 'x';
                     }
 
-            }
+            }*/
 
             $line[] = $id_topic;
             $line[] = $data_scad;
