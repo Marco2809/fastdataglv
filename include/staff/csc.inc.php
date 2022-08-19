@@ -211,6 +211,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
 
 
             $line = fgetcsv($fh, 1000, ";");
+            print_r($line);
             unset($line[count($line)-1]);
             if($line[$key_ordine]=="") $line[$key_ordine] = $line[$key_ordine2];
             $line[$key_ordine] = $line[$key_ordine]."S";
@@ -262,8 +263,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
             $r = array();
 $error2 = "";
 
-echo $line[$key_cliente];
-exit();
+
             $r[24] = trim($line[$key_topicId]);
 
             switch(trim($line[$key_cliente])){
