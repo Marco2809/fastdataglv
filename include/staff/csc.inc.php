@@ -259,7 +259,11 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                 $posto = "T";
             }
 
-            switch(trim($r[10])){
+            $r = array();
+$error2 = "";
+            $r[24] = trim($line[$key_topicId]);
+
+            switch(trim($line[$key_cliente])){
 
                 case 'B2X Care':
                     include('/var/www/dolibarr/htdocs/product/prezzi/b2x.php');
@@ -295,7 +299,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
                     include('/var/www/dolibarr/htdocs/product/prezzi/banca5.php');
                     break;
                 default:
-                    $error .= "Il ticket ".$r[0]." non è stato inserito in quanto il cliente ".$r[10]." non risulta censito";
+                    $error2 .= "Il ticket ".$r[0]." non è stato inserito in quanto il cliente ".$r[10]." non risulta censito";
                     continue;
             }
 
@@ -935,6 +939,8 @@ if ($error){
     echo 'Risultato: '.$result.'<br>';
     echo 'Codice: '.$code.'<br><br>';
 }
+
+if($error2!="") echo $error2;
 
 if ($ordini_assist){
     echo "<br><br><br><br><br><br>I seguenti ordini sono già inseriti:<br><br><pre>";
