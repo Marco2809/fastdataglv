@@ -1494,7 +1494,7 @@ if ($results_dis) {
                 <option value="(65,66,67,68,69,70,71,74,76,77,80,82,86)">Yamamay</option>
                 <option value="(59,60,61,78,87)">B2X Care</option>
                 <option value="(84,85,88,89,90,91,92,93,94,95,96,97)">CSE</option>
-                <option value="(62,63,64,81)">WEB-KORNER</option>
+                <option value="(62,63,64,81,98,100)">WEB-KORNER</option>
                 <option value="(83)">EXTRA</option>
             </select>
         </fieldset>
