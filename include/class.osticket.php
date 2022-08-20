@@ -321,7 +321,7 @@ class osTicket {
         db_query($sql, false);
         
         if(strpos($info['title'], 'DB Error') !== false){
-            if(!strstr($message,"INSERT INTO ost_user_email")) $sql_off="UPDATE `ost_config` SET `value`=0 WHERE `key`='isonline'";
+            if(!strstr($message,"INSERT INTO ost_user_email")||!strstr($message,"SELECT ref_num FROM ost_ticket__cdata WHERE ticket_id=")) $sql_off="UPDATE `ost_config` SET `value`=0 WHERE `key`='isonline'";
 		  db_query($sql_off, false);
 		  //mail('marco.salmi89@gmail.com','Fastdata Zoccali offline automaticamente',$info['body']);
 		}
