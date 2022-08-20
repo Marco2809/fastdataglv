@@ -2176,7 +2176,7 @@ $inc = 'tickets_pre.inc.php';
 
        			          //mail('marco.salmi89@gmail.com, openunit3@gmail.com','ref_num',$ref_num);
 
-if (strpos($ref_num, 'c') !== false or strpos($ref_num, 'C') !== false){
+if (strpos($ref_num, 'c') !== false or strpos($ref_num, 'C') !== false or strpos($ref_num, 'S') !== false){
 
                        $presa = db_query('SELECT ticket.created as created, ticket.ticket_id as ticket_id, source, ticket.user_id as user_id, number, name, commesse.comm_id, firstname,lastname,cr,topic,from_unixtime(zz_dt_clmghw),ref_num
            FROM ost_ticket as ticket
