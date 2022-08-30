@@ -161,6 +161,23 @@ $keys = array_replace($keys,
     )
 );
 }
+
+    if (in_array('TIPOLOGIA',$keys)){
+        $keys = array_replace($keys,
+            array_fill_keys(
+                array_keys($keys, 'TIPOLOGIA'),
+                'group_last_name'
+            )
+        );
+    }else{
+        $keys = array_replace($keys,
+            array_fill_keys(
+                array_keys($keys, "ATTIVITA'"),
+                'group_last_name'
+            )
+        );
+    }
+
 /*$keys = array_replace($keys,
     array_fill_keys(
         array_keys($keys, 'CHIUSURA COMM.'),
@@ -239,6 +256,7 @@ $keys[]='subject';
 $keys[]='message';
 $keys[]='ip';
 
+
 $key_name = array_search('customer_middle_name', $keys);
 $key_topicId = array_search('group_last_name', $keys);
 $key_subject = array_search('customer_middle_name', $keys);
@@ -248,10 +266,12 @@ $key_ordine = array_search('ref_num', $keys);
 
 
 
-if (array_search('EventualiNote', $keys))
-$key_message = array_search('EventualiNote', $keys);
-else
-$key_message = array_search('CAS', $keys);
+
+
+    if (array_search('TIPOLOGIA', $keys))
+        $key_message = array_search('EventualiNote', $keys);
+    else
+        $key_message = array_search('CAS', $keys);
 
 $key_provincia = array_search('customer_location_l_addr1', $keys);
 $key_abi = array_search('customer_last_name', $keys);
@@ -308,6 +328,28 @@ $line[] = 23;
 $line[] = 32;
 
 break;
+    case 'SWAP DA BIG A FUSION':
+        $n=180;
+        $line[] = 40;
+        $line[] = nworkingdaysafter($date,$n,$holidays);
+        $line[] = '20:00';
+
+        $line[] = 55;
+        $line[] = 23;
+        $line[] = 32;
+
+        break;
+    case 'INSTALLAZIONE FUSION':
+        $n=180;
+        $line[] = 40;
+        $line[] = nworkingdaysafter($date,$n,$holidays);
+        $line[] = '20:00';
+
+        $line[] = 55;
+        $line[] = 23;
+        $line[] = 32;
+
+        break;
 case 'RCH':
 $n=180;
 $line[] = 41;
