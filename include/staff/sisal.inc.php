@@ -108,13 +108,13 @@ $keys = array_replace($keys,
         array_keys($keys, 'riferimento'),
         'ref_contatto'
     )
-);*/
+);
 $keys = array_replace($keys,
     array_fill_keys(
         array_keys($keys, 'TIPOLOGIA'),
         'group_last_name'
     )
-);
+);*/
 
 $keys = array_replace($keys,
     array_fill_keys(
