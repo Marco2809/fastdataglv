@@ -142,21 +142,21 @@ $keys = array_replace($keys,
 );
 $keys = array_replace($keys,
     array_fill_keys(
-        array_keys($keys, 'N° TEL1'),
+        array_keys($keys, 'TEL1'),
         'customer_phone_number'
     )
 );
 if (in_array('TEL_CEL_TITOL',$keys)){
 $keys = array_replace($keys,
     array_fill_keys(
-        array_keys($keys, 'N° TEL2'),
+        array_keys($keys, 'TEL2'),
         'tec_contatto_phone'
     )
 );
 }else{
 $keys = array_replace($keys,
     array_fill_keys(
-        array_keys($keys, 'N° TEL2'),
+        array_keys($keys, 'TEL2'),
         'tec_contatto_phone'
     )
 );
