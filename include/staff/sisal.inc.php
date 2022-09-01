@@ -317,7 +317,6 @@ $line[$key_abi]='0'.$line[$key_abi];
 
     $date=date('Y-m-d',time());
 
-    echo $line[$key_topicId]."<br>";
 
 
 switch (trim($line[$key_topicId])) {
@@ -441,7 +440,7 @@ unset($subArr['UFFICIO VENDITE 3']);
 echo "<pre>";
 print_r($csv);
 echo "</pre>";
-die;
+
 
 
 }
