@@ -178,6 +178,9 @@ $keys = array_replace($keys,
         );
     }
 
+
+
+
 /*$keys = array_replace($keys,
     array_fill_keys(
         array_keys($keys, 'CHIUSURA COMM.'),
@@ -314,7 +317,9 @@ $line[$key_abi]='0'.$line[$key_abi];
 
     $date=date('Y-m-d',time());
 
-
+print_r($keys);
+echo '<br>';
+print_r($line);
 
 switch (trim($line[$key_topicId])) {
 case 'SWAP':
