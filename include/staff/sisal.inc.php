@@ -437,12 +437,12 @@ unset($subArr['UFFICIO VENDITE 3']);
 
 }
 
-/*
+
 echo "<pre>";
 print_r($csv);
 echo "</pre>";
 die;
-*/
+
 
 }
 }
