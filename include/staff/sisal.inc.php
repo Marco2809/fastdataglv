@@ -317,9 +317,8 @@ $line[$key_abi]='0'.$line[$key_abi];
 
     $date=date('Y-m-d',time());
 
-print_r($keys);
-echo '<br>';
-print_r($line);
+    echo $line[$key_topicId]."<br>";
+
 
 switch (trim($line[$key_topicId])) {
 case 'SWAP':
