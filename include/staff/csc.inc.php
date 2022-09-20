@@ -286,7 +286,6 @@ $error2 = "";
                     include('/var/www/dolibarr/htdocs/product/prezzi/bnl.php');
                     break;
                 case 'WEB-KORNER':
-                    echo "CLIENTE:".$line[$key_cliente];
                     include('/var/www/dolibarr/htdocs/product/prezzi/webkorner.php');
                     break;
                 case 'COOPERSYSTEM':
@@ -304,8 +303,11 @@ $error2 = "";
                 case 'BANCA 5':
                     include('/var/www/dolibarr/htdocs/product/prezzi/banca5.php');
                     break;
+                case 'MERCURY Payment Services':
+                    include('/var/www/dolibarr/htdocs/product/prezzi/mercury.php');
+                    break;
                 default:
-                    //$error2 .= "Il ticket ".$r[0]." non è stato inserito in quanto il cliente ".$r[10]." non risulta censito";
+                    $error2 .= "Il ticket ".$r[0]." non è stato inserito in quanto il cliente ".$r[10]." non risulta censito";
                     continue;
             }
 
