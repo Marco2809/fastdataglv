@@ -1543,6 +1543,7 @@ echo '</td></tr></table>';
 				<td width="120" style="vertical-align:top">
                 <label><span style="font-size:14px; font-family:play; font-weight:bold; color:black;"><?php echo "Matricole"; ?>: </span></label>
                 </td>
+
                 <td>
                     <textarea name="seriale" id="seriale" cols="1" rows="7" wrap="soft"
                         placeholder="<?php echo "Serial Number"; ?>"
@@ -1551,6 +1552,34 @@ echo '</td></tr></table>';
                 </td>
 
             </tr>
+            <script>
+                $(document).ready(function(){
+
+                    $('#seriale').on('change paste keyup',function(){
+//alert('test');
+
+                        var num = encodeURIComponent($("#seriale").val());// "%2B"
+                        $.ajax({
+                            url: "http://5.249.147.181:8081/htdocs/product/matricola_control.php",
+                            type: "post",
+                            data: "num=" + num,
+                            success: function (response) {
+
+                                $('#matricola_info').html(response);
+                                //if(response=='Ticket non esistente') $('#save').prop( "disabled", true);
+                                //else if(response=='OK') $('#save').prop( "disabled", false);'[id^="content_"]'
+                                //alert($('[id^="result_chiusura_"]').text());
+                                if($('[id^="matricola_info"]').text().includes('Ticket non esistente')) $('#submit_risolvi').prop( "disabled", true);
+                                else $('#submit_risolvi').prop( "disabled", false);
+                            },
+                            error: function(jqXHR, textStatus, errorThrown) {
+                                console.log(textStatus, errorThrown);
+                            }
+                        });
+
+                    });
+                });
+            </script>
              <tr>
              <td width="120" style="vertical-align:top">
                 <label><span style="font-size:14px; font-family:play; font-weight:bold; color:black;"><?php echo "Descrizione intervento"; ?>: </span></label>
@@ -1599,7 +1628,7 @@ print $response_form->getField('attachments')->render();
 	border-radius:0px 5px 0px 5px;
     -moz-box-shadow: 2px 2px 3px #DDD;
     -webkit-box-shadow: 2px 2px 3px #DDD;
-    box-shadow: 2px 2px 3px #DDD;" type="submit" value="Risolvi">
+    box-shadow: 2px 2px 3px #DDD;" type="submit" value="Risolvi" id="submit_risolvi">
             <input style="font-family: play;
 	font-weight: bold;
 	background: white;

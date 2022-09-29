@@ -40,7 +40,7 @@ document.getElementById('cscino').value='Submitting, please wait...';">
         $fh = fopen($file, 'r');
         set_time_limit(0);
 
-        $keys = fgetcsv($fh, 1000, ";");
+        $keys = fgetcsv($fh, 1000, ";","\"");
 
         unset($keys[count($keys)-1]);
         $keys = array_map('trim',$keys);
@@ -266,7 +266,7 @@ $error2 = "";
 
             $r[24] = trim($line[$key_topicId]);
 
-
+if(trim($line[$key_cliente])=="") continue;
 
             switch(trim($line[$key_cliente])){
 
