@@ -1569,7 +1569,7 @@ echo '</td></tr></table>';
                                 //if(response=='Ticket non esistente') $('#save').prop( "disabled", true);
                                 //else if(response=='OK') $('#save').prop( "disabled", false);'[id^="content_"]'
                                 //alert($('[id^="result_chiusura_"]').text());
-                                if($('[id^="matricola_info"]').text().includes('Ticket non esistente')) $('#submit_risolvi').prop( "disabled", true);
+                                if($('[id^="matricola_info"]').text().includes('Errore')) $('#submit_risolvi').prop( "disabled", true);
                                 else $('#submit_risolvi').prop( "disabled", false);
                             },
                             error: function(jqXHR, textStatus, errorThrown) {
