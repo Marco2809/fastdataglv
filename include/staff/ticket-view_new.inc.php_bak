@@ -1543,7 +1543,6 @@ echo '</td></tr></table>';
 				<td width="120" style="vertical-align:top">
                 <label><span style="font-size:14px; font-family:play; font-weight:bold; color:black;"><?php echo "Matricole"; ?>: </span></label>
                 </td>
-
                 <td>
                     <textarea name="seriale" id="seriale" cols="1" rows="7" wrap="soft"
                         placeholder="<?php echo "Serial Number"; ?>"
