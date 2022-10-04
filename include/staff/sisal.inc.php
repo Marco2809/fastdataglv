@@ -44,7 +44,7 @@ $keys = array_map('trim',$keys);
 
 $keys = array_replace($keys,
     array_fill_keys(
-        array_keys($keys, 'ZONA RICE'),
+        array_keys($keys, 'ZONARICE'),
         'ref_num'
     )
 );
