@@ -1627,7 +1627,7 @@ if (!in_array($thisstaff->getDeptId(), $tec)) {
                         <!-- fine proposta chiusura-->
 
                         <script>
-                            $(document).ready(function(){
+                            /*$(document).ready(function(){
                                 $('#seriale_control').on('click',function(){
 
                                     var num = encodeURIComponent($("#seriale").val());// "%2B"
@@ -1637,9 +1637,6 @@ if (!in_array($thisstaff->getDeptId(), $tec)) {
                                         data: "matricola=" + num,
                                         success: function (response) {
                                             $('#seriale_info').html(response);
-                                            //if(response=='Ticket non esistente') $('#save').prop( "disabled", true);
-                                            //else if(response=='OK') $('#save').prop( "disabled", false);'[id^="content_"]'
-                                            //alert($('[id^="result_chiusura_"]').text());
 
                                             if($("#seriale_info").text().includes('Error')) $("[value='Risolvi']").prop( "disabled", true);
                                             else $("[value='Risolvi']").prop( "disabled", false);
@@ -1650,7 +1647,7 @@ if (!in_array($thisstaff->getDeptId(), $tec)) {
                                     });
 
                                 });
-                            });
+                            });*/
                         </script>
 
 
