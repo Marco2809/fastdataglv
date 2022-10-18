@@ -1543,16 +1543,16 @@ if (!in_array($thisstaff->getDeptId(), $tec)) {
                               class="richtext ifhtml no-bar"><?php echo $info['chiusura']; ?></textarea>
                                                         <span class="error"><?php echo $errors['chiusura']; ?></span><br>
                                                     </td>
-                                                    <td>
+                                                    <!--<td>
                                                         <input type="button" id="seriale_control" value="Controlla Matricola">
-                                                    </td>
+                                                    </td>-->
 
                                                 </tr>
-                                                <tr>
+                                                <!--<tr>
                                                     <td>
                                                         <span id="seriale_info"></span>
                                                     </td>
-                                                </tr>
+                                                </tr>-->
                                                 <tr>
                                                     <td width="120" style="vertical-align:top">
                                                         <label><span style="font-size:14px; font-family:play; font-weight:bold; color:black;"><?php echo "Descrizione intervento"; ?>: </span></label>
@@ -1626,8 +1626,8 @@ if (!in_array($thisstaff->getDeptId(), $tec)) {
                                 </td></tr></table>
                         <!-- fine proposta chiusura-->
 
-                        <script>
-                            /*$(document).ready(function(){
+                        <!--<script>
+                            $(document).ready(function(){
                                 $('#seriale_control').on('click',function(){
 
                                     var num = encodeURIComponent($("#seriale").val());// "%2B"
@@ -1647,8 +1647,8 @@ if (!in_array($thisstaff->getDeptId(), $tec)) {
                                     });
 
                                 });
-                            });*/
-                        </script>
+                            });
+                        </script>-->
 
 
                         <!---@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@---->
