@@ -13,6 +13,10 @@
 
     vim: expandtab sw=4 ts=4 sts=4:
 **********************************************************************/
+
+error_reporting(E_ALL);
+ini_set('display_errors',1);
+
 require('staff.inc.php');
 require_once(INCLUDE_DIR.'class.ticket.php');
 require_once(INCLUDE_DIR.'class.dept.php');
@@ -1612,6 +1616,12 @@ if($thisstaff->getDeptId()==6) {
                            'iconclass'=>'newTicket'),
                         ($_REQUEST['status']=='ticket_sisal'));
 
+    $nav->addSubMenu(array('desc'=>'CSC',
+                            'title'=>'Importazione CSC',
+                            'href'=>'?a=ticket_csc',
+                            'iconclass'=>'newTicket'),
+                            ($_REQUEST['status']=='ticket_csc'));
+
 
     $nav->addSubMenu(array('desc'=>'Stampa',
                            'title'=>'Stampa massiva',
@@ -2446,7 +2456,46 @@ $msg="I seguenti ticket sono stati ripresi in carico: ".$avviso;
 
 ##########FINE Attesa
 ##########ASSEGNA
-         }elseif($_REQUEST['status_id']==23){
+         } elseif($_REQUEST['status_id']=='scontrino'){
+
+
+
+                if(isset($_REQUEST['input_field_scontrino'])) {
+
+
+                    foreach ($_REQUEST['input_field_scontrino'] as $chiave => $valore) {
+
+                      //mail("marco.salmi89@gmail.com","QUERY SCONTRINO",$valore[0]."-".$valore[1]);
+
+                        $number = preg_replace("/[^0-9abcisgeABCISGE+]/", "", $valore[0]);
+
+                        if (strpos($number, '+') !== false) {
+                            $ref_num = preg_replace("/[^0-9abcisgeABCISGE]/", "", $number);
+
+                            if (strlen($ref_num) > 4)
+                                $id_ticket = Ticket::getIdByRef_num($ref_num);
+
+                        } else {
+
+                            if (strlen($number) > 4)
+                                $id_ticket = Ticket::getIdByNumber($number);
+
+                        }
+
+                        if (!(ctype_digit($id_ticket) && $id_ticket > 4000))
+                            continue;
+
+                        $sql = "INSERT INTO ost_ticket_thread (pid,ticket_id,staff_id,user_id,thread_type,poster,title, body, format, ip_address, created)
+                        VALUES
+                        (0," . $id_ticket . "," . $thisstaff->getId() . ",0,'N','" . $thisstaff->getName() . "','Data scontrino', " .db_input($valore[1]) . ", 'html','127.0.0.1',NOW())";
+
+
+                        //mail("marco.salmi89@gmail.com","QUERY SCONTRINO",$sql);
+                        db_query($sql);
+                        //$msg="Query: ".$sql;
+                    }
+                }
+            }elseif($_REQUEST['status_id']==23){
 
            $status_id=$_REQUEST['status_id'];
            $tecnico=$_POST['tec_assegnato'];
