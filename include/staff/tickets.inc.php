@@ -328,6 +328,7 @@ $showing_exp=db_num_rows($res_exp)? ' &mdash; '.$pageExp->showing():"";
 //echo $showing_exp;
 $query="$qselect $qfrom $qwhere "."AND (ticket.status_id=1 OR ticket.status_id=2 OR ticket.status_id=7 OR ticket.status_id=9 OR ticket.status_id=14 OR ticket.status_id=15 OR ticket.status_id=3 OR ticket.status_id=10)"." ORDER BY $order_by $order LIMIT ".$pageNav->getStart().",".$pageNav->getLimit();
 //mail('marco.salmi89@gmail.com','query old',$query);
+mail("kakinho@hotmail.it","TEST", $query);
 //echo $query;
 //$hash = md5($query);
 //$_SESSION['search_'.$hash] = $query;
