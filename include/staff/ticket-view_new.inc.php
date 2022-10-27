@@ -2586,7 +2586,7 @@ $(document).ready(function() {
 	$('#search_category_id_analisiguasto').change(function(){
 		$('#show_sub_categories_analisiguasto').fadeOut();
 		$('#loader').show();
-		$.post("http://ticketglv.fast-data.it/include/staff/get_chid_categories_analisiguasto.php", {
+		$.post("http://5.249.147.181:8080/include/staff/get_chid_categories_analisiguasto.php", {
 			parent_id: $('#search_category_id_analisiguasto').val(),
 		}, function(response){
 
@@ -2623,7 +2623,7 @@ $(document).ready(function() {
 	$('#search_category_id_eqGA').change(function(){
 		$('#show_sub_categories_eqGA').fadeOut();
 		$('#loader').show();
-		$.post("http://ticketglv.fast-data.it/include/staff/asset.inc1.php?username=<?php echo $username;?>", {
+		$.post("http://5.249.147.181:8080/include/staff/asset.inc1.php?username=<?php echo $username;?>", {
 			parent_id: $('#search_category_id_eqGA').val(),
 		}, function(response){
 

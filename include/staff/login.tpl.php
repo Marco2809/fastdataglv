@@ -45,7 +45,7 @@ if (count($ext_bks)) { ?>
 <a href='http://www.service-tech.org' target="_blank">Service Tech s.r.l.</a></div>
 <center>
 <div id="logo_ticket" style="margin-top:50px;">
-<img src="http://ticketglv.fast-data.it/include/staff/img/logo-ticket-texture.png" style=" width:700px; height:230;"></div>
+<img src="http://5.249.147.181:8080/include/staff/img/logo-ticket-texture.png" style=" width:700px; height:230;"></div>
 </center>
 </body>
 </div>

@@ -211,7 +211,7 @@ html,body {
 
 .container {
   background-color:#1E1E1E;
-	background-image:url(http://ticketglv.fast-data.it/include/staff/img_new/parete_piccola.png), radial-gradient(300px 500px at center, #669933 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0));
+	background-image:url(http://5.249.147.181:8080/include/staff/img_new/parete_piccola.png), radial-gradient(300px 500px at center, #669933 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0));
 
 	background-size: 125%, 50% 100%;
   background-position: 0 60%, 0 100%;
