@@ -49,7 +49,7 @@ if (($lang = Internationalization::getCurrentLanguage())
     <link href="<?php echo ROOT_PATH; ?>include/staff/css/as_style.min.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="./js/jquery.dropdown.js?a7d44f8"></script>
     <link href='https://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
-    <script src="respond.min.js"></script>
+    <!--<script src="respond.min.js"></script>-->
 
     <?php
     if($ost && ($headers=$ost->getExtraHeaders())) {
