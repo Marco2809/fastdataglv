@@ -1552,10 +1552,10 @@ echo '</td></tr></table>';
 
             </tr>
             <script>
-                $(document).ready(function(){
+                /*$(document).ready(function(){
 
                     $('#seriale').on('change paste keyup',function(){
-//alert('test');
+
 
                         var num = encodeURIComponent($("#seriale").val());// "%2B"
                         $.ajax({
@@ -1565,9 +1565,7 @@ echo '</td></tr></table>';
                             success: function (response) {
 
                                 $('#matricola_info').html(response);
-                                //if(response=='Ticket non esistente') $('#save').prop( "disabled", true);
-                                //else if(response=='OK') $('#save').prop( "disabled", false);'[id^="content_"]'
-                                //alert($('[id^="result_chiusura_"]').text());
+
                                 if($('[id^="matricola_info"]').text().includes('Errore')) $('#submit_risolvi').prop( "disabled", true);
                                 else $('#submit_risolvi').prop( "disabled", false);
                             },
@@ -1577,7 +1575,7 @@ echo '</td></tr></table>';
                         });
 
                     });
-                });
+                });*/
             </script>
              <tr>
              <td width="120" style="vertical-align:top">
