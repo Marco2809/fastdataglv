@@ -13,7 +13,6 @@
 
     vim: expandtab sw=4 ts=4 sts=4:
 **********************************************************************/
-
 require('staff.inc.php');
 require_once(INCLUDE_DIR.'class.ticket.php');
 require_once(INCLUDE_DIR.'class.dept.php');
@@ -23,12 +22,6 @@ require_once(INCLUDE_DIR.'class.json.php');
 include_once(PEAR_DIR.'Mail.php');
 require_once(INCLUDE_DIR.'class.dynamic_forms.php');
 require_once(INCLUDE_DIR.'class.export.php');       // For paper sizes
-
-/*error_reporting(E_ALL);
-ini_set("display_errors", 1);
-*/
-
-
 
 $coopper=array(18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38);
 function prepara_sql($value)
@@ -369,7 +362,7 @@ if($_POST && !$errors):
 
 
 
-				/*if (in_array($utopico, Array(15,16,17))){
+				if (in_array($utopico, Array(15,16,17))){
 
 
                if(($utopica=='VT' || $utopica=='RI') && $utopico==17)
@@ -483,17 +476,9 @@ if($_POST && !$errors):
 
                $costo_ext =0;
 				       $costo_int =0;
-				}*/
+				}
 
-                     /*if($tecnico==80) {
-                         $costo_int=0;
-                         $topico=db_query("SELECT `costo_ext` FROM ".TICKET_TABLE."__cdata WHERE `ticket_id`=".$ticket->getId());
-                         $row=db_fetch_array($topico);
-                         $costo_ext=$row['costo_ext'];
-                         db_query("UPDATE ".TICKET_TABLE."__cdata SET costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$ticket->getId());
-                     }*/
-
-				//db_query("UPDATE ".TICKET_TABLE."__cdata SET costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$ticket->getId());
+				db_query("UPDATE ".TICKET_TABLE."__cdata SET costo_ext='".$costo_ext."',costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$ticket->getId());
 
 
 
@@ -932,7 +917,7 @@ WHERE ticket.ticket_id='.$chiave);
 
 
 
-            $urlo='http://5.249.147.181:8081/product/script_swap.php';
+            $urlo='http://glvservice.fast-data.it/product/script_swap.php';
             $ch = curl_init();
 
             curl_setopt($ch, CURLOPT_URL, $urlo);
@@ -945,7 +930,7 @@ WHERE ticket.ticket_id='.$chiave);
             curl_close($ch);
 
             if ($error)
-               // mail('openunit3@gmail.com','errore curl zoccali',$error);
+                mail('openunit3@gmail.com','errore curl zoccali',$error);
 
             if (strpos($cresult, 'Errore') !== false){
               $mat=explode('_',$cresult);
@@ -1347,7 +1332,7 @@ WHERE ticket.ticket_id='.$chiave);
 
 
 
-				/*if (in_array($utopico, Array(15,16,17))){
+				if (in_array($utopico, Array(15,16,17))){
 
 
                if(($utopica=='VT' || $utopica=='RI') && $utopico==17)
@@ -1462,15 +1447,10 @@ WHERE ticket.ticket_id='.$chiave);
 
                         $costo_ext =0;
          				       $costo_int =0;
-         				}*/
+         				}
 
-                    /*if($tecnico==80) {
-                        $costo_int=0;
-                        $topico=db_query("SELECT `costo_ext` FROM ".TICKET_TABLE."__cdata WHERE `ticket_id`=".$id_ticket);
-                        $row=db_fetch_array($topico);
-                        $costo_ext=$row['costo_ext'];
-                        db_query("UPDATE ".TICKET_TABLE."__cdata SET costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$id_ticket);
-                    }*/
+				db_query("UPDATE ".TICKET_TABLE."__cdata SET costo_ext='".$costo_ext."',costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$id_ticket);
+
 
 
 				$sql="INSERT INTO ost_ticket_thread (pid,ticket_id,staff_id,user_id,thread_type,poster,title, body, format, ip_address, created)
@@ -1631,12 +1611,6 @@ if($thisstaff->getDeptId()==6) {
                            'href'=>'?a=ticket_sisal',
                            'iconclass'=>'newTicket'),
                         ($_REQUEST['status']=='ticket_sisal'));
-
-    $nav->addSubMenu(array('desc'=>'CSC',
-                            'title'=>'Importazione CSC',
-                            'href'=>'?a=ticket_csc',
-                            'iconclass'=>'newTicket'),
-                            ($_REQUEST['status']=='ticket_csc'));
 
 
     $nav->addSubMenu(array('desc'=>'Stampa',
@@ -1820,11 +1794,6 @@ $inc = 'tickets_pre.inc.php';
                      $inc = 'sisal.inc.php';
 
     }
-   elseif($_REQUEST['a']=='ticket_csc' && $thisstaff->canEditTickets()) {
-
-       $inc = 'csc.inc.php';
-
-   }
     elseif($_REQUEST['a']=='stampa_massiva' && $thisstaff->canEditTickets()) {
         $inc = 'stampa.inc.php';
     }
@@ -1855,9 +1824,6 @@ $inc = 'tickets_pre.inc.php';
             case 'sisal':
                 $where="ref_num LIKE '%GE%' OR ref_num LIKE '%CA%' ";
                 break;
-          case 'csc':
-              $where="ref_num LIKE '[A-Z][A-Z][0-9][0-9][0-9][0-9][A-Z][A-Z]-[0-9][0-9]'";
-              break;
             case 'altro':
                 $where="ref_num LIKE '%C%' ";
                 break;
@@ -1874,7 +1840,7 @@ $inc = 'tickets_pre.inc.php';
    }
   }
 
-      echo $sql;
+      //echo $sql;
       //die;
 
       $result=db_query($sql);
@@ -1946,9 +1912,7 @@ $inc = 'tickets_pre.inc.php';
             $blocco=true;
             $inc = 'stampa.inc.php';
           }else{
-
             $inc='/tcpdf/examples/ticket_pdf.php';
-
             header("Refresh:0");
           }
         }else{
@@ -2038,7 +2002,7 @@ $inc = 'tickets_pre.inc.php';
 
 
 
-      				/*if (in_array($utopico, Array(15,16,17))){
+      				if (in_array($utopico, Array(15,16,17))){
 
 
                      if(($utopica=='VT' || $utopica=='RI') && $utopico==17)
@@ -2153,18 +2117,10 @@ $inc = 'tickets_pre.inc.php';
 
                                $costo_ext =0;
                 				       $costo_int =0;
-                				}*/
+                				}
 
-                           /*if($tecnico==80) {
-                               $costo_int=0;
-                               $topico=db_query("SELECT `costo_ext` FROM ".TICKET_TABLE."__cdata WHERE `ticket_id`=".$id_ticket);
-                               $row=db_fetch_array($topico);
-                               $costo_ext=$row['costo_ext'];
-                               db_query("UPDATE ".TICKET_TABLE."__cdata SET costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$id_ticket);
-
-                           }*/
-
-                                //echo "UPDATE ".TICKET_TABLE."__cdata SET costo_ext='".$costo_ext."',costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$id_ticket."<br>";
+       				          db_query("UPDATE ".TICKET_TABLE."__cdata SET costo_ext='".$costo_ext."',costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$id_ticket);
+                        //echo "UPDATE ".TICKET_TABLE."__cdata SET costo_ext='".$costo_ext."',costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$id_ticket."<br>";
 
 
        				          $sql="INSERT INTO ost_ticket_thread (pid,ticket_id,staff_id,user_id,thread_type,poster,title, body, format, ip_address, created)
@@ -2178,7 +2134,7 @@ $inc = 'tickets_pre.inc.php';
 
        			          //mail('marco.salmi89@gmail.com, openunit3@gmail.com','ref_num',$ref_num);
 
-if (strpos($ref_num, 'c') !== false or strpos($ref_num, 'C') !== false or strpos($ref_num, 'S') !== false){
+if (strpos($ref_num, 'c') !== false or strpos($ref_num, 'C') !== false){
 
                        $presa = db_query('SELECT ticket.created as created, ticket.ticket_id as ticket_id, source, ticket.user_id as user_id, number, name, commesse.comm_id, firstname,lastname,cr,topic,from_unixtime(zz_dt_clmghw),ref_num
            FROM ost_ticket as ticket
@@ -2215,7 +2171,7 @@ if (strpos($ref_num, 'c') !== false or strpos($ref_num, 'C') !== false or strpos
 
                        //mail('marco.salmi89@gmail.com','array chiusura da zoccali',serialize($data));
 
-                       $urlo='http://5.249.147.181:8081/product/script_swap.php';
+                       $urlo='http://glvservice.fast-data.it/product/script_swap.php';
                        $ch = curl_init();
 
                        curl_setopt($ch, CURLOPT_URL, $urlo);
@@ -2227,8 +2183,8 @@ if (strpos($ref_num, 'c') !== false or strpos($ref_num, 'C') !== false or strpos
                        $error  = curl_error($ch);
                        curl_close($ch);
 
-                       if($error)
-                           mail('kakinho@hotmail.it','errore curl_massivo zoccali',$error);
+                       if ($error)
+                           mail('domenico.zavattolo@service-tech.it','errore curl_massivo zoccali',$error);
 
                        if (strpos($cresult, 'Errore') !== false){
                          $mat=explode('_',$cresult);
@@ -2490,46 +2446,7 @@ $msg="I seguenti ticket sono stati ripresi in carico: ".$avviso;
 
 ##########FINE Attesa
 ##########ASSEGNA
-         } elseif($_REQUEST['status_id']=='scontrino'){
-
-
-
-                if(isset($_REQUEST['input_field_scontrino'])) {
-
-
-                    foreach ($_REQUEST['input_field_scontrino'] as $chiave => $valore) {
-
-                      //mail("marco.salmi89@gmail.com","QUERY SCONTRINO",$valore[0]."-".$valore[1]);
-
-                        $number = preg_replace("/[^0-9abcisgeABCISGE+]/", "", $valore[0]);
-
-                        if (strpos($number, '+') !== false) {
-                            $ref_num = preg_replace("/[^0-9abcisgeABCISGE]/", "", $number);
-
-                            if (strlen($ref_num) > 4)
-                                $id_ticket = Ticket::getIdByRef_num($ref_num);
-
-                        } else {
-
-                            if (strlen($number) > 4)
-                                $id_ticket = Ticket::getIdByNumber($number);
-
-                        }
-
-                        if (!(ctype_digit($id_ticket) && $id_ticket > 4000))
-                            continue;
-
-                        $sql = "INSERT INTO ost_ticket_thread (pid,ticket_id,staff_id,user_id,thread_type,poster,title, body, format, ip_address, created)
-                        VALUES
-                        (0," . $id_ticket . "," . $thisstaff->getId() . ",0,'N','" . $thisstaff->getName() . "','Data scontrino', " .db_input($valore[1]) . ", 'html','127.0.0.1',NOW())";
-
-
-                        //mail("marco.salmi89@gmail.com","QUERY SCONTRINO",$sql);
-                        db_query($sql);
-                        //$msg="Query: ".$sql;
-                    }
-                }
-            }elseif($_REQUEST['status_id']==23){
+         }elseif($_REQUEST['status_id']==23){
 
            $status_id=$_REQUEST['status_id'];
            $tecnico=$_POST['tec_assegnato'];
@@ -2590,7 +2507,7 @@ $msg="I seguenti ticket sono stati ripresi in carico: ".$avviso;
 
 
 
-    				/*if (in_array($utopico, Array(15,16,17))){
+    				if (in_array($utopico, Array(15,16,17))){
 
 
                    if(($utopica=='VT' || $utopica=='RI') && $utopico==17)
@@ -2705,18 +2622,10 @@ $msg="I seguenti ticket sono stati ripresi in carico: ".$avviso;
 
                              $costo_ext =0;
               				       $costo_int =0;
-              				}*/
+              				}
 
-                         /*if($tecnico==80) {
-                             $costo_int=0;
-                             $topico=db_query("SELECT `costo_ext` FROM ".TICKET_TABLE."__cdata WHERE `ticket_id`=".$id_ticket);
-                             $row=db_fetch_array($topico);
-                             $costo_ext=$row['costo_ext'];
-                             db_query("UPDATE ".TICKET_TABLE."__cdata SET costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$id_ticket);
-
-                         } */
-                         
-                         //echo "UPDATE ".TICKET_TABLE."__cdata SET costo_ext='".$costo_ext."',costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$id_ticket."<br>";
+     				          db_query("UPDATE ".TICKET_TABLE."__cdata SET costo_ext='".$costo_ext."',costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$id_ticket);
+                      //echo "UPDATE ".TICKET_TABLE."__cdata SET costo_ext='".$costo_ext."',costo_int='".$costo_int."',prezzo='".($costo_ext-$costo_int)."' WHERE `ticket_id`=".$id_ticket."<br>";
 
 
      				          $sql="INSERT INTO ost_ticket_thread (pid,ticket_id,staff_id,user_id,thread_type,poster,title, body, format, ip_address, created)
@@ -2788,4 +2697,3 @@ function nuovascadenza($from, $days, $holidays) {
     }
     return $from->format('Y-m-d')." 01:00:00"; #  or just return DateTime object
 }
-
