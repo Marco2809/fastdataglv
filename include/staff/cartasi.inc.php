@@ -11,7 +11,8 @@ $config = array(
 $zona1=array('RM','RI','VT','LT','FR');
 $zona2=array('AQ','PE','TE','CH');
 $holidays = ['2018-12-08', '2018-12-25', '2018-12-26', '2019-01-01', '2019-01-06', '2019-04-22', '2019-04-25', '2019-05-01'];
-
+echo $config['url']."<br>";
+echo $config['key'];
 
 if (!isset($_FILES['userfile']) || !is_uploaded_file($_FILES['userfile']['tmp_name'])) {
     ?>
@@ -557,8 +558,7 @@ if (!empty($csv)){
 
         //echo json_encode($data);
 
-        echo $config['url']."<br>";
-        echo $config['key'];
+
 
         if ($code != 201){
             if ($i % 2 == 0)
